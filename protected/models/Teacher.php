@@ -72,7 +72,7 @@ class Teacher extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'lessonsRequests' => array(self::HAS_MANY, 'LessonsRequest', 'teacher_id'),
+			'lessonsRequests' => array(self::HAS_MANY, 'LessonRequest', 'teacher_id'),
 			'teacherTimeSlots' => array(self::HAS_MANY, 'TeacherTimeSlot', 'teacher_id'),
 		);
 	}

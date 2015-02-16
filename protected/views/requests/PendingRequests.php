@@ -21,6 +21,7 @@
 					<div class="table-responsive">
 						<?php for($i=0;$i<count($results);$i++): ?>
 						<form action="index.php?r=Requests/PendingRequests" method="post" id="myform<?php echo $i; ?>"></form>
+						
 						<?php endfor; ?>
 						<table class="table">
 							<thead>
@@ -40,27 +41,32 @@
 									<?php 
 									$j = -1;
 									foreach ($results as $request) {
-										 
+										 if($request->status == 1)
+										 	continue;
 										 ?>
 										 <?php
 										  $j = $j+1; 
 										  
 										  ?>
-										  <?php echo count($request->lessonRequestTimeSlots); ?>
+										  
 									<tr>
 										<td><?php echo $request -> student -> first_name; ?></td>
 										<td><?php echo $request -> student -> last_name; ?></td>
 										<td><?php echo $request -> student -> age; ?></td>
 										
+										<td><?php if($request->student->gender == 0 ): ?>Male<?php else: ?>Female <?php endif; ?></td>
+										
 										<td>
 										
+										<input type="hidden" name = "LessonRequest[student_id]" value="<?php echo $request -> student -> id; ?>" form="myform<?php echo $j; ?>">
+										<input type="hidden" name = "LessonRequest[request_id]" value="<?php echo $request -> id; ?>" form="myform<?php echo $j; ?>">
+										
 										<select name="LessonRequest[currency]" form="myform<?php echo $j; ?>">
-											<option value="GBP">GBP</option>
-											<option value="EUR">EUR</option>
-											<option value="EGP">EGP</option>
+											<option value="0">GBP</option>
+											<option value="1">EUR</option>
+											<option value="2">EGP</option>
 										</select></td>
 										
-										<td><?php if($request->student->age == 0 ): ?>Male<?php else: ?>Female <?php endif; ?></td>
 										<td>
 										<input type="number" class="form-control" placeholder="price" name="LessonRequest[cost]" form="myform<?php echo $j; ?>">
 										</td>

@@ -1,5 +1,42 @@
-<div class="page-content-wrap">
+<script>
 
+    $(document).ready(function() {
+        
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+
+            defaultDate: '<?php if(count($lessons)>0){ 
+            					echo $lessons[0]->expected_start_time; 
+            				}
+else echo "2015-02-16 18:08:00";
+            ?>',
+            defaultView: 'agendaDay',
+            droppable: false,
+            eventLimit: true, // allow "more" link when too many events
+            <?php if(isset($lessons)): ?>
+            events: [
+            <?php foreach ($lessons as $lesson): ?>
+                {
+                    title: 'Quran Session',
+                    start: '<?php echo $lesson->expected_start_time ?>',
+                    end: '<?php echo $lesson->expected_end_time ?>'
+                    
+                },
+                <?php endforeach; ?>
+                
+            ]
+            <?php endif; ?>
+        });
+        
+    });
+
+</script>
+
+<div class="page-content-wrap">
 </div>
 <!-- END PAGE CONTENT WRAPPER -->
 <!-- START CONTENT FRAME -->

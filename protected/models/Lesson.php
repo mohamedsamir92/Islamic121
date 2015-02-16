@@ -46,10 +46,10 @@ class Lesson extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('student_id, teacher_id, expected_start_time, cost, currency_id, actual_start_ayah, actual_end_ayah, actual_start_surah, actual_end_surah, front_revision_start_ayah, front_revision_end_ayah, front_revision_start_surah, front_revision_end_surah, back_revision_start_ayah, back_revision_end_ayah, back_revision_start_surah, back_revision_end_surah, grade, notes', 'required'),
+			array('student_id, teacher_id, expected_start_time, cost, currency_id', 'required'),
 			array('student_id, teacher_id, currency_id, actual_start_ayah, actual_end_ayah, actual_start_surah, actual_end_surah, front_revision_start_ayah, front_revision_end_ayah, front_revision_start_surah, front_revision_end_surah, back_revision_start_ayah, back_revision_end_ayah, back_revision_start_surah, back_revision_end_surah', 'numerical', 'integerOnly'=>true),
 			array('cost, grade', 'numerical'),
-			array('expected_end_time, actual_start_time, actual_end_time', 'safe'),
+			array('expected_end_time, actual_start_time, actual_end_time, notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, student_id, teacher_id, expected_start_time, expected_end_time, actual_start_time, actual_end_time, cost, currency_id, actual_start_ayah, actual_end_ayah, actual_start_surah, actual_end_surah, front_revision_start_ayah, front_revision_end_ayah, front_revision_start_surah, front_revision_end_surah, back_revision_start_ayah, back_revision_end_ayah, back_revision_start_surah, back_revision_end_surah, grade, notes', 'safe', 'on'=>'search'),

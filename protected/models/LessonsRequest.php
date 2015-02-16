@@ -12,11 +12,12 @@
  * @property double $cost
  * @property integer $currency_id
  * @property string $notes
+ * @property integer $status
  *
  * The followings are the available model relations:
  * @property LessonRequestTimeSlot[] $lessonRequestTimeSlots
- * @property Teacher $teacher
  * @property Student $student
+ * @property Teacher $teacher
  */
 class LessonsRequest extends CActiveRecord
 {
@@ -37,12 +38,12 @@ class LessonsRequest extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('student_id, teacher_id', 'required'),
-			array('student_id, teacher_id, currency_id', 'numerical', 'integerOnly'=>true),
+			array('student_id, teacher_id, currency_id, status', 'numerical', 'integerOnly'=>true),
 			array('cost', 'numerical'),
 			array('start_date, end_date, notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, student_id, teacher_id, start_date, end_date, cost, currency_id, notes', 'safe', 'on'=>'search'),
+			array('id, student_id, teacher_id, start_date, end_date, cost, currency_id, notes, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,8 +56,8 @@ class LessonsRequest extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'lessonRequestTimeSlots' => array(self::HAS_MANY, 'LessonRequestTimeSlot', 'lesson_request_id'),
-			'teacher' => array(self::BELONGS_TO, 'Teacher', 'teacher_id'),
 			'student' => array(self::BELONGS_TO, 'Student', 'student_id'),
+			'teacher' => array(self::BELONGS_TO, 'Teacher', 'teacher_id'),
 		);
 	}
 
@@ -74,6 +75,7 @@ class LessonsRequest extends CActiveRecord
 			'cost' => 'Cost',
 			'currency_id' => 'Currency',
 			'notes' => 'Notes',
+			'status' => 'Status',
 		);
 	}
 
@@ -103,6 +105,7 @@ class LessonsRequest extends CActiveRecord
 		$criteria->compare('cost',$this->cost);
 		$criteria->compare('currency_id',$this->currency_id);
 		$criteria->compare('notes',$this->notes,true);
+		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
