@@ -1,0 +1,34 @@
+
+body{
+  overflow: hidden;
+}
+
+table .fa-calendar{
+  color: #777777;
+}
+table .fa-calendar:hover,table .fa-calendar:focus{
+  text-decoration: none
+}
+.modal-content{
+  margin: 150px auto;
+}
+
+th{
+  text-align: center;
+}
+
+td{
+  text-align: center;
+}
+
+td input{
+  width: 60px;
+  text-align: center;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td
+{
+  vertical-align: middle;
+}
+#dashboard-chart{
+  display: none;
+}
