@@ -26,7 +26,7 @@ class LessonsRequest extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'lessons_request';
+		return 'lesson_request';
 	}
 
 	/**
@@ -54,11 +54,11 @@ class LessonsRequest extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
+		/*return array(
 			'lessonRequestTimeSlots' => array(self::HAS_MANY, 'LessonRequestTimeSlot', 'lesson_request_id'),
 			'student' => array(self::BELONGS_TO, 'Student', 'student_id'),
 			'teacher' => array(self::BELONGS_TO, 'Teacher', 'teacher_id'),
-		);
+		);*/
 	}
 
 	/**

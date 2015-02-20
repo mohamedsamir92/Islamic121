@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 		var x = $(".submitRowButton");
-		alert(x.length);
+		//alert(x.length);
 		$(".submitRowButton").on("click",function(){
 			
-			alert($(this).attr("row-class"));	
+			//alert($(this).attr("row-class"));	
 		});
 		
 		
@@ -82,6 +82,6 @@ $(document).ready(function(){
 		});
 	$("select.prefered_days").on("click",function(){
 		
-		alert("KAKA");
+		//alert("KAKA");
 	});
 	

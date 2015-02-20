@@ -371,12 +371,12 @@
 
 	<!-- START DASHBOARD CHART -->
 	<div class="block-full-width">
-		<div id="dashboard-chart" style="height: 250px; width: 100%; float: left;"></div>
-		<div class="chart-legend">
-			<div id="dashboard-legend"></div>
-		</div>
-	</div>
-	<!-- END DASHBOARD CHART -->
+                        <div id="dashboard-chart" style="height: 250px; width: 100%; float: left;"></div>
+                        <div class="chart-legend">
+                            <div id="dashboard-legend"></div>
+                        </div>                                                
+                    </div>                    
+                    <!-- END DASHBOARD CHART -->
 
 </div>
 
@@ -400,3 +400,6 @@
         <script type="text/javascript" src="js/plugins/knob/jquery.knob.min.js"></script>
         <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
         <!-- END THIS PAGE PLUGINS-->        
+        
+        <script type="text/javascript" src="js/demo_dashboard.js"></script>
+        

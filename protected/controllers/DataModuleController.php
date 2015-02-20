@@ -43,7 +43,7 @@ class DataModuleController extends Controller {
 		$allTeachers = Teacher::model() -> findAll();
 
 		if (isset($_POST['Student'])) {
-			var_dump($_POST['Student']);
+			//var_dump($_POST['Student']);
 			$model -> attributes = $_POST['Student'];
 			//
 			//$target_dir = Yii::app() -> request -> baseUrl . "/images/";
@@ -60,7 +60,7 @@ class DataModuleController extends Controller {
 			$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
 			$model -> password = $model -> hashPassword($model -> password);
 			if ($model -> save()) {
-				$lesson_request = new LessonsRequest;
+				$lesson_request = new LessonRequest;
 				$lesson_request -> student_id = $model -> id;
 				$lesson_request -> teacher_id = $_POST['Student']['teacher'];
 				if ($lesson_request -> save()) {
@@ -132,7 +132,15 @@ class DataModuleController extends Controller {
 			//echo $imageFileType;
 
 		}
-		$this -> render('AddTeacher');
+		if(isset(Yii::app() -> user -> id)){
+			if(Yii::app()->user->type == 'Admin')
+				$this -> render('AddTeacher');
+			else 
+				$this -> redirect('index.php?r=DataModule/Login');	
+		}
+		else 
+			$this -> redirect('index.php?r=DataModule/Login');
+		
 
 	}
 
@@ -163,7 +171,15 @@ class DataModuleController extends Controller {
 			//echo $imageFileType;
 
 		}
-		$this -> render('AddAdmin');
+		if(isset(Yii::app() -> user -> id)){
+			if(Yii::app()->user->type == 'Admin')
+				$this -> render('AddAdmin');
+			else 
+				$this -> redirect('index.php?r=DataModule/Login');	
+		}
+		else 
+			$this -> redirect('index.php?r=DataModule/Login');
+		
 
 	}
 
