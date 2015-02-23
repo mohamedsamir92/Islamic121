@@ -16,14 +16,14 @@
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span>First</span></span>
-									<input type="text" class="form-control"/ name="Student[first_name]">
+									<input type="text" class="form-control"/ name="Student[first_name]" required="">
 								</div>
 							</div>
 
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span>Last</span></span>
-									<input type="text" class="form-control" name="Student[last_name]"/>
+									<input type="text" class="form-control" name="Student[last_name]" required="" />
 								</div>
 							</div>
 						</div>
@@ -33,7 +33,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></span>
-									<input type="text" class="form-control" name="Student[username]" />
+									<input type="text" class="form-control" name="Student[username]" required="" />
 								</div>
 							</div>
 						</div>
@@ -43,14 +43,14 @@
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input type="password" class="form-control" name="Student[password]"/>
+									<input type="password" class="form-control" name="Student[password]" required=""/>
 								</div>
 							</div>
 
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input type="password" class="form-control"/>
+									<input type="password" class="form-control" required=""/>
 								</div>
 							</div>
 						</div>
@@ -60,7 +60,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-phone"></span></span>
-									<input type="text" class="form-control" name="Student[phone_no]"/>
+									<input type="text" class="form-control" name="Student[phone_no]" required=""/>
 								</div>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-envelope"></span></span>
-									<input type="text" class="form-control" name="Student[email]"/>
+									<input type="text" class="form-control" name="Student[email]" required=""/>
 								</div>
 							</div>
 						</div>
@@ -80,7 +80,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-skype"></span></span>
-									<input type="text" class="form-control" name="Student[skype_id]"/>
+									<input type="text" class="form-control" name="Student[skype_id]" required=""/>
 								</div>
 							</div>
 						</div>
@@ -90,7 +90,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-signal"></span></span>
-									<input type="text" class="form-control" name="Student[age]"/>
+									<input type="text" class="form-control" name="Student[age]" required=""/>
 								</div>
 							</div>
 						</div>
@@ -100,14 +100,14 @@
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-flag"></span></span>
-									<input type="text" class="form-control" placeholder="Country" name="Student[country]"/>
+									<input type="text" class="form-control" placeholder="Country" name="Student[country]" required=""/>
 								</div>
 							</div>
 
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-flag-o"></span></span>
-									<input type="text" class="form-control" placeholder="City" name="Student[city]"/>
+									<input type="text" class="form-control" placeholder="City" name="Student[city]" required=""/>
 								</div>
 							</div>
 						</div>
@@ -135,44 +135,30 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Teacher</label>
-							<div class="col-md-6 col-xs-12">
-								<select id="teachers" class="form-control select" name="Student[teacher]">
-
-									<?php foreach ($teachers as $teacher) { ?>
-
-									<option value="<?php echo $teacher -> id; ?>"><?php echo $teacher -> first_name . " " . $teacher -> last_name; ?></option>
-									<?php } ?>
-								</select>
-							</div>
+						<div class="form-group" id="preference">
+							
 						</div>
-
-						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Prefered Times</label>
-							<div id="preference" class="col-md-6 col-xs-12">
-
-							</div>
-						</div>
-
+						
+						
+						
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Guardians Names</label>
 							<div class="col-md-6 col-xs-12">
-								<textarea class="form-control" rows="3" name="Student[guardians_name]"></textarea>
+								<textarea class="form-control" rows="3" name="Student[guardians_name]" required=""></textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Notes</label>
 							<div class="col-md-6 col-xs-12">
-								<textarea class="form-control" rows="3" name="Student[notes]"></textarea>
+								<textarea class="form-control" rows="3" name="Student[notes]" required=""></textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">How did you hear about us</label>
 							<div class="col-md-6 col-xs-12">
-								<select class="form-control select" name="Student[hear_us]">
+								<select class="form-control select" name="Student[hear_us]" >
 									<option value="facebook">Facebook</option>
 									<option value="twitter">Twitter</option>
 									<option value="google+">Google+</option>
@@ -224,6 +210,7 @@
 <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>                
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
 <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>

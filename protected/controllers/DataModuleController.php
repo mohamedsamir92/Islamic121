@@ -6,7 +6,9 @@ class DataModuleController extends Controller {
 	}
 
 	public function actionLogin() {
-
+		if (isset(Yii::app() -> user -> id)) {
+			$this -> redirect('index.php?r=DashBoard/' . Yii::app() -> user -> type . 'DashBoard');
+		}
 		if (isset($_POST['Login'])) {
 			//var_dump($_POST);
 			$identity = new UserIdentity($_POST['Login']['username'], $_POST['Login']['password']);
@@ -47,22 +49,25 @@ class DataModuleController extends Controller {
 			$model -> attributes = $_POST['Student'];
 			//
 			//$target_dir = Yii::app() -> request -> baseUrl . "/images/";
+			if (isset($_POST['Student']['image'])) {
+				$file = CUploadedFile::getInstance($model, 'image');
+				//var_dump($file);
 
-			$file = CUploadedFile::getInstance($model, 'image');
-			//var_dump($file);
+				$fileName = date('YmdHms') + $model -> image;
+				// random number + file name
+				$model -> image = $fileName . '.' . $file -> getExtensionName();
+				//echo $model->image;
 
-			$fileName = date('YmdHms') + $model -> image;
-			// random number + file name
-			$model -> image = $fileName . '.' . $file -> getExtensionName();
-			//echo $model->image;
-
-			//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
-			$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
+				//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
+				$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
+			} else {
+				$model -> image = "no-image.jpg";
+			}
 			$model -> password = $model -> hashPassword($model -> password);
 			if ($model -> save()) {
 				$lesson_request = new LessonRequest;
 				$lesson_request -> student_id = $model -> id;
-				$lesson_request -> teacher_id = $_POST['Student']['teacher'];
+				//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
 				if ($lesson_request -> save()) {
 					for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
 						$lesson_time_slots = new LessonRequestTimeSlot;
@@ -75,10 +80,24 @@ class DataModuleController extends Controller {
 						//print_r($lesson_time_slots -> getErrors());
 
 					}
-
-				}
+					$identity = new UserIdentity($_POST['Student']['username'], $_POST['Student']['password']);
+					$identity -> setType("Student");
+					if ($identity -> authenticate()) {
+						Yii::app() -> user -> login($identity);
+						$_type = Yii::app() -> user -> type;
+						if ($_type == "Student")
+							$this -> redirect('index.php?r=DashBoard/StudentDashBoard');
+						else if ($_type == "Admin")
+							$this -> redirect('index.php?r=DashBoard/AdminDashBoard');
+						else if ($_type == "Teacher")
+							$this -> redirect('index.php?r=DashBoard/TeacherDashBoard');
+					} else
+						echo "ERROR";
+				} else
+					echo "ERROR";
 			} else {
-				print_r($model -> getErrors());
+				echo "ERROR";
+				return;
 
 			}
 			//var_dump($_FILES);
@@ -87,15 +106,15 @@ class DataModuleController extends Controller {
 			//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			//echo $imageFileType;
 
-		}
-		$this -> render('AddStudent', array("teachers" => $allTeachers));
+		} else
+			$this -> render('AddStudent', array("teachers" => $allTeachers));
 
 	}
 
 	public function actionGetTeacherTimeSlots() {
 		if (isset($_GET['day']))
 			$teacherSlots = TeacherTimeSlot::model() -> findAll("teacher_id = :id and day = :day", array(":id" => $_GET['id'], ":day" => $_GET['day']));
-		else 
+		else
 			$teacherSlots = TeacherTimeSlot::model() -> findAll("teacher_id = :id", array(":id" => $_GET['id']));
 		$result = array();
 		foreach ($teacherSlots as $slot) {
@@ -132,15 +151,13 @@ class DataModuleController extends Controller {
 			//echo $imageFileType;
 
 		}
-		if(isset(Yii::app() -> user -> id)){
-			if(Yii::app()->user->type == 'Admin')
+		if (isset(Yii::app() -> user -> id)) {
+			if (Yii::app() -> user -> type == 'Admin')
 				$this -> render('AddTeacher');
-			else 
-				$this -> redirect('index.php?r=DataModule/Login');	
-		}
-		else 
+			else
+				$this -> redirect('index.php?r=DataModule/Login');
+		} else
 			$this -> redirect('index.php?r=DataModule/Login');
-		
 
 	}
 
@@ -171,15 +188,13 @@ class DataModuleController extends Controller {
 			//echo $imageFileType;
 
 		}
-		if(isset(Yii::app() -> user -> id)){
-			if(Yii::app()->user->type == 'Admin')
+		if (isset(Yii::app() -> user -> id)) {
+			if (Yii::app() -> user -> type == 'Admin')
 				$this -> render('AddAdmin');
-			else 
-				$this -> redirect('index.php?r=DataModule/Login');	
-		}
-		else 
+			else
+				$this -> redirect('index.php?r=DataModule/Login');
+		} else
 			$this -> redirect('index.php?r=DataModule/Login');
-		
 
 	}
 

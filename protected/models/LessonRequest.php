@@ -37,7 +37,7 @@ class LessonRequest extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('student_id, teacher_id', 'required'),
+			array('student_id', 'required'),
 			array('student_id, teacher_id, currency_id, status', 'numerical', 'integerOnly'=>true),
 			array('cost', 'numerical'),
 			array('start_date, end_date, notes', 'safe'),
