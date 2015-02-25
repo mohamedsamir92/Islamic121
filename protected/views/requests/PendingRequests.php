@@ -126,7 +126,7 @@
 																		<div class="input-group bootstrap-timepicker">
 																			<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
 																			<?php $lessonTimeSlot->from  = date("g:i a", strtotime($lessonTimeSlot->from));
-																			$lessonTimeSlot->to = date("g:i a", strtotime($lessonTimeSlot->from)); ?>
+																			$lessonTimeSlot->to = date("g:i a", strtotime($lessonTimeSlot->to)); ?>
 																			<input type="text" class="form-control timepicker" form="myform<?php echo $j; ?>" name="LessonRequest[from][]" value="<?php echo $lessonTimeSlot->from ?>" />
 																		</div></td>
 																		<td>

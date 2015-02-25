@@ -128,22 +128,51 @@ class DataModuleController extends Controller {
 		$model = new Teacher;
 
 		if (isset($_POST['Teacher'])) {
-			//var_dump($_POST['Student']);
+			//var_dump($_POST['Teacher']);
 			$model -> attributes = $_POST['Teacher'];
 			//
 			//$target_dir = Yii::app() -> request -> baseUrl . "/images/";
 
-			$file = CUploadedFile::getInstance($model, 'image');
-			//var_dump($file);
+			if (isset($_POST['Teacher']['image'])) {
+				$file = CUploadedFile::getInstance($model, 'image');
+				//var_dump($file);
 
-			$fileName = date('YmdHms') + $model -> image;
-			// random number + file name
-			$model -> image = $fileName . '.' . $file -> getExtensionName();
+				$fileName = date('YmdHms') + $model -> image;
+				// random number + file name
+				$model -> image = $fileName . '.' . $file -> getExtensionName();
+				//echo $model->image;
+
+				//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
+				$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
+			} else {
+				$model -> image = "no-image.jpg";
+			}
 			//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
-			$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
+			//$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
 			$model -> password = $model -> hashPassword($model -> password);
-			$model -> save();
-			print_r($model -> getErrors());
+			if($model -> save()){
+				
+				foreach ($_POST['Teacher']['days'] as $dayIndex) {
+					
+					$slot = new TeacherTimeSlot;
+					$slot->teacher_id = $model->id;
+					$slot->day = $dayIndex;
+					$slot->from = $_POST['Teacher']['from'][$dayIndex];
+					$slot->to = $_POST['Teacher']['to'][$dayIndex];
+					$slot->save();
+					
+				}
+				
+			}
+			
+			else {
+				
+				echo "ERROR";
+				//print_r($model -> getErrors());
+				return;
+			}
+			
+			//print_r($model -> getErrors());
 			//var_dump($_FILES);
 			//$target_file = $target_dir . basename($_FILES["image"]["name"]);
 			//$uploadOk = 1;

@@ -9,8 +9,10 @@ class CalendarController extends Controller
 	
 	public function actionCalendarView()
 	{
-		if(Yii::app()->user->type == 'admin'){
-			$this->render('CalendarView');
+		//echo Yii::app()->user->type;
+		if(Yii::app()->user->type == 'Admin'){
+			$lessons = Lesson::model()->with(array("student", "teacher"))->findAll();
+			$this->render('CalendarView',array("lessons"=>$lessons));
 		}else{
 		$lessons = Lesson::model()->findAll("student_id = ".Yii::app() -> user -> id." or teacher_id = ".Yii::app() -> user -> id);
 		$this->render('CalendarView',array("lessons"=>$lessons));

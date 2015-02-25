@@ -74,6 +74,7 @@ class Student extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'lessons' => array(self::HAS_MANY, 'Lesson', 'student_id'),
 			'lessonRequests' => array(self::HAS_MANY, 'LessonRequest', 'student_id'),
 		);
 	}

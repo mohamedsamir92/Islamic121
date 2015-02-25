@@ -27,6 +27,10 @@
  * @property integer $back_revision_end_surah
  * @property double $grade
  * @property string $notes
+ *
+ * The followings are the available model relations:
+ * @property Student $student
+ * @property Teacher $teacher
  */
 class Lesson extends CActiveRecord
 {
@@ -46,7 +50,7 @@ class Lesson extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('student_id, teacher_id, expected_start_time, cost, currency_id', 'required'),
+			array('student_id, teacher_id, expected_start_time, currency_id', 'required'),
 			array('student_id, teacher_id, currency_id, actual_start_ayah, actual_end_ayah, actual_start_surah, actual_end_surah, front_revision_start_ayah, front_revision_end_ayah, front_revision_start_surah, front_revision_end_surah, back_revision_start_ayah, back_revision_end_ayah, back_revision_start_surah, back_revision_end_surah', 'numerical', 'integerOnly'=>true),
 			array('cost, grade', 'numerical'),
 			array('expected_end_time, actual_start_time, actual_end_time, notes', 'safe'),
@@ -64,6 +68,8 @@ class Lesson extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'student' => array(self::BELONGS_TO, 'Student', 'student_id'),
+			'teacher' => array(self::BELONGS_TO, 'Teacher', 'teacher_id'),
 		);
 	}
 

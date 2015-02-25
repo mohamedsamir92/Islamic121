@@ -54,7 +54,7 @@ class Teacher extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, image, notes', 'required'),
+			array('first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, notes', 'required'),
 			array('age, gender, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_no, email, skype_id, username, country, city, image', 'length', 'max'=>100),
 			array('password', 'length', 'max'=>500),
@@ -72,6 +72,7 @@ class Teacher extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'lessons' => array(self::HAS_MANY, 'Lesson', 'teacher_id'),
 			'lessonsRequests' => array(self::HAS_MANY, 'LessonRequest', 'teacher_id'),
 			'teacherTimeSlots' => array(self::HAS_MANY, 'TeacherTimeSlot', 'teacher_id'),
 		);

@@ -4,6 +4,7 @@
  * This is the model class for table "teacher_time_slot".
  *
  * The followings are the available columns in table 'teacher_time_slot':
+ * @property integer $id
  * @property integer $teacher_id
  * @property integer $day
  * @property string $from
@@ -34,7 +35,7 @@ class TeacherTimeSlot extends CActiveRecord
 			array('teacher_id, day', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('teacher_id, day, from, to', 'safe', 'on'=>'search'),
+			array('id, teacher_id, day, from, to', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +57,7 @@ class TeacherTimeSlot extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'teacher_id' => 'Teacher',
 			'day' => 'Day',
 			'from' => 'From',
@@ -81,6 +83,7 @@ class TeacherTimeSlot extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('teacher_id',$this->teacher_id);
 		$criteria->compare('day',$this->day);
 		$criteria->compare('from',$this->from,true);

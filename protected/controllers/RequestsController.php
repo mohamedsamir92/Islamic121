@@ -15,6 +15,7 @@ class RequestsController extends Controller {
 			$received_data = $_POST;
 			//var_dump($received_data);
 			$request = LessonRequest::model()->find("id = ".$received_data['LessonRequest']['request_id']);
+			$request->teacher_id = $received_data['LessonRequest']['teacher_id'];
 			$request->currency_id = $received_data['LessonRequest']['currency'];
 			$request->cost = $received_data['LessonRequest']['cost'];
 			$days = array("Saturday" => 0, "Sunday" => 1, "Monday" => 2, "Tuesday" => 3, "Wednesday" => 4, "Thursday" => 5, "Friday" => 6);
@@ -104,7 +105,7 @@ class RequestsController extends Controller {
 			 //var_dump($nextDay);
 			 */
 		}
-		$result = LessonRequest::model() -> with(array("lessonRequestTimeSlots", "teacher", "student")) -> findAll();
+		$result = LessonRequest::model() -> with(array("lessonRequestTimeSlots", "teacher", "student")) -> findAll("status = 0");
 		$teachers = Teacher::model() -> findAll();
 		//var_dump($result[2]->lessonRequestTimeSlots);
 		//var_dump($result[0]->lessonRequestTimeSlots[0]);

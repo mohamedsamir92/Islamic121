@@ -127,19 +127,19 @@
 
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked"/>
+									<input type="checkbox" class="icheckbox" checked="checked" name="Teacher[days][]" value="0"/>
 									Saturday</label>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[from][]"/>
 								</div>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[to][]" />
 								</div>
 							</div>
 						</div>
@@ -149,19 +149,19 @@
 
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked"/>
+									<input type="checkbox" class="icheckbox" checked="checked" name="Teacher[days][]" value="1"/>
 									Sunday</label>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[from][]" />
 								</div>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[to][]" />
 								</div>
 							</div>
 						</div>
@@ -171,19 +171,19 @@
 
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked"/>
+									<input type="checkbox" class="icheckbox" checked="checked" name="Teacher[days][]" value="2"/>
 									Monday</label>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[from][]" />
 								</div>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[to][]" />
 								</div>
 							</div>
 						</div>
@@ -193,19 +193,19 @@
 
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked"/>
+									<input type="checkbox" class="icheckbox" checked="checked" name="Teacher[days][]" value="3" />
 									Tuesday</label>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[from][]" />
 								</div>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[to][]" />
 								</div>
 							</div>
 						</div>
@@ -215,19 +215,19 @@
 
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked"/>
+									<input type="checkbox" class="icheckbox" checked="checked" name="Teacher[days][]" value="4" />
 									Wednesday</label>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[from][]" />
 								</div>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[to][]" />
 								</div>
 							</div>
 						</div>
@@ -237,19 +237,19 @@
 
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked"/>
+									<input type="checkbox" class="icheckbox" checked="checked" name="Teacher[days][]" value="5" />
 									Thursday</label>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[from][]" />
 								</div>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[to][]" />
 								</div>
 							</div>
 						</div>
@@ -259,19 +259,19 @@
 
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked"/>
+									<input type="checkbox" class="icheckbox" checked="checked" name="Teacher[days][]" value="6" />
 									Friday</label>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[from][]" />
 								</div>
 							</div>
 							<div class="col-md-2 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker"/>
+									<input type="text" class="form-control timepicker" name="Teacher[to][]" />
 								</div>
 							</div>
 						</div>
