@@ -7,7 +7,7 @@
 			<form class="form-horizontal" action="index.php?r=DataModule/AddStudent" method="post" enctype="multipart/form-data">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Add New <strong>Student</strong></h3>
+						<h3 class="panel-title"><strong>Student</strong> Sign Up</h3>
 					</div>
 					<div class="panel-body">
 
@@ -144,7 +144,7 @@
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Guardians Names</label>
 							<div class="col-md-6 col-xs-12">
-								<textarea class="form-control" rows="3" name="Student[guardians_name]" required=""></textarea>
+								<input type="text" class="form-control" placeholder="Guardians Name" name="Student[guardians_name]" required=""/>
 							</div>
 						</div>
 

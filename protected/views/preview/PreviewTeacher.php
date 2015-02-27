@@ -197,145 +197,36 @@
 					</div>
 					<div class="panel-body form-group-separated">
 
+						<?php 
+						$days = array("Saturday" , "Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday");
+						foreach ($slots as $slot): 
+						$slot->from  = date("g:i a", strtotime($slot->from));
+						$slot->to = date("g:i a", strtotime($slot->to));
+																			
+						?>
 						<div class="form-group">
 							<div class="col-md-2 col-xs-12">
 								<label class="check">
-									<input type="checkbox" class="icheckbox" disabled/>
-									Saturday</label>
+									<input type="checkbox" class="icheckbox" disabled checked="checked"/>
+									<?php echo $days[$slot->day]; ?></label>
 							</div>
 							<div class="col-md-5 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
+									<input type="text" class="form-control timepicker" value="<?php echo $slot->from; ?>" disabled/>
 								</div>
 							</div>
 							<div class="col-md-5 col-xs-12">
 								<div class="input-group bootstrap-timepicker">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
+									<input type="text" class="form-control timepicker" value="<?php echo $slot->to; ?>" disabled/>
 								</div>
 							</div>
 						</div>
+						
+						<?php endforeach; ?>
 
-						<div class="form-group">
-							<div class="col-md-2 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" disabled/>
-									Sunday</label>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-						</div>
 
-						<div class="form-group">
-							<div class="col-md-2 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked" disabled/>
-									Monday</label>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-2 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked" disabled/>
-									Tuesday</label>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-2 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked" disabled/>
-									Wednesday</label>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-2 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked" disabled/>
-									Thursday</label>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-2 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked" disabled/>
-									Friday</label>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-							<div class="col-md-5 col-xs-12">
-								<div class="input-group bootstrap-timepicker">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-									<input type="text" class="form-control timepicker" disabled/>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</form>

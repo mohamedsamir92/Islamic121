@@ -1,63 +1,77 @@
-<form class="form-horizontal" action="index.php?r=DataModule/Login" method="post" >
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Login</h3>
-		</div>
-		<div class="panel-body">
+<div class="login-container login-v2">
 
-			<div class="form-group">
-				<label class="col-md-3 col-xs-12 control-label">Username</label>
-				<div class="col-md-6 col-xs-12">
-					<div class="input-group">
-						<span class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></span>
-						<input type="text" class="form-control" name="Login[username]" />
+	<div class="login-box animated fadeInDown">
+		<div class="login-body">
+			<div class="login-title"><strong>  Welcome</strong>, Please login.</div>
+			<form class="form-horizontal" action="index.php?r=DataModule/Login" method="post" >
+
+				<div class="form-group">
+					<div class="col-md-12">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="fa fa-user"></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Username"  name="Login[username]"/>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				<label class="col-md-3 col-xs-12 control-label">Password</label>
-				<div class="col-md-3 col-xs-12">
-					<div class="input-group">
-						<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-						<input type="password" class="form-control" name="Login[password]"/>
+				<div class="form-group">
+					<div class="col-md-12">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="fa fa-lock"></span>
+							</div>                                
+							<input type="password" class="form-control" placeholder="Password"  name="Login[password]"/>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div class="form-group">
-				<label class="col-md-3 col-xs-12 control-label">Type</label>
-				<div class="col-md-3 col-xs-12">
-					<div class="input-group">
-						<select class="basic" name = "Login[type]">
-							<option value = "Student"> Student </option>
-							<option value = "Teacher"> Teacher </option>
-							<option value = "Admin"> Admin </option>
-							<!--<option value = "supervisor"> Supervisor </option>-->
-						</select>
+
+				<div class="form-group">
+					<div class="col-md-12">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="fa fa-group"></span>
+							</div>                                
+							<select class="form-control select" name = "Login[type]">
+								<option value = "Student"> Student </option>
+								<option value = "Teacher"> Teacher </option>
+								<option value = "Admin"> Admin </option>
+								<!--<option value = "supervisor"> Supervisor </option>-->
+							</select>
+						</div>
 					</div>
 				</div>
-			</div>
 
-		</div>
-		<div class="panel-footer">
-			<button class="btn btn-default">
-				Clear Form
-			</button>
-			<button type="submit" class="btn btn-primary pull-right">
-				Submit
-			</button>
-		</div>
+				<div class="form-group">
+					<div class="col-md-6">
+						<a href="#">Forgot your password?</a>
+					</div>          
+					<div class="col-md-6 text-right">
+						<a href="index.php?r=DataModule/AddStudent">Create an account</a>
+					</div>              
+				</div>
 
+				<div class="form-group">
+					<div class="col-md-12">
+						<button class="btn btn-primary btn-lg btn-block">Login</button>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
-</form>
 
-    <!-- THIS PAGE PLUGINS -->
-		<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-		<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+</div>
 
-		<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
-		<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
-		<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
-		<script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
-		<!-- END THIS PAGE PLUGINS -->
+
+
+
+<!-- THIS PAGE PLUGINS -->
+<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+<!-- END THIS PAGE PLUGINS -->

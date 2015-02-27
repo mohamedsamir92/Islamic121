@@ -2,10 +2,16 @@
 
 class EditController extends Controller {
 	public function actionIndex() {
+		if(!isset(Yii::app()->user->id)){
+			$this->redirect("index.php?r=DataModule/Login");
+		}
 		$this -> render('index');
 	}
 
 	public function actionEditAdmin() {
+		if(!isset(Yii::app()->user->id)){
+			$this->redirect("index.php?r=DataModule/Login");
+		}
 		$record = Admin::model() -> find("id = " . Yii::app() -> user -> id);
 
 		if (isset($_POST["Admin"])) {
@@ -53,6 +59,9 @@ class EditController extends Controller {
 	}
 
 	public function actionEditStudent() {
+		if(!isset(Yii::app()->user->id)){
+			$this->redirect("index.php?r=DataModule/Login");
+		}
 		$record = Student::model() -> find("id = " . Yii::app() -> user -> id);
 
 		if (isset($_POST["Student"])) {
@@ -100,6 +109,9 @@ class EditController extends Controller {
 	}
 
 	public function actionEditTeacher() {
+		if(!isset(Yii::app()->user->id)){
+			$this->redirect("index.php?r=DataModule/Login");
+		}
 		$record = Teacher::model() -> find("id = " . Yii::app() -> user -> id);
 
 		if (isset($_POST["Teacher"])) {

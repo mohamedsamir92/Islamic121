@@ -7,7 +7,7 @@ class DataModuleController extends Controller {
 
 	public function actionLogin() {
 		if (isset(Yii::app() -> user -> id)) {
-			$this -> redirect('index.php?r=DashBoard/' . Yii::app() -> user -> type . 'DashBoard');
+			$this -> redirect('index.php?r=Calendar/CalendarView');
 		}
 		if (isset($_POST['Login'])) {
 			//var_dump($_POST);
@@ -19,11 +19,11 @@ class DataModuleController extends Controller {
 				Yii::app() -> user -> login($identity);
 				$_type = Yii::app() -> user -> type;
 				if ($_type == "Student")
-					$this -> redirect('index.php?r=DashBoard/StudentDashBoard');
+					$this -> redirect('index.php?r=Calendar/CalendarView');
 				else if ($_type == "Admin")
 					$this -> redirect('index.php?r=DashBoard/AdminDashBoard');
 				else if ($_type == "Teacher")
-					$this -> redirect('index.php?r=DashBoard/TeacherDashBoard');
+					$this -> redirect('index.php?r=Calendar/CalendarView');
 
 			} else {
 				echo $identity -> errorMessage;
@@ -45,11 +45,11 @@ class DataModuleController extends Controller {
 		$allTeachers = Teacher::model() -> findAll();
 
 		if (isset($_POST['Student'])) {
-			//var_dump($_POST['Student']);
 			$model -> attributes = $_POST['Student'];
-			//
-			//$target_dir = Yii::app() -> request -> baseUrl . "/images/";
-			if (isset($_POST['Student']['image'])) {
+			
+				
+			if (strlen($_FILES['Student']['name']['image'])>0) {
+				
 				$file = CUploadedFile::getInstance($model, 'image');
 				//var_dump($file);
 
@@ -80,19 +80,17 @@ class DataModuleController extends Controller {
 						//print_r($lesson_time_slots -> getErrors());
 
 					}
-					$identity = new UserIdentity($_POST['Student']['username'], $_POST['Student']['password']);
+					/*$identity = new UserIdentity($_POST['Student']['username'], $_POST['Student']['password']);
 					$identity -> setType("Student");
 					if ($identity -> authenticate()) {
 						Yii::app() -> user -> login($identity);
 						$_type = Yii::app() -> user -> type;
-						if ($_type == "Student")
-							$this -> redirect('index.php?r=DashBoard/StudentDashBoard');
-						else if ($_type == "Admin")
+						if ($_type == "Admin")
 							$this -> redirect('index.php?r=DashBoard/AdminDashBoard');
 						else if ($_type == "Teacher")
 							$this -> redirect('index.php?r=DashBoard/TeacherDashBoard');
 					} else
-						echo "ERROR";
+						echo "ERROR";*/
 				} else
 					echo "ERROR";
 			} else {
@@ -106,8 +104,11 @@ class DataModuleController extends Controller {
 			//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			//echo $imageFileType;
 
-		} else
+		} else{
+			$this->layout='registration';
 			$this -> render('AddStudent', array("teachers" => $allTeachers));
+		
+		}
 
 	}
 

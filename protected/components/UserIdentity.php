@@ -19,7 +19,16 @@ class UserIdentity extends CUserIdentity {
 			$this -> errorCode = self::ERROR_PASSWORD_INVALID;
 		else {
 			//var_dump($record);
+			if($this->_type == "Student"){
+				$request = LessonRequest::model()->find("student_id = ".$record -> id);
+				if($request->status == 0){
+					$this -> errorCode = self::ERROR_USERNAME_INVALID;
+					return !$this -> errorCode;
+				}
+				
+			}
 			$this -> _id = $record -> id;
+			
 			$this -> setState('first_name', $record -> first_name);
 			$this -> setState('last_name', $record -> last_name);
 			$this -> setState('phone_no', $record -> phone_no);

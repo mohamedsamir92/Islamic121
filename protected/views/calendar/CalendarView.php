@@ -14,7 +14,7 @@
             				}
 else echo "2015-02-16 18:08:00";
             ?>',
-            defaultView: 'agendaDay',
+            defaultView: 'month',
             droppable: false,
             eventLimit: true, // allow "more" link when too many events
             <?php if(isset($lessons)): ?>
@@ -26,9 +26,14 @@ else echo "2015-02-16 18:08:00";
 					$info = "Student: " . $lesson -> student -> first_name . " " . $lesson -> student -> last_name;
 				else
 					$info = "Teacher: " . $lesson -> teacher -> first_name . " " . $lesson -> teacher -> last_name;
+				$tok = strtok($lesson->expected_end_time, " ");
+				$tok = strtok(" ");
+				$tok = date("g:i a", strtotime($tok));
+				$tok = substr($tok, 0 , strlen($tok)-1);
+				
 				?>
                 {
-                    title: 'Quran \n <?php echo $info; ?> <?php if(Yii::app()->user->type == "Admin"): ?> \n <?php echo "Student: " . $lesson -> student -> first_name . " " . $lesson -> student -> last_name; endif; ?>',
+                    title: ' - <?php echo $tok ?> Quran \n <?php echo $info; ?> <?php if(Yii::app()->user->type == "Admin"): ?> \n <?php echo "Student: " . $lesson -> student -> first_name . " " . $lesson -> student -> last_name; endif; ?>',
                     start: '<?php echo $lesson->expected_start_time ?>',
                     end: '<?php echo $lesson->expected_end_time ?>'
                     
