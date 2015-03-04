@@ -70,7 +70,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-envelope"></span></span>
-									<input type="text" class="form-control" name="Student[email]" required=""/>
+									<input type="text" class="form-control" name="Student[email]" />
 								</div>
 							</div>
 						</div>
@@ -80,7 +80,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-skype"></span></span>
-									<input type="text" class="form-control" name="Student[skype_id]" required=""/>
+									<input type="text" class="form-control" name="Student[skype_id]" />
 								</div>
 							</div>
 						</div>
@@ -144,14 +144,14 @@
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Guardians Names</label>
 							<div class="col-md-6 col-xs-12">
-								<input type="text" class="form-control" placeholder="Guardians Name" name="Student[guardians_name]" required=""/>
+								<input type="text" class="form-control" placeholder="Guardians Name" name="Student[guardians_name]" />
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Notes</label>
 							<div class="col-md-6 col-xs-12">
-								<textarea class="form-control" rows="3" name="Student[notes]" required=""></textarea>
+								<textarea class="form-control" rows="3" name="Student[notes]" ></textarea>
 							</div>
 						</div>
 

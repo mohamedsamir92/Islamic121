@@ -5,6 +5,10 @@ class DataModuleController extends Controller {
 		$this -> render('index');
 	}
 
+	public function actionError() {
+		echo "Ya 7amar";
+	}
+
 	public function actionLogin() {
 		if (isset(Yii::app() -> user -> id)) {
 			$this -> redirect('index.php?r=Calendar/CalendarView');
@@ -46,10 +50,9 @@ class DataModuleController extends Controller {
 
 		if (isset($_POST['Student'])) {
 			$model -> attributes = $_POST['Student'];
-			
-				
-			if (strlen($_FILES['Student']['name']['image'])>0) {
-				
+
+			if (strlen($_FILES['Student']['name']['image']) > 0) {
+
 				$file = CUploadedFile::getInstance($model, 'image');
 				//var_dump($file);
 
@@ -64,50 +67,56 @@ class DataModuleController extends Controller {
 				$model -> image = "no-image.jpg";
 			}
 			$model -> password = $model -> hashPassword($model -> password);
-			if ($model -> save()) {
-				$lesson_request = new LessonRequest;
-				$lesson_request -> student_id = $model -> id;
-				//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
-				if ($lesson_request -> save()) {
-					for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
-						$lesson_time_slots = new LessonRequestTimeSlot;
-						$lesson_time_slots -> lesson_request_id = $lesson_request -> id;
+			try {
+				if ($model -> save()) {
+					$lesson_request = new LessonRequest;
+					$lesson_request -> student_id = $model -> id;
+					//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
+					if ($lesson_request -> save()) {
+						for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
+							$lesson_time_slots = new LessonRequestTimeSlot;
+							$lesson_time_slots -> lesson_request_id = $lesson_request -> id;
 
-						$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
-						$lesson_time_slots -> from = $_POST['Student']['prefered_from_' . ($i + 1)];
-						$lesson_time_slots -> to = $_POST['Student']['prefered_to_' . ($i + 1)];
-						$lesson_time_slots -> save();
-						//print_r($lesson_time_slots -> getErrors());
+							$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
+							$lesson_time_slots -> from = $_POST['Student']['prefered_from_' . ($i + 1)];
+							$lesson_time_slots -> to = $_POST['Student']['prefered_to_' . ($i + 1)];
+							$lesson_time_slots -> save();
+							//print_r($lesson_time_slots -> getErrors());
 
-					}
-					/*$identity = new UserIdentity($_POST['Student']['username'], $_POST['Student']['password']);
-					$identity -> setType("Student");
-					if ($identity -> authenticate()) {
-						Yii::app() -> user -> login($identity);
-						$_type = Yii::app() -> user -> type;
-						if ($_type == "Admin")
-							$this -> redirect('index.php?r=DashBoard/AdminDashBoard');
-						else if ($_type == "Teacher")
-							$this -> redirect('index.php?r=DashBoard/TeacherDashBoard');
+						}
+						/*$identity = new UserIdentity($_POST['Student']['username'], $_POST['Student']['password']);
+						 $identity -> setType("Student");
+						 if ($identity -> authenticate()) {
+						 Yii::app() -> user -> login($identity);
+						 $_type = Yii::app() -> user -> type;
+						 if ($_type == "Admin")
+						 $this -> redirect('index.php?r=DashBoard/AdminDashBoard');
+						 else if ($_type == "Teacher")
+						 $this -> redirect('index.php?r=DashBoard/TeacherDashBoard');
+						 } else
+						 echo "ERROR";*/
 					} else
-						echo "ERROR";*/
-				} else
+						echo "ERROR";
+				} else {
 					echo "ERROR";
-			} else {
-				echo "ERROR";
-				return;
+					return;
 
+				}
+
+			} catch (Exception $e) {
+				echo "ERROR. please check your data again";
 			}
+
 			//var_dump($_FILES);
 			//$target_file = $target_dir . basename($_FILES["image"]["name"]);
 			//$uploadOk = 1;
 			//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			//echo $imageFileType;
 
-		} else{
-			$this->layout='registration';
+		} else {
+			$this -> layout = 'registration';
 			$this -> render('AddStudent', array("teachers" => $allTeachers));
-		
+
 		}
 
 	}
@@ -151,28 +160,26 @@ class DataModuleController extends Controller {
 			//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
 			//$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
 			$model -> password = $model -> hashPassword($model -> password);
-			if($model -> save()){
-				
+			if ($model -> save()) {
+
 				foreach ($_POST['Teacher']['days'] as $dayIndex) {
-					
+
 					$slot = new TeacherTimeSlot;
-					$slot->teacher_id = $model->id;
-					$slot->day = $dayIndex;
-					$slot->from = $_POST['Teacher']['from'][$dayIndex];
-					$slot->to = $_POST['Teacher']['to'][$dayIndex];
-					$slot->save();
-					
+					$slot -> teacher_id = $model -> id;
+					$slot -> day = $dayIndex;
+					$slot -> from = $_POST['Teacher']['from'][$dayIndex];
+					$slot -> to = $_POST['Teacher']['to'][$dayIndex];
+					$slot -> save();
+
 				}
-				
-			}
-			
-			else {
-				
+
+			} else {
+
 				echo "ERROR";
 				//print_r($model -> getErrors());
 				return;
 			}
-			
+
 			//print_r($model -> getErrors());
 			//var_dump($_FILES);
 			//$target_file = $target_dir . basename($_FILES["image"]["name"]);

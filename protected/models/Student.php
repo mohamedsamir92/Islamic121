@@ -55,11 +55,12 @@ class Student extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, class_package, hear_us, image, guardians_name, notes', 'required'),
+			array('first_name, last_name, phone_no, username, password, age, country, city, gender, class_package, hear_us, image', 'required'),
 			array('age, gender, class_package, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_no, email, skype_id, username, country, city, hear_us, image', 'length', 'max'=>100),
 			array('password', 'length', 'max'=>500),
 			array('guardians_name', 'length', 'max'=>300),
+			array('notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, class_package, hear_us, image, quran_course, arabic_course, guardians_name, notes', 'safe', 'on'=>'search'),
