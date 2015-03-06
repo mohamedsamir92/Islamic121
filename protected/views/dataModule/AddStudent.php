@@ -65,7 +65,7 @@
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input type="password" class="form-control" required=""/>
+									<input type="password" class="form-control" required="" name="Student[confirmed_password]" placeholder="Enter your password again" />
 								</div>
 							</div>
 						</div>

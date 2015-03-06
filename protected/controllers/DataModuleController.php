@@ -71,9 +71,27 @@ class DataModuleController extends Controller {
 			$model -> password = $model -> hashPassword($model -> password);
 			try {
 				$message = "";
-				//echo $this->from;
-				
-				if ($model -> save()) {
+				if($_POST['Student']['confirmed_password'] != $_POST['Student']['password']){
+					$message = "Your passwords don\'t match, please try again. ";
+				}
+				for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
+					$from_time  = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
+					$to_time  = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
+					$dt_start = new DateTime('2001-01-01 '.$from_time);
+					$dt_end = new DateTime('2001-01-1 '.$to_time);
+					$dt_start_timestamp = $dt_start->getTimestamp();
+					$dt_end_timestamp = $dt_end->getTimestamp();
+					if($dt_end_timestamp < $dt_start_timestamp){
+						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
+					}
+					if(($dt_end_timestamp-$dt_start_timestamp)!=1800 && ($dt_end_timestamp-$dt_start_timestamp)!=3600){
+						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
+					}
+					//echo $message;
+					//echo $dt_start->getTimestamp()."<br>";
+					//echo $dt_end->getTimestamp();
+				}
+				if (strlen($message) < 1 && $model -> save()) {
 					$lesson_request = new LessonRequest;
 					$lesson_request -> student_id = $model -> id;
 					//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
@@ -91,7 +109,6 @@ class DataModuleController extends Controller {
 						}
 					} else {
 						//var_dump($lesson_request->getErrors());
-						echo $model->id;
 						foreach ($lesson_request->getErrors() as $key => $value) {
 							foreach ($value as $error) {
 								$message .= $error . " ";
@@ -122,7 +139,7 @@ class DataModuleController extends Controller {
 			} catch (Exception $e) {
 				print_r($e);
 
-				echo "ERROR. please check your data again";
+				//echo "ERROR. please check your data again";
 			}
 
 			//var_dump($_FILES);
