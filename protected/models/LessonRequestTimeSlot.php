@@ -36,8 +36,19 @@ class LessonRequestTimeSlot extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, lesson_request_id, day, from, to', 'safe', 'on'=>'search'),
+			//array('from',  'checkTimes'),
 		);
 	}
+	
+	/*public function checkTimes($attributes,$params){
+		echo $this->from;
+		$dt_start = new DateTime('2001-01-1 '.$this->from);
+		$dt_end = new DateTime('2001-01-1 '.$this->to);
+		echo $dt_start->format('YmdH') . "\n";
+		$this->addError('from','Incorrect Timing.');
+		
+	}*/
+	
 
 	/**
 	 * @return array relational rules.

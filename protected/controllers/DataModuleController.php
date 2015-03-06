@@ -18,7 +18,7 @@ class DataModuleController extends Controller {
 			$identity = new UserIdentity($_POST['Login']['username'], $_POST['Login']['password']);
 			$identity -> setType($_POST['Login']['type']);
 			//var_dump($identity);
-
+			$message = "Registered Successfully";
 			if ($identity -> authenticate()) {
 				Yii::app() -> user -> login($identity);
 				$_type = Yii::app() -> user -> type;
@@ -30,10 +30,12 @@ class DataModuleController extends Controller {
 					$this -> redirect('index.php?r=Calendar/CalendarView');
 
 			} else {
-				echo $identity -> errorMessage;
-				echo "ERROR";
+				//echo $identity -> errorMessage;
+				//echo "ERROR";
+				$message = "Username or password incorrect";
 				//	echo "string";
 			}
+			$this -> render('Login', array("my_message" => $message));
 
 		} else
 			$this -> render('Login');
@@ -68,6 +70,9 @@ class DataModuleController extends Controller {
 			}
 			$model -> password = $model -> hashPassword($model -> password);
 			try {
+				$message = "";
+				//echo $this->from;
+				
 				if ($model -> save()) {
 					$lesson_request = new LessonRequest;
 					$lesson_request -> student_id = $model -> id;
@@ -84,26 +89,39 @@ class DataModuleController extends Controller {
 							//print_r($lesson_time_slots -> getErrors());
 
 						}
-						/*$identity = new UserIdentity($_POST['Student']['username'], $_POST['Student']['password']);
-						 $identity -> setType("Student");
-						 if ($identity -> authenticate()) {
-						 Yii::app() -> user -> login($identity);
-						 $_type = Yii::app() -> user -> type;
-						 if ($_type == "Admin")
-						 $this -> redirect('index.php?r=DashBoard/AdminDashBoard');
-						 else if ($_type == "Teacher")
-						 $this -> redirect('index.php?r=DashBoard/TeacherDashBoard');
-						 } else
-						 echo "ERROR";*/
-					} else
-						echo "ERROR";
+					} else {
+						//var_dump($lesson_request->getErrors());
+						echo $model->id;
+						foreach ($lesson_request->getErrors() as $key => $value) {
+							foreach ($value as $error) {
+								$message .= $error . " ";
+							}
+						}
+						Student::model() -> deleteAll("id = " . $model -> id);
+					}
 				} else {
-					echo "ERROR";
-					return;
+
+					//var_dump($model->getErrors());
+					foreach ($model->getErrors() as $key => $value) {
+						foreach ($value as $error) {
+							$message .= $error . " ";
+						}
+
+					}
+
+					//return;
 
 				}
+				//echo $message;
+				if(strlen($message)<1){
+					$message = "Registered successfully";
+				}
+				$this -> layout = 'registration';
+				$this -> render('AddStudent', array("teachers" => $allTeachers , "my_message"=>$message));
 
 			} catch (Exception $e) {
+				print_r($e);
+
 				echo "ERROR. please check your data again";
 			}
 

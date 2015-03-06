@@ -1,3 +1,18 @@
+<?php if(isset($my_message)): ?>
+			
+		<script>
+			$(document).ready(function(){
+				
+				noty({
+                        text: '<?php echo $my_message ?>',
+                        layout: 'topRight',
+                        type: 'error',
+                        
+                   });
+			});
+		</script>
+		<?php endif; ?>
+
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap" style="padding: 15px;">
 

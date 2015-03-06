@@ -20,11 +20,14 @@
 		<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+		    
 		<!-- END PLUGINS -->
-
+		
 	</head>
 
 	<body>
+		
+		
 		
 		<?php if(Yii::app()->controller->action->id == "Login")
 		echo $content; ?>
@@ -198,6 +201,14 @@
 		<!-- START TEMPLATE -->
 		<script type="text/javascript" src="js/plugins.js"></script>
 		<script type="text/javascript" src="js/actions.js"></script>
+		<script type='text/javascript' src='js/plugins/noty/jquery.noty.js'></script>
+		<script type='text/javascript' src='js/plugins/noty/layouts/topCenter.js'></script>
+        <script type='text/javascript' src='js/plugins/noty/layouts/topLeft.js'></script>
+        <script type='text/javascript' src='js/plugins/noty/layouts/topRight.js'></script>            
+            
+        <script type='text/javascript' src='js/plugins/noty/themes/default.js'></script>
+            
+            
 		<!-- END TEMPLATE -->
 		<!-- END SCRIPTS -->
 	</body>

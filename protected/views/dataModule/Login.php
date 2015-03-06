@@ -1,3 +1,17 @@
+<?php if(isset($my_message)): ?>
+			
+		<script>
+			$(document).ready(function(){
+				
+				noty({
+                        text: '<?php echo $my_message ?>',
+                        layout: 'topRight',
+                        type: 'error',
+                        
+                   });
+			});
+		</script>
+		<?php endif; ?>
 <div class="login-container login-v2">
 
 	<div class="login-box animated fadeInDown">

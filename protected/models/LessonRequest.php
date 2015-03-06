@@ -44,9 +44,11 @@ class LessonRequest extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, student_id, teacher_id, start_date, end_date, cost, currency_id, notes, status', 'safe', 'on'=>'search'),
+			//array('start_date',  'checkTimes'),
 		);
 	}
-
+	
+	
 	/**
 	 * @return array relational rules.
 	 */

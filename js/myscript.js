@@ -64,13 +64,13 @@ $("select#package").change(function() {
 				'<div class="col-md-2 col-xs-12">'+
 					'<div class="input-group bootstrap-timepicker">'+
 						'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-						'<input type="text" name="Student[prefered_from_'+(i + 1)+']" class="form-control timepicker"/>'+
+						'<input type="text" name="Student[prefered_from_'+(i + 1)+']" class="form-control timepicker_from"/>'+
 					'</div>'+
 				'</div>'+
 				'<div class="col-md-2 col-xs-12">'+
 					'<div class="input-group bootstrap-timepicker">'+
 						'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-						'<input type="text" name="Student[prefered_to_'+(i + 1)+']" class="form-control timepicker"/>'+
+						'<input type="text" name="Student[prefered_to_'+(i + 1)+']" class="form-control timepicker_to"/>'+
 					'</div>'+
 				'</div>'+
 			'</div>'
@@ -98,19 +98,22 @@ $("select#package").change(function() {
 							'<div class="col-md-2 col-xs-12">'+
 								'<div class="input-group bootstrap-timepicker">'+
 									'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-									'<input type="text" class="form-control timepicker"/>'+
+									'<input type="text" class="form-control timepicker_from"/>'+
 								'</div>'+
 							'</div>'+
 							'<div class="col-md-2 col-xs-12">'+
 								'<div class="input-group bootstrap-timepicker">'+
 									'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-									'<input type="text" class="form-control timepicker"/>'+
+									'<input type="text" class="form-control timepicker_to"/>'+
 								'</div>'+
 							'</div>'+
 			'</div>'
 						);*/
 					}
-					$('.timepicker').timepicker();
+					$('.timepicker_to').timepicker({ 'minuteStep' : 30 });
+					
+					$('.timepicker_from').timepicker({ 'minuteStep' : 30 });
+					
 					$('.select').selectpicker();
 					
 //	$("select#teachers").change();
