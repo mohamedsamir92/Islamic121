@@ -84,7 +84,7 @@ class DataModuleController extends Controller {
 					if($dt_end_timestamp < $dt_start_timestamp){
 						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
 					}
-					if(($dt_end_timestamp-$dt_start_timestamp)!=1800 && ($dt_end_timestamp-$dt_start_timestamp)!=3600){
+					else if(($dt_end_timestamp-$dt_start_timestamp)!=1800 && ($dt_end_timestamp-$dt_start_timestamp)!=3600){
 						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
 					}
 					//echo $message;

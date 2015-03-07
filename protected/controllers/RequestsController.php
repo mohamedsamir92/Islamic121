@@ -21,9 +21,9 @@ class RequestsController extends Controller {
 		}
 
 		if (Yii::app() -> user -> type == "Admin") {
-
+			$message = "";
+				
 			if ($_POST) {
-
 				$received_data = $_POST;
 				//var_dump($received_data);
 				$request = LessonRequest::model() -> find("id = " . $received_data['LessonRequest']['request_id']);
@@ -31,7 +31,45 @@ class RequestsController extends Controller {
 				$request -> currency_id = $received_data['LessonRequest']['currency'];
 				$request -> cost = $received_data['LessonRequest']['cost'];
 				$days = array("Saturday" => 0, "Sunday" => 1, "Monday" => 2, "Tuesday" => 3, "Wednesday" => 4, "Thursday" => 5, "Friday" => 6);
-
+				$teacher = Teacher::model()->find('id = '.$received_data['LessonRequest']['teacher_id']);
+				$student = Student::model()->find('id = '.$received_data['LessonRequest']['student_id']);
+				if($teacher->gender != $student->gender){
+					$message = "Teacher and student should be both males or both females";
+				}
+				for ($i = 0; $i < count($received_data['LessonRequest']['from']); $i++) {
+					$from_time  = date("H:i", strtotime($received_data['LessonRequest']['from'][$i]));
+					$to_time  = date("H:i", strtotime($received_data['LessonRequest']['to'][$i]));
+					$dt_start = new DateTime('2001-01-01 '.$from_time);
+					$dt_end = new DateTime('2001-01-1 '.$to_time);
+					$dt_start_timestamp = $dt_start->getTimestamp();
+					$dt_end_timestamp = $dt_end->getTimestamp();
+					if($dt_end_timestamp < $dt_start_timestamp){
+						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
+					}
+					else if(($dt_end_timestamp-$dt_start_timestamp)!=1800 && ($dt_end_timestamp-$dt_start_timestamp)!=3600){
+						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
+					}
+					$teacher_slots = TeacherTimeSlot::model()->findAll('teacher_id = '.$received_data['LessonRequest']['teacher_id'].' and day = '.$days[$received_data['LessonRequest']['day'][$i]]);
+					$check = 0;
+					foreach ($teacher_slots as $teacher_slot) {
+						$dt_teacher_from = new DateTime('2001-01-01 '.$teacher_slot->from);
+						$dt_teacher_to = new DateTime('2001-01-01 '.$teacher_slot->to);
+						$dt_teacher_from_timestamp = $dt_teacher_from->getTimestamp();
+						$dt_teacher_to_timestamp = $dt_teacher_to->getTimestamp();
+						if($dt_teacher_from_timestamp < $dt_start_timestamp && $dt_teacher_to_timestamp > $dt_end_timestamp){
+							$check = 1;
+							break;
+						}
+					}
+					if($check == 0){
+						$message .= "Teacher is not available";
+					}
+					//echo $message;
+					
+				}
+				
+				
+				
 				for ($i = 0; $i < count($received_data['LessonRequest']['from']); $i++) {
 					$received_data['LessonRequest']['from'][$i] = date("H:i", strtotime($received_data['LessonRequest']['from'][$i]));
 					$received_data['LessonRequest']['to'][$i] = date("H:i", strtotime($received_data['LessonRequest']['to'][$i]));
@@ -99,28 +137,12 @@ class RequestsController extends Controller {
 				$request -> save();
 				$request -> getErrors();
 
-				/*$d = new DateTime();
-				 $d->setTimestamp($current_time);
-
-				 $current_date = $d->format('Y-m-d');
-				 $current_time = strtotime($current_date."+ 1 days");
-
-				 var_dump($current_time);
-				 var_dump($next_year_time);
-				 var_dump(($current_time > $next_year_time));
-				 // as sunday index is 0 in date object
-				 $days = array("Saturday" => 0, "Sunday" => 1, "Monday" => 2, "Tuesday" => 3, "Wednesday" => 4, "Thursday" => 5, "Friday" => 6);
-
-				 $nextDay = strtotime(date("Y-m-d")."+ 1 day");
-
-				 //var_dump($nextDay);
-				 */
 			}
 			$result = LessonRequest::model() -> with(array("lessonRequestTimeSlots", "teacher", "student")) -> findAll("status = 0");
 			$teachers = Teacher::model() -> findAll();
-			//var_dump($result[2]->lessonRequestTimeSlots);
-			//var_dump($result[0]->lessonRequestTimeSlots[0]);
-			$this -> render('PendingRequests', array("results" => $result, "teachers" => $teachers));
+			if(strlen($message) < 1)
+				$message = "Accepted Successfully";
+			$this -> render('PendingRequests', array("results" => $result, "teachers" => $teachers , "my_message"=>$message));
 		}
 		else{
 			$this -> redirect('index.php?r=Calendar/CalendarView');

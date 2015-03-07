@@ -15,6 +15,7 @@ class PreviewController extends Controller
 		if(!isset(Yii::app()->user->id)){
 			$this->redirect("index.php?r=DataModule/Login");
 		}
+		
 		$slots = TeacherTimeSlot::model()->findAll("teacher_id = ".Yii::app()->user->id);
 		$this->render('PreviewTeacher' , array("slots"=>$slots));
 	}

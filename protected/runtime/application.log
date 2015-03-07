@@ -4800,3 +4800,26 @@ in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\ind
 2015/03/07 00:24:31 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 00:27:13 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 00:27:13 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 00:27:13 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 00:27:13 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 01:26:41 [error] [php] Undefined variable: message (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\RequestsController.php:43)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): RequestsController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): RequestsController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): RequestsController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Requests/PendingRequests
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\RequestsController.php (43)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)

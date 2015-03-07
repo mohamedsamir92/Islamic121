@@ -1,3 +1,21 @@
+<script>
+	
+	$(document).ready(function() {
+	
+	$('.time_from').timepicker({ 'minuteStep' : 30 });
+	$('.time_to').timepicker({ 'minuteStep' : 30 });
+	<?php if(isset($my_message)): ?>
+	noty({
+                        text: '<?php echo $my_message ?>',
+                        layout: 'topRight',
+                        type: 'error',
+                        
+                   });
+    <?php endif; ?>
+
+});
+</script>
+
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap">
 
@@ -127,12 +145,12 @@
 																			<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
 																			<?php $lessonTimeSlot->from  = date("g:i a", strtotime($lessonTimeSlot->from));
 																			$lessonTimeSlot->to = date("g:i a", strtotime($lessonTimeSlot->to)); ?>
-																			<input type="text" class="form-control timepicker" form="myform<?php echo $j; ?>" name="LessonRequest[from][]" value="<?php echo $lessonTimeSlot->from ?>" />
+																			<input type="text" class="form-control timepicker time_from" form="myform<?php echo $j; ?>" name="LessonRequest[from][]" value="<?php echo $lessonTimeSlot->from ?>" />
 																		</div></td>
 																		<td>
 																		<div class="input-group bootstrap-timepicker">
 																			<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-																			<input type="text" class="form-control timepicker" form="myform<?php echo $j; ?>" name="LessonRequest[to][]" value="<?php echo $lessonTimeSlot->to ?>" />
+																			<input type="text" class="form-control timepicker time_to"  form="myform<?php echo $j; ?>" name="LessonRequest[to][]" value="<?php echo $lessonTimeSlot->to ?>" />
 																		</div></td>
 																	</tr>
 																	
