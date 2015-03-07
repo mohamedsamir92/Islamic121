@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	alert("Hello");
 	$('#time_from').timepicker({ 'minuteStep' : 30 });
 	$('#time_to').timepicker({ 'minuteStep' : 30 });
 	

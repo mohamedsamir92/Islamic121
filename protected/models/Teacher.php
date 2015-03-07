@@ -54,12 +54,16 @@ class Teacher extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, notes', 'required'),
+			array('first_name, last_name, phone_no, username, password, age, country, city, gender, image', 'required'),
 			array('age, gender, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_no, email, skype_id, username, country, city, image', 'length', 'max'=>100),
 			array('password', 'length', 'max'=>500),
+			array('notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
+			array('username', 'unique'),
+			array('email', 'unique'),
+			
 			array('id, first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, image, quran_course, arabic_course, notes', 'safe', 'on'=>'search'),
 		);
 	}

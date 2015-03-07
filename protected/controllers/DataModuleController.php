@@ -71,21 +71,20 @@ class DataModuleController extends Controller {
 			$model -> password = $model -> hashPassword($model -> password);
 			try {
 				$message = "";
-				if($_POST['Student']['confirmed_password'] != $_POST['Student']['password']){
+				if ($_POST['Student']['confirmed_password'] != $_POST['Student']['password']) {
 					$message = "Your passwords don\'t match, please try again. ";
 				}
 				for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
-					$from_time  = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
-					$to_time  = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
-					$dt_start = new DateTime('2001-01-01 '.$from_time);
-					$dt_end = new DateTime('2001-01-1 '.$to_time);
-					$dt_start_timestamp = $dt_start->getTimestamp();
-					$dt_end_timestamp = $dt_end->getTimestamp();
-					if($dt_end_timestamp < $dt_start_timestamp){
-						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
-					}
-					else if(($dt_end_timestamp-$dt_start_timestamp)!=1800 && ($dt_end_timestamp-$dt_start_timestamp)!=3600){
-						$message .= "Error in slot number ".($i+1).", slot interval should be only 30 minutes or 1 hour";
+					$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
+					$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
+					$dt_start = new DateTime('2001-01-01 ' . $from_time);
+					$dt_end = new DateTime('2001-01-1 ' . $to_time);
+					$dt_start_timestamp = $dt_start -> getTimestamp();
+					$dt_end_timestamp = $dt_end -> getTimestamp();
+					if ($dt_end_timestamp < $dt_start_timestamp) {
+						$message .= "Error in slot number " . ($i + 1) . ", slot interval should be only 30 minutes or 1 hour";
+					} else if (($dt_end_timestamp - $dt_start_timestamp) != 1800 && ($dt_end_timestamp - $dt_start_timestamp) != 3600) {
+						$message .= "Error in slot number " . ($i + 1) . ", slot interval should be only 30 minutes or 1 hour";
 					}
 					//echo $message;
 					//echo $dt_start->getTimestamp()."<br>";
@@ -97,12 +96,15 @@ class DataModuleController extends Controller {
 					//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
 					if ($lesson_request -> save()) {
 						for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
+							$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
+							$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
+
 							$lesson_time_slots = new LessonRequestTimeSlot;
 							$lesson_time_slots -> lesson_request_id = $lesson_request -> id;
 
 							$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
-							$lesson_time_slots -> from = $_POST['Student']['prefered_from_' . ($i + 1)];
-							$lesson_time_slots -> to = $_POST['Student']['prefered_to_' . ($i + 1)];
+							$lesson_time_slots -> from = $from_time;
+							$lesson_time_slots -> to = $to_time;
 							$lesson_time_slots -> save();
 							//print_r($lesson_time_slots -> getErrors());
 
@@ -130,11 +132,11 @@ class DataModuleController extends Controller {
 
 				}
 				//echo $message;
-				if(strlen($message)<1){
+				if (strlen($message) < 1) {
 					$message = "Registered successfully";
 				}
 				$this -> layout = 'registration';
-				$this -> render('AddStudent', array("teachers" => $allTeachers , "my_message"=>$message));
+				$this -> render('AddStudent', array("teachers" => $allTeachers, "my_message" => $message));
 
 			} catch (Exception $e) {
 				print_r($e);
@@ -171,7 +173,7 @@ class DataModuleController extends Controller {
 
 	public function actionAddTeacher() {
 		$model = new Teacher;
-
+		$message = "";
 		if (isset($_POST['Teacher'])) {
 			//var_dump($_POST['Teacher']);
 			$model -> attributes = $_POST['Teacher'];
@@ -195,24 +197,60 @@ class DataModuleController extends Controller {
 			//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
 			//$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
 			$model -> password = $model -> hashPassword($model -> password);
-			if ($model -> save()) {
+			try {
+				$message = "";
+				if ($_POST['Teacher']['confirmed_password'] != $_POST['Teacher']['password']) {
+					$message = "Your passwords don\'t match, please try again. ";
+				}
+				$i = 0;
+				if (!isset($_POST['Teacher']['days']))
+					$message = "You must register working hours";
+				else {
+					foreach ($_POST['Teacher']['days'] as $dayIndex) {
+						$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$dayIndex]));
+						$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$dayIndex]));
+						$dt_start = new DateTime('2001-01-01 ' . $from_time);
+						$dt_end = new DateTime('2001-01-1 ' . $to_time);
+						$dt_start_timestamp = $dt_start -> getTimestamp();
+						$dt_end_timestamp = $dt_end -> getTimestamp();
+						if ($dt_end_timestamp < $dt_start_timestamp) {
+							$message .= "Error in time number " . ($i + 1) . ", slot interval should be at least 30 minutes ";
+						} else if (($dt_end_timestamp - $dt_start_timestamp) < 1800) {
+							$message .= "Error in time number " . ($i + 1) . ", slot interval should be at least 30 minutes ";
+						}
+						$i++;
+					}
+				}
 
-				foreach ($_POST['Teacher']['days'] as $dayIndex) {
+				if (strlen($message) < 1 && $model -> save()) {
 
-					$slot = new TeacherTimeSlot;
-					$slot -> teacher_id = $model -> id;
-					$slot -> day = $dayIndex;
-					$slot -> from = $_POST['Teacher']['from'][$dayIndex];
-					$slot -> to = $_POST['Teacher']['to'][$dayIndex];
-					$slot -> save();
+					foreach ($_POST['Teacher']['days'] as $dayIndex) {
+						$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$dayIndex]));
+						$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$dayIndex]));
+
+						$slot = new TeacherTimeSlot;
+						$slot -> teacher_id = $model -> id;
+						$slot -> day = $dayIndex;
+						$slot -> from = $from_time;
+						$slot -> to = $to_time;
+						$slot -> save();
+
+					}
+
+				} else {
+
+					foreach ($model->getErrors() as $key => $value) {
+						foreach ($value as $error) {
+							$message .= $error . " ";
+						}
+					}
 
 				}
 
-			} else {
+			} catch (Exception $e) {
+				print_r($e);
 
-				echo "ERROR";
-				//print_r($model -> getErrors());
-				return;
+				//echo "ERROR. please check your data again";
 			}
 
 			//print_r($model -> getErrors());
@@ -221,16 +259,24 @@ class DataModuleController extends Controller {
 			//$uploadOk = 1;
 			//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			//echo $imageFileType;
-
-		}
-		if (isset(Yii::app() -> user -> id)) {
-			if (Yii::app() -> user -> type == 'Admin')
-				$this -> render('AddTeacher');
-			else
+			if (strlen($message) < 1)
+				$message = "Registered Successfully";
+			if (isset(Yii::app() -> user -> id)) {
+				if (Yii::app() -> user -> type == 'Admin')
+					$this -> render('AddTeacher', array("my_message" => $message));
+				else
+					$this -> redirect('index.php?r=DataModule/Login', array("my_message" => $message));
+			} else
+				$this -> redirect('index.php?r=DataModule/Login', array("my_message" => $message));
+		} else {
+			if (isset(Yii::app() -> user -> id)) {
+				if (Yii::app() -> user -> type == 'Admin')
+					$this -> render('AddTeacher');
+				else
+					$this -> redirect('index.php?r=DataModule/Login');
+			} else
 				$this -> redirect('index.php?r=DataModule/Login');
-		} else
-			$this -> redirect('index.php?r=DataModule/Login');
-
+		}
 	}
 
 	public function actionAddAdmin() {

@@ -4823,3 +4823,331 @@ Stack trace:
 REQUEST_URI=/Islamic121/index.php?r=Requests/PendingRequests
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\RequestsController.php (43)
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:29 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:29 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:29 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:30 [error] [php] Undefined index: confirmed_password (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:199)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/AddTeacher
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (199)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:52 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:52 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:52 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:47:53 [error] [php] Undefined index: confirmed_password (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:199)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/AddTeacher
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (199)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:03 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:03 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:03 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:03 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:04 [error] [php] Undefined variable: i (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:212)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/AddTeacher
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (212)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:32 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:32 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:32 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:48:32 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:49:40 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:49:40 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:49:40 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:49:40 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:50:56 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:50:56 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:50:56 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:50:56 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:51:33 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:51:33 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:51:33 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:51:33 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:54:54 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:54:54 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:54:54 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:54:54 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:30 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:30 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:30 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:30 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:48 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:48 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:48 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:55:48 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:56:35 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:56:35 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:56:35 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:56:35 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:57:20 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:57:20 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:57:20 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:57:20 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:58:32 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:58:32 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:58:32 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:58:33 [error] [php] Undefined index: days (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:203)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/AddTeacher
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (203)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:59:13 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:59:13 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:59:13 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:59:14 [error] [php] Undefined index: days (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:205)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/AddTeacher
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (205)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:59:54 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:59:54 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 02:59:54 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:00:46 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:00:46 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:00:46 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:02:58 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:02:58 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:02:58 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:02:58 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:06:02 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:06:02 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:06:02 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:06:02 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (176)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:09:16 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:09:16 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:09:16 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:09:16 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:09:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'mohmed_samir_rabey@yahoo.com' for key 'email'. The SQL statement executed was: INSERT INTO `student` (`quran_course`, `arabic_course`, `first_name`, `last_name`, `username`, `password`, `phone_no`, `email`, `skype_id`, `age`, `country`, `city`, `gender`, `class_package`, `guardians_name`, `notes`, `hear_us`, `image`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17).
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (93)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:24 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:24 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:24 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:24 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:52 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:52 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:52 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:10:52 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:11:15 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:11:15 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:11:15 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:11:15 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:13:32 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:13:32 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:13:32 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:13:32 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (54)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:19:06 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (179)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:19:06 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (179)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:19:06 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (179)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/07 03:19:06 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (179)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)

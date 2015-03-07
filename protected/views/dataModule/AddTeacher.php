@@ -1,3 +1,18 @@
+<?php if(isset($my_message)): ?>
+			
+		<script>
+			$(document).ready(function(){
+				
+				noty({
+                        text: '<?php echo $my_message ?>',
+                        layout: 'topRight',
+                        type: 'error',
+                        
+                   });
+			});
+		</script>
+		<?php endif; ?>
+
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap" style="padding: 15px;">
 
@@ -50,7 +65,7 @@
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input type="password" class="form-control"/>
+									<input type="password" class="form-control" placeholder="Enter your password again" name="Teacher[confirmed_password]" />
 								</div>
 							</div>
 						</div>
@@ -284,7 +299,7 @@
 							</div>
 						</div>
 
-						
+<!--						
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Teach</label>
 							<div class="col-md-1 col-xs-12">
@@ -298,7 +313,7 @@
 									Arabic</label>
 							</div>
 						</div>
-
+-->
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Profile Image</label>
 							<div class="col-md-6 col-xs-12">

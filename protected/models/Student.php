@@ -64,6 +64,8 @@ class Student extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('username', 'unique'),
+			array('email', 'unique'),
+			
 			array('id, first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, class_package, hear_us, image, quran_course, arabic_course, guardians_name, notes', 'safe', 'on'=>'search'),
 		);
 	}
