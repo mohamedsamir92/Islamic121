@@ -1,7 +1,57 @@
 <script>
 	
 	$(document).ready(function() {
+	<?php for($i=0;$i<count($results);$i++): ?>
+	$( "#myform<?php echo $i ?>" ).submit(function( event ) {
+		var state = 0;
+		if(typeof $("#from<?php echo $i ?>").val() !== "undefined"){
+		$.ajax("index.php?r=Requests/checkTeacher&id=" + $("#teacher<?php echo $i ?>").val() +"&from=" + $("#from<?php echo $i ?>").val()+"&to="+$("#to<?php echo $i ?>").val()+"&day="+$("#day<?php echo $i ?>").val()+"&student_gender="+$("#gender<?php echo $i ?>").text(), {
+							success : function(data) {
+									var obj = jQuery.parseJSON(data);
+									noty({
+                        					text: obj.status,
+                        					layout: 'topRight',
+                        					type: 'error',
+                        
+                   						});
+                   						if (obj.status == "Success") 
+                   						{
+                   							state = 1;
+                   						}	
+										
+									
+								
+							},
+							error : function() {
+								alert("ERROR");
+							},
+							async: false
+							
+							
+							
+						});
+					}
+
+		//return;
+		if(state == 1){
+			state = 0;
+			return;
+		}
+		else {
+			state = 0;
+			event.preventDefault();
+		
+		}
+	});
 	
+	<?php endfor; ?>
+	$(".daysReq,.time_from,.time_to").change(function(){
+		
+		var index = $(this).attr("number");
+		//alert($("#from"+index).val());
+		handleAjax(index,$("#from"+index).val(),$("#to"+index).val())
+						
+	});
 	$('.time_from').timepicker({ 'minuteStep' : 30 });
 	$('.time_to').timepicker({ 'minuteStep' : 30 });
 	<?php if(isset($my_message)): ?>
@@ -14,6 +64,48 @@
     <?php endif; ?>
 
 });
+function handleChangeRequest(){
+alert("kdsldklsdk");
+
+}
+function handleAjax(index,from,to){
+	$.ajax("index.php?r=DataModule/checkSlot&from=" + from+"&to="+to, {
+							success : function(data) {
+									var obj = jQuery.parseJSON(data);
+								
+									$(".logo"+index).html("");
+									//alert($('.slot-time').index("#preference"));
+									//alert($('.timepicker_to').index(this));
+									//if($( '#check'+index+' span' ).hasClass( "glyphicon" )){return;}
+									if($( '#check'+index+' span' ).hasClass( "glyphicon-remove" )&&obj.status == "Success")
+										$('#check'+index).html('<span class="glyphicon glyphicon-ok"></span> Success');
+										
+									else if($( '#check'+index+' span' ).hasClass( "glyphicon-ok" )&&obj.status != "Success")
+										$('#check'+index).html('<span class="glyphicon glyphicon-remove"></span> Error');
+									else if(!$( '#check'+index+' span' ).hasClass( "glyphicon" )){
+									
+										if(obj.status == "Success")
+										$('#check'+index).html('<span class="glyphicon glyphicon-ok"></span> Success');
+										
+										else 
+										$('#check'+index).html('<span class="glyphicon glyphicon-remove"></span> Error');
+										
+										
+									}
+								
+							},
+							error : function() {
+								alert("ERROR");
+							}
+							
+							
+							
+						});
+}
+
+				
+				
+
 </script>
 
 <!-- PAGE CONTENT WRAPPER -->
@@ -72,7 +164,7 @@
 										<td><?php echo $request -> student -> last_name; ?></td>
 										<td><?php echo $request -> student -> age; ?></td>
 										
-										<td><?php if($request->student->gender == 0 ): ?>Male<?php else: ?>Female <?php endif; ?></td>
+										<td><?php if($request->student->gender == 0 ): ?><p id="gender<?php echo $j ?>">Male<p></p><?php else: ?><p id="gender<?php echo $j ?>">Female</p> <?php endif; ?></td>
 										
 										<td>
 										
@@ -90,13 +182,12 @@
 										</td>
 
 										<td>
-										<select name="LessonRequest[teacher_id]" form="myform<?php echo $j; ?>">
+										<select class="teachers" id="teacher<?php echo $j ?>" number = <?php echo $j; ?> name="LessonRequest[teacher_id]" form="myform<?php echo $j; ?>">
 											<?php foreach ($teachers as $teacher) { ?>
 												<option value="<?php echo $teacher->id ?>"><?php echo $teacher -> first_name . " " . $teacher -> last_name; ?></option>
 											<?php } ?>
 											
 										</select><!-- <span class="label label-info label-form">Info</span> --></td>
-
 										<td>
 										<button href="#myModal<?php echo $j; ?>" id="openBtn" data-toggle="modal" class="btn btn-primary">
 											<span class="fa fa-calendar" style="color: #fff;"></span>
@@ -128,14 +219,14 @@
 																	
 																	<tr>
 																		<td>
-																		<select class="form-control select" name="LessonRequest[day][]" form="myform<?php echo $j; ?>">
+																		<select id="day<?php echo $j; ?>" class="form-control daysReq select" name="LessonRequest[day][]" number="<?php echo $j; ?>" form="myform<?php echo $j; ?>">
 																			<?php 
 																			$days = array("Saturday" , "Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday");
 																			for($i=0;$i<7;$i++): ?>
 																				<?php if($lessonTimeSlot->day == $i): ?>
-																					<option selected><?php echo $days[$i]; ?></option>
+																					<option value="<?php echo $i ?>" selected><?php echo $days[$i]; ?></option>
 																					<?php else: ?>
-																					<option><?php echo $days[$i]; ?></option>
+																					<option value="<?php echo $i ?>" ><?php echo $days[$i]; ?></option>
 																					<?php endif; ?>
 																			<?php endfor; ?>
 																		</select>
@@ -145,13 +236,14 @@
 																			<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
 																			<?php $lessonTimeSlot->from  = date("g:i a", strtotime($lessonTimeSlot->from));
 																			$lessonTimeSlot->to = date("g:i a", strtotime($lessonTimeSlot->to)); ?>
-																			<input type="text" class="form-control timepicker time_from" form="myform<?php echo $j; ?>" name="LessonRequest[from][]" value="<?php echo $lessonTimeSlot->from ?>" />
+																			<input id="from<?php echo $j; ?>" type="text" class="form-control timepicker time_from" form="myform<?php echo $j; ?>" number="<?php echo $j; ?>" name="LessonRequest[from][]" value="<?php echo $lessonTimeSlot->from ?>" />
 																		</div></td>
 																		<td>
 																		<div class="input-group bootstrap-timepicker">
 																			<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-																			<input type="text" class="form-control timepicker time_to"  form="myform<?php echo $j; ?>" name="LessonRequest[to][]" value="<?php echo $lessonTimeSlot->to ?>" />
+																			<input id="to<?php echo $j; ?>" type="text" class="form-control timepicker time_to"  form="myform<?php echo $j; ?>" number="<?php echo $j; ?>" name="LessonRequest[to][]" value="<?php echo $lessonTimeSlot->to ?>" />
 																		</div></td>
+																		<td id="check<?php echo $j; ?>"></td>
 																	</tr>
 																	
 																	<?php
