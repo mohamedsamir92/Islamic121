@@ -279,6 +279,44 @@ class DataModuleController extends Controller {
 		}
 	}
 
+	public function actionCheckSlot() {
+		$message = "";
+		$message = "";
+		$from_time = date("H:i", strtotime($_GET['from']));
+		$to_time = date("H:i", strtotime($_GET['to']));
+		$dt_start = new DateTime('2001-01-01 ' . $from_time);
+		$dt_end = new DateTime('2001-01-1 ' . $to_time);
+		$dt_start_timestamp = $dt_start -> getTimestamp();
+		$dt_end_timestamp = $dt_end -> getTimestamp();
+		if ($dt_end_timestamp < $dt_start_timestamp) {
+			$message .= "Error in this slot , slot interval should be only 30 minutes or 1 hour";
+		} else if (($dt_end_timestamp - $dt_start_timestamp) != 1800 && ($dt_end_timestamp - $dt_start_timestamp) != 3600) {
+			$message .= "Error in this slot , slot interval should be only 30 minutes or 1 hour";
+		}
+
+		$teacher_slots = TeacherTimeSlot::model() -> findAll();
+		$check = 0;
+		foreach ($teacher_slots as $teacher_slot) {
+			$dt_teacher_from = new DateTime('2001-01-01 ' . $teacher_slot -> from);
+			$dt_teacher_to = new DateTime('2001-01-01 ' . $teacher_slot -> to);
+			$dt_teacher_from_timestamp = $dt_teacher_from -> getTimestamp();
+			$dt_teacher_to_timestamp = $dt_teacher_to -> getTimestamp();
+			if ($dt_teacher_from_timestamp < $dt_start_timestamp && $dt_teacher_to_timestamp > $dt_end_timestamp) {
+				$check = 1;
+				break;
+			}
+		}
+		/*if ($check == 0) {
+			$message .= "Teacher is not available";
+		}*/
+		if(strlen($message) < 1)
+			$message = "Success";
+		$result = array();
+		$result["status"] = $message;
+		echo json_encode($result);
+
+	}
+
 	public function actionAddAdmin() {
 		$model = new Admin;
 

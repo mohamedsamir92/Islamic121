@@ -68,7 +68,7 @@ class RequestsController extends Controller {
 					
 				}
 				
-				
+				//if(strlen($string))
 				
 				for ($i = 0; $i < count($received_data['LessonRequest']['from']); $i++) {
 					$received_data['LessonRequest']['from'][$i] = date("H:i", strtotime($received_data['LessonRequest']['from'][$i]));

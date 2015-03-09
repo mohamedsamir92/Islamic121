@@ -1,59 +1,56 @@
+
 $(document).ready(function() {
+	$( "form" ).submit(function( event ) {
+		   
+		  if($(".glyphicon-remove").length > 0){
+		  	noty({
+                        text: 'Check your slots again',
+                        layout: 'topRight',
+                        type: 'error',
+                        
+                   });
+		  }
+		  else{
+		  	noty({
+                        text: 'Registered Successfully',
+                        layout: 'topRight',
+                        type: 'error',
+                        
+                   });
+		  	return;
+		  }
+		  event.preventDefault();
+	});
 	$('#time_from').timepicker({ 'minuteStep' : 30 });
 	$('#time_to').timepicker({ 'minuteStep' : 30 });
 	
-	var x = $(".submitRowButton");
-	//alert(x.length);
-	$(".submitRowButton").on("click", function() {
-
-		//alert($(this).attr("row-class"));
-	});
-
+	
+	//$('.days,.timepicker_to,.timepicker_from').on('change',handleChange());
+	
 	$("select#package").change();
-	var days = $("select.prefered_days");
-	//alert(days.length);
-	$("select.prefered_days").change(function() {
-		//alert("KAKA");
-		var selectedTeacher = $("select#teachers option:selected").val();
-		var selectedDay = $("select.prefered_days option:selected").val();
-		$.ajax("index.php?r=DataModule/getTeacherTimeSlots&id=" + selectedTeacher + "&day=" + selectedDay, {
-			success : function(data) {
-				//alert(data);
-				//$('select.prefered_days').html("");
-				$('select.prefered_from').html("");
-				$('select.prefered_to').html("");
+	
+					
+//					$( ".days" ).trigger( "change" );
 
-				var obj = jQuery.parseJSON(data);
-				var days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-				for (var i = 0; i < obj.length; ++i) {
-					//$('select.prefered_days').append('<option value='+obj[i].day+' >'+days[obj[i].day - 1]+'</option>');
-					$('select.prefered_from').append('<option value=' + obj[i].from + '>' + obj[i].from + '</option>');
-					$('select.prefered_to').append('<option value=' + obj[i].to + '>' + obj[i].to + '</option>');
 
-				}
-			},
-			error : function() {
-
-			}
-		});
-
-	});
-
+//$(".days").change();
+//					$( ".days" ).trigger( "change" );
+	
 });
+
 
 $("select#package").change(function() {
 	var numberOfRows = $("select#package").val();
 	
 	$('#preference').html("");
-	//$("#preference").append("<div class='row'>" + "<div class='col-md-4'>Day</div><div class='col-md-4'>From</div><div class='col-md-4'>To</div></div>");
 		
 	
 	for (var i = 0; i < numberOfRows; ++i){
 		$("#preference").append(
-		'<div class="form-group">'+
+		'<div class="form-group slot-time">'+
 			'<label class="col-md-3 col-xs-12 control-label">Working Times</label>'+
 				'<div class="col-md-2 col-xs-12">'+
-					'<select class="form-control select" name="Student[prefered_days_'+(i + 1)+']">'+
+					'<select class="form-control select days" name="Student[prefered_days_'+(i + 1)+']">'+
 						'<option value="0">Saturday</option>'+
 						'<option value="1">Sunday</option>'+
 						'<option value="2">Monday</option>'+
@@ -66,88 +63,71 @@ $("select#package").change(function() {
 				'<div class="col-md-2 col-xs-12">'+
 					'<div class="input-group bootstrap-timepicker">'+
 						'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-						'<input type="text" name="Student[prefered_from_'+(i + 1)+']" class="form-control timepicker_from"/>'+
+						'<input type="text" name="Student[prefered_from_'+(i + 1)+']" class="form-control timeslot timepicker_from"/>'+
 					'</div>'+
 				'</div>'+
 				'<div class="col-md-2 col-xs-12">'+
 					'<div class="input-group bootstrap-timepicker">'+
 						'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-						'<input type="text" name="Student[prefered_to_'+(i + 1)+']" class="form-control timepicker_to"/>'+
+						'<input type="text" name="Student[prefered_to_'+(i + 1)+']" class="form-control timeslot timepicker_to"/>'+
 					'</div>'+
 				'</div>'+
 			'</div>'
+		
 		);
 		
-		//$("#preference").collapsibleset("refresh");
-		
-		//if(i==0)
-		//	$("#preference").append('<label class="col-md-3 col-xs-12 control-label">Working Times</label>');
-		//$("#preference").append(	);
-		//$("#preference").append('</div>');
-		/*$("#preference").append(
-						
-							'<div class="col-md-2 col-xs-12">'+
-								'<select class="form-control select" name="Student[hear_us]">'+
-									'<option value="0">Saturday</option>'+
-									'<option value="1">Sunday</option>'+
-									'<option value="2">Monday</option>'+
-									'<option value="3">Tuesday</option>'+
-									'<option value="4">Wednesday</option>'+
-									'<option value="5">Tursday</option>'+
-									'<option value="6">Friday</option>'+
-								'</select>'+
-							'</div>'+
-							'<div class="col-md-2 col-xs-12">'+
-								'<div class="input-group bootstrap-timepicker">'+
-									'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-									'<input type="text" class="form-control timepicker_from"/>'+
-								'</div>'+
-							'</div>'+
-							'<div class="col-md-2 col-xs-12">'+
-								'<div class="input-group bootstrap-timepicker">'+
-									'<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>'+
-									'<input type="text" class="form-control timepicker_to"/>'+
-								'</div>'+
-							'</div>'+
-			'</div>'
-						);*/
 					}
+										
+					
 					$('.timepicker_to').timepicker({ 'minuteStep' : 30 });
 					
 					$('.timepicker_from').timepicker({ 'minuteStep' : 30 });
 					
-					$('.select').selectpicker();
 					
-//	$("select#teachers").change();
+					
+					$('.select').selectpicker();
+					//$( ".days" ).trigger( "change" );
+					//$(".days").change();
+					//$('.days,.timepicker_to,.timepicker_from').on('change',handleChange());
+					//$('.days').change(handleChange());
+					$(".days,.timepicker_to,.timepicker_from").change(function(){
+						handleChange();
+					});
+					$(".days").trigger("change");
+					
+					
+					
 });
 
-$("select#teachers").change(function() {
+function handleChange(){
+						for(var counter = 0;counter<$(".timepicker_to").length;counter++){
+							handleAjax(counter,$(".timepicker_from").eq(counter).val(),$(".timepicker_to").eq(counter).val());			
+					
 
-	var selected = $("select#teachers option:selected").val();
-	$.ajax("index.php?r=DataModule/getTeacherTimeSlots&id=" + selected, {
-		success : function(data) {
-			//alert(data);
-			$('select.prefered_days').html("");
-			$('select.prefered_from').html("");
-			$('select.prefered_to').html("");
+					}
+				}
+				
+function handleAjax(index,from,to){
+	$.ajax("index.php?r=DataModule/checkSlot&from=" + from+"&to="+to, {
+							success : function(data) {
+									var obj = jQuery.parseJSON(data);
+								
+									$(".logo"+index).html("");
+									//alert($('.slot-time').index("#preference"));
+									//alert($('.timepicker_to').index(this));
+									if(obj.status == "Success")
+										$('.slot-time').eq(index).append('<div class = "logo'+index+'"><span class="glyphicon glyphicon-ok"></span> Success</div>');
+									else
+										$('.slot-time').eq(index).append('<div class = "logo'+index+'"><span class="glyphicon glyphicon-remove"></span>'+obj.status+'</div>');
+								
+							},
+							error : function() {
+								alert("ERROR");
+							}
+							
+							
+							
+						});
+}
 
-			var obj = jQuery.parseJSON(data);
-			var days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-			for (var i = 0; i < obj.length; ++i) {
-				$('select.prefered_days').append('<option value=' + obj[i].day + ' >' + days[obj[i].day - 1] + '</option>');
-				$('select.prefered_from').append('<option value=' + obj[i].from + '>' + obj[i].from + '</option>');
-				$('select.prefered_to').append('<option value=' + obj[i].to + '>' + obj[i].to + '</option>');
 
-			}
-		},
-		error : function() {
-
-		}
-	});
-
-	$("select.prefered_days").change();
-});
-$("select.prefered_days").on("click", function() {
-
-	//alert("KAKA");
-});
