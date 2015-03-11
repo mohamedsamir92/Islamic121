@@ -68,6 +68,7 @@
 									<input type="password" class="form-control" placeholder="Enter your password again" name="Teacher[confirmed_password]" />
 								</div>
 							</div>
+							
 						</div>
 
 						<div class="form-group">

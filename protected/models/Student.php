@@ -56,9 +56,10 @@ class Student extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('first_name, last_name, phone_no, username, password, age, country, city, gender, class_package, hear_us, image', 'required'),
-			array('age, gender, class_package, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
+			array('gender, class_package, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_no, email, skype_id, username, country, city, hear_us, image', 'length', 'max'=>100),
 			array('password', 'length', 'max'=>500),
+			array('age', 'length', 'max'=>50),
 			array('guardians_name', 'length', 'max'=>300),
 			array('notes', 'safe'),
 			// The following rule is used by search().
@@ -137,7 +138,7 @@ class Student extends CActiveRecord
 		$criteria->compare('skype_id',$this->skype_id,true);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('age',$this->age);
+		$criteria->compare('age',$this->age,true);
 		$criteria->compare('country',$this->country,true);
 		$criteria->compare('city',$this->city,true);
 		$criteria->compare('gender',$this->gender);

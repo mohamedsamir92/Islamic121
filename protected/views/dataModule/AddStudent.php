@@ -7,6 +7,7 @@
                         text: '<?php echo $my_message ?>',
                         layout: 'topRight',
                         type: 'error',
+                        timeout: 5000,
                         
                    });
 			});
@@ -43,31 +44,33 @@
 							</div>
 						</div>
 
-						<div class="form-group">
+						<div id="username-group" class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Username</label>
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></span>
-									<input type="text" class="form-control" name="Student[username]" required="" />
+									<input id="username" type="text" class="form-control" name="Student[username]" required="" />
 								</div>
 							</div>
+							<div id="username-status"></div>
 						</div>
 
-						<div class="form-group">
+						<div id="password-group" class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Password</label>
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input type="password" class="form-control" name="Student[password]" required=""/>
+									<input id="password" type="password" class="form-control" name="Student[password]" required=""/>
 								</div>
 							</div>
 
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input type="password" class="form-control" required="" name="Student[confirmed_password]" placeholder="Enter your password again" />
+									<input id="confirmed-password" type="password" class="form-control" required="" name="Student[confirmed_password]" placeholder="Enter your password again" />
 								</div>
 							</div>
+							<div id="password-status"></div>
 						</div>
 
 						<div class="form-group">
@@ -80,14 +83,15 @@
 							</div>
 						</div>
 
-						<div class="form-group">
+						<div id="email-group" class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Email Address</label>
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-envelope"></span></span>
-									<input type="text" class="form-control" name="Student[email]" />
+									<input id="email" type="text" class="form-control" name="Student[email]" />
 								</div>
 							</div>
+							<div id="email-status"></div>
 						</div>
 
 						<div class="form-group">
@@ -101,12 +105,28 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Age</label>
-							<div class="col-md-6 col-xs-12">
+							<label class="col-md-3 col-xs-12 control-label">Date of birth</label>
+							<div id="date-day-group" class="col-md-2 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-signal"></span></span>
-									<input type="text" class="form-control" name="Student[age]" required=""/>
+									<input id="date-day" type="text" class="form-control" name="Student[day]" required="" placeholder="Day"/>
 								</div>
+								<span class="help-block"></span>
+								
+							</div>
+							<div id="date-month-group" class="col-md-2 col-xs-12">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-signal"></span></span>
+									<input id="date-month" type="text" class="form-control" name="Student[month]" required="" placeholder="Month" />
+								</div>
+								<span class="help-block"></span>
+							</div>
+							<div id="date-year-group" class="col-md-2 col-xs-12">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-signal"></span></span>
+									<input id="date-year" type="text" class="form-control" name="Student[year]" required="" placeholder="Year" />
+								</div>
+								<span class="help-block"></span>
 							</div>
 						</div>
 
@@ -183,20 +203,7 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Lessons</label>
-							<div class="col-md-1 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked" name="Student[quran_course]" value="1" />
-									Quran</label>
-							</div>
-							<div class="col-md-1 col-xs-12">
-								<label class="check">
-									<input type="checkbox" class="icheckbox" checked="checked" name="Student[arabic_course]" value="1" />
-									Arabic</label>
-							</div>
-						</div>
-
+						
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Profile Image</label>
 							<div class="col-md-6 col-xs-12">

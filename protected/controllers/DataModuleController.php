@@ -51,6 +51,8 @@ class DataModuleController extends Controller {
 		$allTeachers = Teacher::model() -> findAll();
 
 		if (isset($_POST['Student'])) {
+			$_POST['Student']['age'] = $_POST['Student']['day']."-".$_POST['Student']['month']."-".$_POST['Student']['year'];
+		
 			$model -> attributes = $_POST['Student'];
 
 			if (strlen($_FILES['Student']['name']['image']) > 0) {
@@ -279,6 +281,30 @@ class DataModuleController extends Controller {
 		}
 	}
 
+
+	public function actionCheckStudentUsername(){
+		$uname = $_GET['uname'];
+		$check = Student::model()->find("username = :uname",array(":uname"=>$uname));
+		$result = array();
+		if(count($check) > 0)
+			$result['status'] = "failed";
+		else 
+			$result['status'] = "ok";
+		
+		echo json_encode($result);
+	}
+	public function actionCheckStudentEmail(){
+		$email = $_GET['email'];
+		$check = Student::model()->find("email = :email",array(":email"=>$email));
+		$result = array();
+		if(count($check) > 0)
+			$result['status'] = "failed";
+		else 
+			$result['status'] = "ok";
+		
+		echo json_encode($result);
+	}
+	
 	public function actionCheckSlot() {
 		$message = "";
 		$message = "";
