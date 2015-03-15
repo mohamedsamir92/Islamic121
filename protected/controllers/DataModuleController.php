@@ -16,7 +16,6 @@ class DataModuleController extends Controller {
 		if (isset($_POST['Login'])) {
 			//var_dump($_POST);
 			$identity = new UserIdentity($_POST['Login']['username'], $_POST['Login']['password']);
-			$identity -> setType($_POST['Login']['type']);
 			//var_dump($identity);
 			$message = "Registered Successfully";
 			if ($identity -> authenticate()) {
@@ -51,8 +50,8 @@ class DataModuleController extends Controller {
 		$allTeachers = Teacher::model() -> findAll();
 
 		if (isset($_POST['Student'])) {
-			$_POST['Student']['age'] = $_POST['Student']['day']."-".$_POST['Student']['month']."-".$_POST['Student']['year'];
-		
+			$_POST['Student']['age'] = $_POST['Student']['day'] . "-" . $_POST['Student']['month'] . "-" . $_POST['Student']['year'];
+
 			$model -> attributes = $_POST['Student'];
 
 			if (strlen($_FILES['Student']['name']['image']) > 0) {
@@ -75,8 +74,12 @@ class DataModuleController extends Controller {
 				$message = "";
 				if ($_POST['Student']['confirmed_password'] != $_POST['Student']['password']) {
 					$message = "Your passwords don\'t match, please try again. ";
+				} else {
+					$username_exist_check = Users::model() -> find("username = :uname", array(":uname" => $_POST['Student']['username']));
+					if (count($username_exist_check) > 0)
+						$message = "username is already exist";
 				}
-				for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
+				for ($i = 0; $i < $_POST['Student']['class_package'] && strlen($message) < 1; $i++) {
 					$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
 					$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
 					$dt_start = new DateTime('2001-01-01 ' . $from_time);
@@ -93,32 +96,44 @@ class DataModuleController extends Controller {
 					//echo $dt_end->getTimestamp();
 				}
 				if (strlen($message) < 1 && $model -> save()) {
-					$lesson_request = new LessonRequest;
-					$lesson_request -> student_id = $model -> id;
-					//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
-					if ($lesson_request -> save()) {
-						for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
-							$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
-							$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
-
-							$lesson_time_slots = new LessonRequestTimeSlot;
-							$lesson_time_slots -> lesson_request_id = $lesson_request -> id;
-
-							$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
-							$lesson_time_slots -> from = $from_time;
-							$lesson_time_slots -> to = $to_time;
-							$lesson_time_slots -> save();
-							//print_r($lesson_time_slots -> getErrors());
-
-						}
-					} else {
-						//var_dump($lesson_request->getErrors());
-						foreach ($lesson_request->getErrors() as $key => $value) {
+					$user = new Users;
+					$user -> username = $_POST['Student']['username'];
+					$user -> type = 0;
+					$user -> profile_id = $model -> id;
+					if (!$user -> save()) {
+						foreach ($user->getErrors() as $key => $value) {
 							foreach ($value as $error) {
 								$message .= $error . " ";
 							}
 						}
-						Student::model() -> deleteAll("id = " . $model -> id);
+					} else {
+						$lesson_request = new LessonRequest;
+						$lesson_request -> student_id = $model -> id;
+						//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
+						if ($lesson_request -> save()) {
+							for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
+								$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
+								$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
+
+								$lesson_time_slots = new LessonRequestTimeSlot;
+								$lesson_time_slots -> lesson_request_id = $lesson_request -> id;
+
+								$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
+								$lesson_time_slots -> from = $from_time;
+								$lesson_time_slots -> to = $to_time;
+								$lesson_time_slots -> save();
+								//print_r($lesson_time_slots -> getErrors());
+
+							}
+						} else {
+							//var_dump($lesson_request->getErrors());
+							foreach ($lesson_request->getErrors() as $key => $value) {
+								foreach ($value as $error) {
+									$message .= $error . " ";
+								}
+							}
+							//Student::model() -> deleteAll("id = " . $model -> id);
+						}
 					}
 				} else {
 
@@ -203,8 +218,14 @@ class DataModuleController extends Controller {
 				$message = "";
 				if ($_POST['Teacher']['confirmed_password'] != $_POST['Teacher']['password']) {
 					$message = "Your passwords don\'t match, please try again. ";
+				} else {
+					$username_exist_check = Users::model() -> find("username = :uname", array(":uname" => $_POST['Teacher']['username']));
+					if (count($username_exist_check) > 0)
+						$message = "username is already exist";
 				}
+
 				$i = 0;
+
 				if (!isset($_POST['Teacher']['days']))
 					$message = "You must register working hours";
 				else {
@@ -226,17 +247,31 @@ class DataModuleController extends Controller {
 
 				if (strlen($message) < 1 && $model -> save()) {
 
-					foreach ($_POST['Teacher']['days'] as $dayIndex) {
-						$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$dayIndex]));
-						$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$dayIndex]));
+					$user = new Users;
+					$user -> username = $_POST['Teacher']['username'];
+					$user -> type = 1;
+					$user -> profile_id = $model -> id;
+					if (!$user -> save()) {
+						foreach ($user->getErrors() as $key => $value) {
+							foreach ($value as $error) {
+								$message .= $error . " ";
+							}
 
-						$slot = new TeacherTimeSlot;
-						$slot -> teacher_id = $model -> id;
-						$slot -> day = $dayIndex;
-						$slot -> from = $from_time;
-						$slot -> to = $to_time;
-						$slot -> save();
+						}
+					} else {
 
+						foreach ($_POST['Teacher']['days'] as $dayIndex) {
+							$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$dayIndex]));
+							$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$dayIndex]));
+
+							$slot = new TeacherTimeSlot;
+							$slot -> teacher_id = $model -> id;
+							$slot -> day = $dayIndex;
+							$slot -> from = $from_time;
+							$slot -> to = $to_time;
+							$slot -> save();
+
+						}
 					}
 
 				} else {
@@ -281,30 +316,30 @@ class DataModuleController extends Controller {
 		}
 	}
 
-
-	public function actionCheckStudentUsername(){
+	public function actionCheckStudentUsername() {
 		$uname = $_GET['uname'];
-		$check = Student::model()->find("username = :uname",array(":uname"=>$uname));
+		$check = Users::model() -> find("username = :uname", array(":uname" => $uname));
 		$result = array();
-		if(count($check) > 0)
+		if (count($check) > 0)
 			$result['status'] = "failed";
-		else 
+		else
 			$result['status'] = "ok";
-		
+
 		echo json_encode($result);
 	}
-	public function actionCheckStudentEmail(){
+
+	public function actionCheckStudentEmail() {
 		$email = $_GET['email'];
-		$check = Student::model()->find("email = :email",array(":email"=>$email));
+		$check = Student::model() -> find("email = :email", array(":email" => $email));
 		$result = array();
-		if(count($check) > 0)
+		if (count($check) > 0)
 			$result['status'] = "failed";
-		else 
+		else
 			$result['status'] = "ok";
-		
+
 		echo json_encode($result);
 	}
-	
+
 	public function actionCheckSlot() {
 		$message = "";
 		$message = "";
@@ -333,9 +368,9 @@ class DataModuleController extends Controller {
 			}
 		}
 		/*if ($check == 0) {
-			$message .= "Teacher is not available";
-		}*/
-		if(strlen($message) < 1)
+		 $message .= "Teacher is not available";
+		 }*/
+		if (strlen($message) < 1)
 			$message = "Success";
 		$result = array();
 		$result["status"] = $message;
@@ -347,6 +382,7 @@ class DataModuleController extends Controller {
 		$model = new Admin;
 
 		if (isset($_POST['Admin'])) {
+			$message = "";
 			//var_dump($_POST['Student']);
 			$model -> attributes = $_POST['Admin'];
 			//
@@ -361,22 +397,36 @@ class DataModuleController extends Controller {
 			//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
 			$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
 			$model -> password = $model -> hashPassword($model -> password);
-			$model -> save();
-			print_r($model -> getErrors());
+			$username_exist_check = Users::model() -> find("username = :uname", array(":uname" => $_POST['Admin']['username']));
+			if (count($username_exist_check) > 0)
+				$message = "username is already exist";
+			if (strlen($message) < 1 && $model -> save()) {
+				$user = new Users;
+				$user -> username = $_POST['Admin']['username'];
+				$user -> type = 2;
+				$user -> profile_id = $model -> id;
+				$user->save();
+				if (isset(Yii::app() -> user -> id)) {
+					if (Yii::app() -> user -> type == 'Admin')
+						$this -> render('AddAdmin');
+					else
+						$this -> redirect('index.php?r=DataModule/Login');
+				} else
+					$this -> redirect('index.php?r=DataModule/Login');
+
+			} else
+				print_r($model -> getErrors());
 			//var_dump($_FILES);
 			//$target_file = $target_dir . basename($_FILES["image"]["name"]);
 			//$uploadOk = 1;
 			//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			//echo $imageFileType;
 
-		}
-		if (isset(Yii::app() -> user -> id)) {
+		} else {
 			if (Yii::app() -> user -> type == 'Admin')
 				$this -> render('AddAdmin');
-			else
-				$this -> redirect('index.php?r=DataModule/Login');
-		} else
-			$this -> redirect('index.php?r=DataModule/Login');
+
+		}
 
 	}
 

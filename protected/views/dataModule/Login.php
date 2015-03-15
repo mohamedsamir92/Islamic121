@@ -41,22 +41,7 @@
 					</div>
 				</div>
 
-				<div class="form-group">
-					<div class="col-md-12">
-						<div class="input-group">
-							<div class="input-group-addon">
-								<span class="fa fa-group"></span>
-							</div>                                
-							<select class="form-control select" name = "Login[type]">
-								<option value = "Student"> Student </option>
-								<option value = "Teacher"> Teacher </option>
-								<option value = "Admin"> Admin </option>
-								<!--<option value = "supervisor"> Supervisor </option>-->
-							</select>
-						</div>
-					</div>
-				</div>
-
+				
 				<div class="form-group">
 					<div class="col-md-6">
 						<a href="#">Forgot your password?</a>

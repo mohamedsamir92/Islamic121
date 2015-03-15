@@ -6,20 +6,20 @@ class UserIdentity extends CUserIdentity {
 	public function authenticate() {
 		//echo $this -> _type;
 		$record = null;
-		if ($this -> _type == "Teacher")
-			$record = Teacher::model() -> findByAttributes(array('username' => $this -> username));
-		else if ($this -> _type == "Student")
-			$record = Student::model() -> findByAttributes(array('username' => $this -> username));
-		else if ($this -> _type == "Admin")
-			$record = Admin::model() -> findByAttributes(array('username' => $this -> username));
-
+		$user = Users::model() -> findByAttributes(array('username' => $this -> username));
+		
+		if ($user -> type == 1)
+			$record = Teacher::model() -> findByAttributes(array('id' => $user -> profile_id));
+		else if ($user -> type == 0)
+			$record = Student::model() -> findByAttributes(array('id' => $user -> profile_id));
+		else if ($user -> type == 2)
+			$record = Admin::model() -> findByAttributes(array('id' => $user -> profile_id));
 		if ($record === null)
 			$this -> errorCode = self::ERROR_USERNAME_INVALID;
 		else if (!$record -> validatePassword($this -> password))
 			$this -> errorCode = self::ERROR_PASSWORD_INVALID;
 		else {
-			//var_dump($record);
-			if($this->_type == "Student"){
+			if($user -> type == 0){
 				$request = LessonRequest::model()->find("student_id = ".$record -> id);
 				if($request->status == 0){
 					$this -> errorCode = self::ERROR_USERNAME_INVALID;
@@ -41,7 +41,13 @@ class UserIdentity extends CUserIdentity {
 			$this -> setState('gender', $record -> gender);
 			$this -> setState('image', $record -> image);
 			$this -> setState('notes', $record -> notes);
-			$this -> setState('type', $this -> _type);
+			if($user->type == 0)
+				$this -> setState('type', "Student");
+			else if($user->type == 1)
+				$this -> setState('type', "Teacher");
+			else if($user->type == 2)
+				$this -> setState('type', "Admin");
+			
 
 			//$this -> setState('title', $record -> title);
 			$this -> errorCode = self::ERROR_NONE;

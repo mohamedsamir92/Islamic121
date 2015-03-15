@@ -74,8 +74,19 @@
 					<li>
 						<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=Calendar/CalendarView"><span class="fa fa-calendar"></span><span class="xn-text">Calendar</span></a>
 					</li>
-					<li>
+					<li class="xn-openable">
 						<a href="#"><span class="fa fa-comments"></span><span class="xn-text">Messages</span></a>
+						<ul>
+							<li>
+								<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=MailBox/send"><span class="fa fa-user"></span><span class="xn-text">Compose</span></a>
+							</li>
+							<li>
+								<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=MailBox/inbox"><span class="fa fa-user"></span><span class="xn-text">Inbox</span></a>
+							</li>
+							<li>
+								<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=MailBox/sent"><span class="fa fa-user"></span><span class="xn-text">Sent</span></a>
+							</li>
+						</ul>
 					</li>
 					<?php if(Yii::app()->user->type == "Admin" || Yii::app()->user->type == "Teacher"): ?>
 					<li class="xn-openable">
@@ -100,12 +111,18 @@
 					</li>
 					<?php if(Yii::app()->user->type == "Admin"): ?>
 					<li>
-						<a href="#"><span class="fa fa-money"></span><span class="xn-text">Invoice</span></a>
+						<a href="index.php?r=Treasury/paper"><span class="fa fa-money"></span><span class="xn-text">Invoice</span></a>
 					</li>
 					<?php endif; ?>
 					
-					<li>
+					<li class="xn-openable">
 						<a href="#"><span class="glyphicon glyphicon-stats"></span><span class="xn-text">Reports</span></a>
+						<ul>
+							<li>
+								<a href="index.php?r=Treasury/report"><span class="fa fa-user"></span><span class="xn-text">Treasury report</span></a>
+							</li>
+							
+						</ul>
 					</li>
 					<?php if(Yii::app()->user->type == "Admin"): ?>
 					<li class="xn-openable">
