@@ -316,11 +316,36 @@ class DataModuleController extends Controller {
 		}
 	}
 
+
+	public function actionCheckCurrency(){
+		$currency_id = $_GET['currency_id'];
+		$uname = $_GET['uname'];
+		$check = Users::model()->find("username = :uname and currency_id = :id", array(":uname" => $uname , ":id"=>$currency_id));
+		if (count($check) > 0)
+			$result['status'] = "ok";
+		else
+			$result['status'] = "failed";
+
+		echo json_encode($result);
+	}
+	
 	public function actionCheckStudentUsername() {
 		$uname = $_GET['uname'];
 		$check = Users::model() -> find("username = :uname", array(":uname" => $uname));
 		$result = array();
 		if (count($check) > 0)
+			$result['status'] = "failed";
+		else
+			$result['status'] = "ok";
+
+		echo json_encode($result);
+	}
+	
+	public function actionCheckStudentUsernameExistence() {
+		$uname = $_GET['uname'];
+		$check = Users::model() -> find("username = :uname", array(":uname" => $uname));
+		$result = array();
+		if (count($check) == 0)
 			$result['status'] = "failed";
 		else
 			$result['status'] = "ok";

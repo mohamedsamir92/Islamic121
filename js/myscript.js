@@ -2,7 +2,6 @@ $(document).ready(function() {
 	$("#sender-type").change(function(){
 		
 		var val = $("#sender-type").val();
-		alert(val);
 		if(val == 0){
 			$("custom-sender").css("visibility","visible");
 		}

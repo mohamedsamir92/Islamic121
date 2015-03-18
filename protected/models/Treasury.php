@@ -1,23 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "treasury".
  *
- * The followings are the available columns in table 'users':
- * @property string $username
- * @property integer $type
- * @property integer $profile_id
- * @property integer $value
+ * The followings are the available columns in table 'treasury':
+ * @property integer $id
  * @property integer $currency_id
+ * @property double $value
  */
-class Users extends CActiveRecord
+class Treasury extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'treasury';
 	}
 
 	/**
@@ -28,13 +26,12 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, type, profile_id, currency_id', 'required'),
-			array('type, profile_id, value, currency_id', 'numerical', 'integerOnly'=>true),
-			array('username', 'length', 'max'=>200),
+			array('currency_id, value', 'required'),
+			array('currency_id', 'numerical', 'integerOnly'=>true),
+			array('value', 'numerical'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('username, type, profile_id, value, currency_id', 'safe', 'on'=>'search'),
-			array('username', 'unique'),
+			array('id, currency_id, value', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,11 +52,9 @@ class Users extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'username' => 'Username',
-			'type' => 'Type',
-			'profile_id' => 'Profile',
-			'value' => 'Value',
+			'id' => 'ID',
 			'currency_id' => 'Currency',
+			'value' => 'Value',
 		);
 	}
 
@@ -81,11 +76,9 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('type',$this->type);
-		$criteria->compare('profile_id',$this->profile_id);
-		$criteria->compare('value',$this->value);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('currency_id',$this->currency_id);
+		$criteria->compare('value',$this->value);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,7 +89,7 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return Treasury the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

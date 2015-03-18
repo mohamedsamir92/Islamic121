@@ -6531,3 +6531,314 @@ Stack trace:
 REQUEST_URI=/Islamic121/index.php?r=MailBox/sent
 HTTP_REFERER=http://127.0.0.1/Islamic121/index.php?r=Treasury/paper
 ---
+2015/03/17 12:21:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "actionCheckStudentUsernameExistence".' in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('actionCheckStud...')
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('actionCheckStud...')
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('DataModule/acti...')
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Islamic121/index.php?r=DataModule/actionCheckStudentUsernameExistence&uname=mo
+HTTP_REFERER=http://127.0.0.1/Islamic121/index.php?r=Treasury/paper
+---
+2015/03/17 12:22:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "actionCheckStudentUsernameExistence".' in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('actionCheckStud...')
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('actionCheckStud...')
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('DataModule/acti...')
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Islamic121/index.php?r=DataModule/actionCheckStudentUsernameExistence&uname=kdlfkldf
+HTTP_REFERER=http://127.0.0.1/Islamic121/index.php?r=Treasury/paper
+---
+2015/03/17 12:22:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "actionCheckStudentUsernameExistence".' in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('actionCheckStud...')
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('actionCheckStud...')
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('DataModule/acti...')
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Islamic121/index.php?r=DataModule/actionCheckStudentUsernameExistence&uname=fldfkldf
+HTTP_REFERER=http://127.0.0.1/Islamic121/index.php?r=Treasury/paper
+---
+2015/03/17 12:23:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "actionCheckStudentUsernameExistence".' in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('actionCheckStud...')
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('actionCheckStud...')
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('DataModule/acti...')
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Islamic121/index.php?r=DataModule/actionCheckStudentUsernameExistence&uname=fdkfldkfl
+---
+2015/03/17 13:27:03 [error] [php] Undefined variable: connection (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:12)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/paper
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (12)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 14:04:24 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:18)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/paper
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (18)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 14:08:11 [error] [php] Undefined variable: type (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:17)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/paper
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (17)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 22:27:08 [error] [exception.CException] exception 'CException' with message 'Property "TreasuryPaper.current_total_value" is not defined.' in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('current_total_v...')
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php(109): CActiveRecord->__get('current_total_v...')
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): TreasuryController->actionGetTransactions()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('getTransactions')
+#7 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('Treasury/getTra...')
+#8 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-15&to=2015-03-17&currency=2
+---
+2015/03/17 22:59:22 [error] [php] Array to string conversion (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:86)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-18&currency=2
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (86)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:04:56 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-20&currency=1&_=1426629888105
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:04:56 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-20&currency=1&_=1426629888106
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:05:10 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-19&currency=1&_=1426629888107
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:05:10 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-19&currency=1&_=1426629888108
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:05:46 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-20&currency=1&_=1426629888109
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:05:46 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-20&currency=1&_=1426629888110
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:06:02 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-20&currency=1&_=1426629888111
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:06:05 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-20&currency=1&_=1426629888112
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:09:21 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=&currency=1&_=1426629888113
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:09:21 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=&currency=1&_=1426629888114
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:11:08 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-20&currency=1&_=1426629888105
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:11:58 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-12&currency=1&_=1426630314632
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:11:58 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-12&currency=1&_=1426630314633
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:12:00 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-12&currency=1&_=1426630314634
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:12:13 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:77)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-12&currency=1&_=1426630314632
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (77)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:14:54 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:79)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-19&currency=1&_=1426630491269
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (79)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:14:54 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:79)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-19&currency=1&_=1426630491270
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (79)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:15:06 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:79)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-19&currency=1&_=1426630491271
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (79)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/17 23:15:13 [error] [php] Trying to get property of non-object (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php:79)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): TreasuryController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): TreasuryController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): TreasuryController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=Treasury/getTransactions&from=2015-03-13&to=2015-03-19&currency=1&_=1426630491269
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\TreasuryController.php (79)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
