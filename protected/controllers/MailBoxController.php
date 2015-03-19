@@ -35,25 +35,45 @@ class MailBoxController extends Controller {
 		foreach ($messages as $msg) {
 			$receiversInfo = MessageUserBridge::model() -> findAll("message_id = " . $msg -> id);
 			$receivers[] = array();
+			
 			foreach ($receiversInfo as $receiver) {
+			//echo $i;	
+				
 				//$receivers[$i][] = $receiver->
-				if(!isset($receiver -> user_type) || !isset($receiver -> user_id)  )
-					$receivers[$i][] = "All";
+				if(!isset($receiver -> user_type) || !isset($receiver -> user_id)  ){
+					if($msg->broadcast_type == 1)
+						$receivers[$i][] = "All Students";
+					else if($msg->broadcast_type == 2)
+						$receivers[$i][] = "All Teachers";
+					else if($msg->broadcast_type == 3)
+						$receivers[$i][] = "All Admins";
+					else if($msg->broadcast_type == 4)
+						$receivers[$i][] = "All Supervisors";
+					else if($msg->broadcast_type == 5)
+						$receivers[$i][] = "All Users";
+				}
+					
+					
 				else if ($receiver -> user_type == 0) {
+					
 					$user = Student::model() -> find("id = " . $receiver -> user_id);
 					$receivers[$i][] = $user -> first_name . " " . $user -> last_name;
-					$i++;
+				//	$i++;
 				} else if ($receiver -> user_type == 1) {
 					$user = Teacher::model() -> find("id = " . $receiver -> user_id);
 					$receivers[$i][] = $user -> first_name . " " . $user -> last_name;
-					$i++;
+				//	$i++;
 				} else if ($receiver -> user_type == 2) {
 					$user = Admin::model() -> find("id = " . $receiver -> user_id);
 					$receivers[$i][] = $user -> first_name . " " . $user -> last_name;
-					$i++;
+				//	$i++;
 				}
+				
 			}
+			$i++;
 		}
+		
+				
 		$this->render("sent",array("allMsgs"=>$messages,"receivers"=>$receivers));
 
 	}

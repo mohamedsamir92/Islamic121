@@ -13,16 +13,7 @@
                     <div class="content-frame">
                         
                         <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="btn-group">
-                                    <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
-                                    <button class="btn btn-default"><span class="fa fa-mail-reply-all"></span></button>
-                                </div>
-
-                                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>
-
-                            </div>
-                            <div class="panel-body mail">
+                           <div class="panel-body mail">
                             	<?php 
                             	$i=0;
                             	foreach ($allMsgs as $message): ?>
@@ -32,6 +23,7 @@
                                     </div>
                                     <div class="mail-user">
                                     	<?php foreach ($receivers[$i] as $receiver): ?>
+											
 											<?php echo $receiver."," ?>
 										<?php endforeach; ?>
                                     	
@@ -45,13 +37,7 @@
                                 
                             </div>
                             <div class="panel-footer">                                
-                                <div class="btn-group">
-                                    <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
-                                    <button class="btn btn-default"><span class="fa fa-mail-reply-all"></span></button>
-                                </div>
-
-                                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>                                    
-                                
+                                                               
                                 <ul class="pagination pagination-sm pull-right">
                                     <li class="disabled"><a href="#">«</a></li>
                                     <li class="active"><a href="#">1</a></li>
