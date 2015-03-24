@@ -1,18 +1,18 @@
 <?php if(isset($my_message)): ?>
-			
-		<script>
-			$(document).ready(function(){
-				
-				noty({
-                        text: '<?php echo $my_message ?>',
-                        layout: 'topRight',
-                        type: 'error',
-                        timeout: 5000,
-                        
-                   });
+
+	<script>
+		$(document).ready(function(){
+
+			noty({
+				text: '<?php echo $my_message ?>',
+				layout: 'topRight',
+				type: 'error',
+				timeout: 5000,
+
 			});
-		</script>
-		<?php endif; ?>
+		});
+	</script>
+<?php endif; ?>
 
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap" style="padding: 15px;">
@@ -28,57 +28,77 @@
 					<div class="panel-body">
 
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Name</label>
-							<div class="col-md-3 col-xs-12">
+							<label class="col-md-3 col-xs-12 control-label">First Name <span class="text-danger">*</span></label>
+							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
-									<span class="input-group-addon"><span>First</span></span>
-									<input type="text" class="form-control"/ name="Student[first_name]" required="">
+									<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+									<input type="text" class="form-control"/ name="Student[first_name]" required/>
 								</div>
 							</div>
+						</div>
 
-							<div class="col-md-3 col-xs-12">
+						<div class="form-group">
+							<label class="col-md-3 col-xs-12 control-label">Last Name <span class="text-danger">*</span></label>
+							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
-									<span class="input-group-addon"><span>Last</span></span>
-									<input type="text" class="form-control" name="Student[last_name]" required="" />
+									<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+									<input type="text" class="form-control" name="Student[last_name]" required />
 								</div>
 							</div>
 						</div>
 
 						<div id="username-group" class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Username</label>
+							<label class="col-md-3 col-xs-12 control-label">Username <span class="text-danger">*</span></label>
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></span>
-									<input id="username" type="text" class="form-control" name="Student[username]" required="" />
+									<input id="username" type="text" class="form-control" name="Student[username]" required/>
 								</div>
 							</div>
 							<div id="username-status"></div>
 						</div>
 
 						<div id="password-group" class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Password</label>
+							<label class="col-md-3 col-xs-12 control-label">Password <span class="text-danger">*</span></label>
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input id="password" type="password" class="form-control" name="Student[password]" required=""/>
+									<input id="password" type="password" class="form-control" name="Student[password]" placeholder="Enter your password" required/>
 								</div>
 							</div>
 
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-									<input id="confirmed-password" type="password" class="form-control" required="" name="Student[confirmed_password]" placeholder="Enter your password again" />
+									<input id="confirmed-password" type="password" class="form-control" name="Student[confirmed_password]" placeholder="Enter your password again" required/>
 								</div>
 							</div>
 							<div id="password-status"></div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Phone No.</label>
+							<label class="col-md-3 col-xs-12 control-label">Address <span class="text-danger">*</span></label>
+							<div class="col-md-3 col-xs-12">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="fa fa-flag"></span></span>
+									<input type="text" class="form-control" placeholder="Country" name="Student[country]" required/>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-xs-12">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="fa fa-flag-o"></span></span>
+									<input type="text" class="form-control" placeholder="City" name="Student[city]" required/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 col-xs-12 control-label">Phone Number <span class="text-danger">*</span></label>
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-phone"></span></span>
-									<input type="text" class="form-control" name="Student[phone_no]" required=""/>
+									<input type="text" class="form-control" name="Student[phone_no]" required/>
 								</div>
 							</div>
 						</div>
@@ -95,7 +115,7 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Skype ID</label>
+							<label class="col-md-3 col-xs-12 control-label">Skype ID <span class="text-danger">*</span></label>
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-skype"></span></span>
@@ -105,69 +125,42 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Date of birth</label>
-							<div id="date-day-group" class="col-md-2 col-xs-12">
+							<label class="col-md-3 col-xs-12 control-label">Date of Birth <span class="text-danger">*</span></label>
+							<div id="date-day-group" class="col-md-6 col-xs-12">
 								<div class="input-group">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-signal"></span></span>
-									<input id="date-day" type="text" class="form-control" name="Student[day]" required="" placeholder="Day"/>
+									<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+									<input id="date_of_birth" type="text" class="form-control datepicker" name="Student[date_of_birth]" value="2005-01-01">
 								</div>
-								<span class="help-block"></span>
 								
 							</div>
-							<div id="date-month-group" class="col-md-2 col-xs-12">
-								<div class="input-group">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-signal"></span></span>
-									<input id="date-month" type="text" class="form-control" name="Student[month]" required="" placeholder="Month" />
-								</div>
-								<span class="help-block"></span>
-							</div>
-							<div id="date-year-group" class="col-md-2 col-xs-12">
-								<div class="input-group">
-									<span class="input-group-addon"><span class="glyphicon glyphicon-signal"></span></span>
-									<input id="date-year" type="text" class="form-control" name="Student[year]" required="" placeholder="Year" />
-								</div>
-								<span class="help-block"></span>
-							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Address</label>
-							<div class="col-md-3 col-xs-12">
-								<div class="input-group">
-									<span class="input-group-addon"><span class="fa fa-flag"></span></span>
-									<input type="text" class="form-control" placeholder="Country" name="Student[country]" required=""/>
-								</div>
-							</div>
-
-							<div class="col-md-3 col-xs-12">
-								<div class="input-group">
-									<span class="input-group-addon"><span class="fa fa-flag-o"></span></span>
-									<input type="text" class="form-control" placeholder="City" name="Student[city]" required=""/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Gender</label>
+							<label class="col-md-3 col-xs-12 control-label">Class Package <span class="text-danger">*</span></label>
 							<div class="col-md-6 col-xs-12">
-								<select class="form-control select" name="Student[gender]">
-									<option value="0">Male</option>
-									<option value="1">Female</option>
+								<select id="package" class="form-control select" name="Student[class_package]">
+									<option value="1">1 Lesson/Week</option>
+									<option value="2">2 Lessons/Week</option>
+									<option value="3">3 Lessons/Week</option>
+									<option value="4">4 Lessons/Week</option>
+									<option value="5">5 Lessons/Week</option>
+									<option value="6">6 Lessons/Week</option>
+									<option value="7">7 Lessons/Week</option>
+									<option value="8">8 Lessons/Week</option>
+									<option value="9">9 Lessons/Week</option>
+									<option value="10">10 Lessons/Week</option>
 								</select>
 							</div>
+
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Class Package</label>
-							<div class="col-md-6 col-xs-12">
-								<select  id="package" class="form-control select" name="Student[class_package]">
-									<option value="1">1 Day/Week</option>
-									<option value="2">2 Days/Week</option>
-									<option value="3">3 Days/Week</option>
-									<option value="4">4 Days/Week</option>
-									<option value="5">5 Days/Week</option>
-								</select>
-							</div>
+							<label class="col-md-3 col-xs-12 control-label">Lessons Times <span class="text-danger">*</span></label>
+							<label class="col-md-2 col-xs-12" style="text-align: center;">Day</label>
+							<label class="col-md-1 col-xs-12" style="text-align: center;">Lesson Type</label>
+							<label class="col-md-1 col-xs-12" style="text-align: center;">Period (Minutes)</label>
+							<label class="col-md-1 col-xs-12" style="text-align: center;">From</label>
+							<label class="col-md-1 col-xs-12" style="text-align: center;">To</label>
 						</div>
 
 						<div class="form-group" id="preference">
@@ -177,7 +170,7 @@
 						
 						
 						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Guardians Names</label>
+							<label class="col-md-3 col-xs-12 control-label">Guardians Name</label>
 							<div class="col-md-6 col-xs-12">
 								<input type="text" class="form-control" placeholder="Guardians Name" name="Student[guardians_name]" />
 							</div>
@@ -192,14 +185,33 @@
 
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">How did you hear about us</label>
-							<div class="col-md-6 col-xs-12">
+							<div class="col-md-2 col-xs-12">
 								<select class="form-control select" name="Student[hear_us]" >
-									<option value="facebook">Facebook</option>
-									<option value="twitter">Twitter</option>
-									<option value="google+">Google+</option>
-									<option value="linkedin">LinkedIn</option>
-									<option value="others">Others</option>
+									<option value="Twitter">Twitter</option>
+									<option value="Facebook">Facebook</option>
+									<option value="Whats App">Whats App</option>
+									<option value="Flyer">Flyer</option>
+									<option value="Google">Google</option>
+									<option value="Gum Tree">Gum Tree</option>
+									<option value="Friend">Friend</option>
+									<option value="Masjid">Masjid</option>
+									<option value="Email">Email</option>
+									<option value="Others">Others</option>
 								</select>
+							</div>
+							<div class="col-md-4 col-xs-12">
+								<input type="text" class="form-control" name="Student[hear_us_others]" />
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label class="col-md-3 col-xs-12 control-label">Gender <span class="text-danger">*</span></label>
+							<div class="col-md-1 col-xs-12">                                   
+								<label class="check"><input name="Student[gender_male]" type="radio" class="iradio"/> Male</label>
+							</div>
+							<div class="col-md-1 col-xs-12">                                   
+								<label class="check"><input name="Student[gender_female]" type="radio" class="iradio" checked="checked"/> Female</label>
 							</div>
 						</div>
 

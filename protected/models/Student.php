@@ -12,7 +12,7 @@
  * @property string $skype_id
  * @property string $username
  * @property string $password
- * @property integer $age
+ * @property date $date_of_birth
  * @property string $country
  * @property string $city
  * @property integer $gender
@@ -55,11 +55,11 @@ class Student extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, phone_no, username, password, age, country, city, gender, class_package, hear_us, image', 'required'),
+			array('first_name, last_name, phone_no, username, password, date_of_birth, country, city, gender, class_package, hear_us, image', 'required'),
 			array('gender, class_package, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_no, email, skype_id, username, country, city, hear_us, image', 'length', 'max'=>100),
 			array('password', 'length', 'max'=>500),
-			array('age', 'length', 'max'=>50),
+			array('date_of_birth', 'length', 'max'=>50),
 			array('guardians_name', 'length', 'max'=>300),
 			array('notes', 'safe'),
 			// The following rule is used by search().
@@ -67,7 +67,7 @@ class Student extends CActiveRecord
 			array('username', 'unique'),
 			array('email', 'unique'),
 			
-			array('id, first_name, last_name, phone_no, email, skype_id, username, password, age, country, city, gender, class_package, hear_us, image, quran_course, arabic_course, guardians_name, notes', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, phone_no, email, skype_id, username, password, date_of_birth, country, city, gender, class_package, hear_us, image, quran_course, arabic_course, guardians_name, notes', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,7 +98,7 @@ class Student extends CActiveRecord
 			'skype_id' => 'Skype',
 			'username' => 'Username',
 			'password' => 'Password',
-			'age' => 'Age',
+			'date_of_birth' => 'Date Of Birth',
 			'country' => 'Country',
 			'city' => 'City',
 			'gender' => 'Gender',
@@ -138,7 +138,7 @@ class Student extends CActiveRecord
 		$criteria->compare('skype_id',$this->skype_id,true);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('age',$this->age,true);
+		$criteria->compare('date_of_birth',$this->date_of_birth,true);
 		$criteria->compare('country',$this->country,true);
 		$criteria->compare('city',$this->city,true);
 		$criteria->compare('gender',$this->gender);
