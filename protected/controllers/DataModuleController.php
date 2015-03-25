@@ -47,10 +47,11 @@ class DataModuleController extends Controller {
 
 	public function actionAddStudent() {
 		$model = new Student;
-		$allTeachers = Teacher::model() -> findAll();
+		//$allTeachers = Teacher::model() -> findAll();
+		$countries = Countries::model() -> findAll();
 
 		if (isset($_POST['Student'])) {
-			$_POST['Student']['age'] = $_POST['Student']['day'] . "-" . $_POST['Student']['month'] . "-" . $_POST['Student']['year'];
+			//$_POST['Student']['age'] = $_POST['Student']['day'] . "-" . $_POST['Student']['month'] . "-" . $_POST['Student']['year'];
 
 			$model -> attributes = $_POST['Student'];
 
@@ -153,7 +154,7 @@ class DataModuleController extends Controller {
 					$message = "Registered successfully";
 				}
 				$this -> layout = 'registration';
-				$this -> render('AddStudent', array("teachers" => $allTeachers, "my_message" => $message));
+				$this -> render('AddStudent', array("my_message" => $message, "countries" => $countries));
 
 			} catch (Exception $e) {
 				print_r($e);
@@ -169,7 +170,7 @@ class DataModuleController extends Controller {
 
 		} else {
 			$this -> layout = 'registration';
-			$this -> render('AddStudent', array("teachers" => $allTeachers));
+			$this -> render('AddStudent', array("countries" => $countries));
 
 		}
 
@@ -316,11 +317,10 @@ class DataModuleController extends Controller {
 		}
 	}
 
-
-	public function actionCheckCurrency(){
+	public function actionCheckCurrency() {
 		$currency_id = $_GET['currency_id'];
 		$uname = $_GET['uname'];
-		$check = Users::model()->find("username = :uname and currency_id = :id", array(":uname" => $uname , ":id"=>$currency_id));
+		$check = Users::model() -> find("username = :uname and currency_id = :id", array(":uname" => $uname, ":id" => $currency_id));
 		if (count($check) > 0)
 			$result['status'] = "ok";
 		else
@@ -328,7 +328,7 @@ class DataModuleController extends Controller {
 
 		echo json_encode($result);
 	}
-	
+
 	public function actionCheckStudentUsername() {
 		$uname = $_GET['uname'];
 		$check = Users::model() -> find("username = :uname", array(":uname" => $uname));
@@ -340,7 +340,7 @@ class DataModuleController extends Controller {
 
 		echo json_encode($result);
 	}
-	
+
 	public function actionCheckStudentUsernameExistence() {
 		$uname = $_GET['uname'];
 		$check = Users::model() -> find("username = :uname", array(":uname" => $uname));
@@ -368,16 +368,19 @@ class DataModuleController extends Controller {
 	public function actionCheckSlot() {
 		$message = "";
 		$message = "";
+		$period = $_GET['period'];
 		$from_time = date("H:i", strtotime($_GET['from']));
 		$to_time = date("H:i", strtotime($_GET['to']));
 		$dt_start = new DateTime('2001-01-01 ' . $from_time);
 		$dt_end = new DateTime('2001-01-1 ' . $to_time);
 		$dt_start_timestamp = $dt_start -> getTimestamp();
 		$dt_end_timestamp = $dt_end -> getTimestamp();
+		//echo ($dt_end_timestamp - $dt_start_timestamp) . " " . ($period*60);
+		
 		if ($dt_end_timestamp < $dt_start_timestamp) {
-			$message .= "Error in this slot , slot interval should be only 30 minutes or 1 hour";
-		} else if (($dt_end_timestamp - $dt_start_timestamp) != 1800 && ($dt_end_timestamp - $dt_start_timestamp) != 3600) {
-			$message .= "Error in this slot , slot interval should be only 30 minutes or 1 hour";
+			$message .= " Slot interval should be ".$period." minutes ";
+		} else if (($dt_end_timestamp - $dt_start_timestamp) != ($period*60) ) {
+			$message .= " Slot interval should be ".$period." minutes ";
 		}
 
 		$teacher_slots = TeacherTimeSlot::model() -> findAll();
@@ -430,7 +433,7 @@ class DataModuleController extends Controller {
 				$user -> username = $_POST['Admin']['username'];
 				$user -> type = 2;
 				$user -> profile_id = $model -> id;
-				$user->save();
+				$user -> save();
 				if (isset(Yii::app() -> user -> id)) {
 					if (Yii::app() -> user -> type == 'Admin')
 						$this -> render('AddAdmin');
@@ -455,30 +458,33 @@ class DataModuleController extends Controller {
 
 	}
 
-	// Uncomment the following methods and override them if needed
-	/*
-	 public function filters()
-	 {
-	 // return the filter configuration for this controller, e.g.:
-	 return array(
-	 'inlineFilterName',
-	 array(
-	 'class'=>'path.to.FilterClass',
-	 'propertyName'=>'propertyValue',
-	 ),
-	 );
-	 }
-
-	 public function actions()
-	 {
-	 // return external action classes, e.g.:
-	 return array(
-	 'action1'=>'path.to.ActionClass',
-	 'action2'=>array(
-	 'class'=>'path.to.AnotherActionClass',
-	 'propertyName'=>'propertyValue',
-	 ),
-	 );
-	 }
-	 */
+	public function actionGetRegions(){
+		$id = $_GET['id'];
+		$cities = Regions::model()->findAll("country_id = :id",array(":id"=>$id));
+		$return = array();
+		$i = 0;
+		foreach ($cities as $city) {
+			$return[] = array();
+			$return[$i]["id"] = $city->id;
+			$return[$i]["name"] = $city->name;
+			$i++;
+		}
+		
+		echo json_encode($return);
+	}
+	
+	public function actionGetSlots(){
+		$gender = $_GET['gender'];
+		$type = $_GET['type'];
+		
+		$preferences = Preference::model()->findAll("lesson_type = :type and gender = :gender",array(":type"=>$type , ":gender" => $gender));
+		$i = 0;
+		$return = array();
+		$days = array();
+		foreach($preferences as $pref){
+			$days[] = $pref->day;
+		}
+		$return["days"] = $days;
+		echo json_encode($return);
+	}
 }

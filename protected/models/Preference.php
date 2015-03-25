@@ -1,23 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "preference".
  *
- * The followings are the available columns in table 'users':
- * @property string $username
- * @property integer $type
- * @property integer $profile_id
- * @property integer $value
- * @property integer $currency_id
+ * The followings are the available columns in table 'preference':
+ * @property integer $id
+ * @property integer $day
+ * @property string $from
+ * @property string $to
+ * @property integer $gender
+ * @property integer $lesson_type
  */
-class Users extends CActiveRecord
+class Preference extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'preference';
 	}
 
 	/**
@@ -28,13 +29,11 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, type, profile_id', 'required'),
-			array('type, profile_id, value, currency_id', 'numerical', 'integerOnly'=>true),
-			array('username', 'length', 'max'=>200),
+			array('day, from, to, gender, lesson_type', 'required'),
+			array('day, gender, lesson_type', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('username, type, profile_id, value, currency_id', 'safe', 'on'=>'search'),
-			array('username', 'unique'),
+			array('id, day, from, to, gender, lesson_type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,11 +54,12 @@ class Users extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'username' => 'Username',
-			'type' => 'Type',
-			'profile_id' => 'Profile',
-			'value' => 'Value',
-			'currency_id' => 'Currency',
+			'id' => 'ID',
+			'day' => 'Day',
+			'from' => 'From',
+			'to' => 'To',
+			'gender' => 'Gender',
+			'lesson_type' => 'Lesson Type',
 		);
 	}
 
@@ -81,11 +81,12 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('type',$this->type);
-		$criteria->compare('profile_id',$this->profile_id);
-		$criteria->compare('value',$this->value);
-		$criteria->compare('currency_id',$this->currency_id);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('day',$this->day);
+		$criteria->compare('from',$this->from,true);
+		$criteria->compare('to',$this->to,true);
+		$criteria->compare('gender',$this->gender);
+		$criteria->compare('lesson_type',$this->lesson_type);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,7 +97,7 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return Preference the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

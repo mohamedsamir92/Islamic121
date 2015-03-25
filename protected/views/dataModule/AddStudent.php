@@ -1,17 +1,18 @@
 <?php if(isset($my_message)): ?>
 
-	<script>
-		$(document).ready(function(){
+<script>
+				$(document).ready(function(){
 
-			noty({
-				text: '<?php echo $my_message ?>',
-				layout: 'topRight',
-				type: 'error',
-				timeout: 5000,
+	noty({
+	text: '<?php echo $my_message ?>
+		',
+		layout: 'topRight',
+		type: 'error',
+		timeout: 5000,
 
-			});
 		});
-	</script>
+		});
+</script>
 <?php endif; ?>
 
 <!-- PAGE CONTENT WRAPPER -->
@@ -20,7 +21,7 @@
 	<div class="row">
 		<div class="col-md-12">
 
-			<form class="form-horizontal" action="index.php?r=DataModule/AddStudent" method="post" enctype="multipart/form-data">
+			<form id="jvalidate" class="form-horizontal" action="index.php?r=DataModule/AddStudent" method="post" enctype="multipart/form-data">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title"><strong>Student</strong> Sign Up</h3>
@@ -32,7 +33,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-									<input type="text" class="form-control"/ name="Student[first_name]" required/>
+									<input type="text" class="form-control" name="first_name"/>
 								</div>
 							</div>
 						</div>
@@ -55,7 +56,7 @@
 									<input id="username" type="text" class="form-control" name="Student[username]" required/>
 								</div>
 							</div>
-							<div id="username-status"></div>
+							<div id="username-status" style="display: table;  height: 30px; overflow: hidden;"></div>
 						</div>
 
 						<div id="password-group" class="form-group">
@@ -79,20 +80,40 @@
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Address <span class="text-danger">*</span></label>
 							<div class="col-md-3 col-xs-12">
-								<div class="input-group">
+								<div class="input-group" style="z-index: 999">
 									<span class="input-group-addon"><span class="fa fa-flag"></span></span>
-									<input type="text" class="form-control" placeholder="Country" name="Student[country]" required/>
+									<select id="country" class="form-control select" name="Student[country]">
+									<?php foreach ($countries as $country):	?>
+										<option value="<?php echo $country->id ?>"><?php echo $country -> name; ?></option>
+									<?php endforeach; ?>
+									</select>
+									
 								</div>
 							</div>
 
 							<div class="col-md-3 col-xs-12">
-								<div class="input-group">
-									<span class="input-group-addon"><span class="fa fa-flag-o"></span></span>
-									<input type="text" class="form-control" placeholder="City" name="Student[city]" required/>
+								<div id="cities" class="input-group" style="z-index: 999">
+									
+										
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 col-xs-12 control-label">Gender <span class="text-danger">*</span></label>
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group" style="z-index: 990">
+									<span class="input-group-addon"><span class="fa fa-group"></span></span>
+									<select id="gender" class="form-control select" name="Student[gender]">
+										<option value="0">Male</option>
+										<option value="1">Female</option>
+									</select>
 								</div>
 							</div>
 						</div>
 
+
+						
+						
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Phone Number <span class="text-danger">*</span></label>
 							<div class="col-md-6 col-xs-12">
@@ -108,7 +129,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-envelope"></span></span>
-									<input id="email" type="text" class="form-control" name="Student[email]" />
+									<input id="email" type="email" class="form-control" name="Student[email]" placeholder="Please enter valid email" />
 								</div>
 							</div>
 							<div id="email-status"></div>
@@ -131,7 +152,7 @@
 									<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
 									<input id="date_of_birth" type="text" class="form-control datepicker" name="Student[date_of_birth]" value="2005-01-01">
 								</div>
-								
+
 							</div>
 						</div>
 
@@ -156,19 +177,17 @@
 
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Lessons Times <span class="text-danger">*</span></label>
-							<label class="col-md-2 col-xs-12" style="text-align: center;">Day</label>
-							<label class="col-md-1 col-xs-12" style="text-align: center;">Lesson Type</label>
+							<label class="col-md-2 col-xs-12" style="text-align: center;">Lesson Type</label>
+							<label class="col-md-1 col-xs-12" style="text-align: center;">Day</label>
 							<label class="col-md-1 col-xs-12" style="text-align: center;">Period (Minutes)</label>
 							<label class="col-md-1 col-xs-12" style="text-align: center;">From</label>
 							<label class="col-md-1 col-xs-12" style="text-align: center;">To</label>
 						</div>
 
 						<div class="form-group" id="preference">
-							
+
 						</div>
-						
-						
-						
+
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Guardians Name</label>
 							<div class="col-md-6 col-xs-12">
@@ -204,17 +223,6 @@
 							</div>
 						</div>
 
-
-						<div class="form-group">
-							<label class="col-md-3 col-xs-12 control-label">Gender <span class="text-danger">*</span></label>
-							<div class="col-md-1 col-xs-12">                                   
-								<label class="check"><input name="Student[gender_male]" type="radio" class="iradio"/> Male</label>
-							</div>
-							<div class="col-md-1 col-xs-12">                                   
-								<label class="check"><input name="Student[gender_female]" type="radio" class="iradio" checked="checked"/> Female</label>
-							</div>
-						</div>
-
 						
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Profile Image</label>
@@ -242,9 +250,13 @@
 <!-- THIS PAGE PLUGINS -->
 <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
 <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script type='text/javascript' src='js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
+        <script type='text/javascript' src='js/plugins/validationengine/jquery.validationEngine.js'></script>        
+
+        <script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>                
 
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>                
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
 <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
