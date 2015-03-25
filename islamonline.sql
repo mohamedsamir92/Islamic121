@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.8
+-- version 3.5.8.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2015 at 01:14 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Generation Time: Mar 25, 2015 at 11:49 PM
+-- Server version: 5.6.11-log
+-- PHP Version: 5.4.14
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 -- Database: `islamonline`
 --
 
-
 -- --------------------------------------------------------
 
 --
@@ -28,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `admin` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `phone_no` varchar(100) NOT NULL,
@@ -41,8 +40,10 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `city` varchar(100) NOT NULL,
   `gender` tinyint(1) NOT NULL,
   `image` varchar(100) NOT NULL,
-  `notes` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `notes` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`,`username`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `admin`
@@ -62,7 +63,8 @@ CREATE TABLE IF NOT EXISTS `admin_time_slot` (
   `admin_id` int(11) NOT NULL,
   `day` int(1) NOT NULL,
   `from` time NOT NULL,
-  `to` time NOT NULL
+  `to` time NOT NULL,
+  KEY `admin_id` (`admin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -72,9 +74,10 @@ CREATE TABLE IF NOT EXISTS `admin_time_slot` (
 --
 
 CREATE TABLE IF NOT EXISTS `countries` (
-`id` int(10) unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=235 ;
 
 --
 -- Dumping data for table `countries`
@@ -321,10 +324,12 @@ INSERT INTO `countries` (`id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `currency` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `sign` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `sign` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`,`sign`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `currency`
@@ -340,7 +345,7 @@ INSERT INTO `currency` (`id`, `name`, `sign`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `lesson` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL,
   `lesson_type_id` int(11) NOT NULL,
@@ -363,8 +368,12 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `back_revision_start_surah` int(3) DEFAULT NULL,
   `back_revision_end_surah` int(3) DEFAULT NULL,
   `grade` double DEFAULT NULL,
-  `notes` text
-) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8;
+  `notes` text,
+  PRIMARY KEY (`id`),
+  KEY `teacher_reference` (`teacher_id`),
+  KEY `student_reference` (`student_id`),
+  KEY `lesson_type_id` (`lesson_type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=159 ;
 
 --
 -- Dumping data for table `lesson`
@@ -537,26 +546,29 @@ INSERT INTO `lesson` (`id`, `student_id`, `teacher_id`, `lesson_type_id`, `expec
 --
 
 CREATE TABLE IF NOT EXISTS `lesson_request` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(11) NOT NULL,
   `teacher_id` int(11) DEFAULT NULL,
-  `lesson_type_id` int(11) NOT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `cost` double DEFAULT NULL,
   `currency_id` int(11) DEFAULT NULL,
   `notes` text,
-  `status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `lessons_request_student_id` (`student_id`),
+  KEY `lessons_request_teacher_id` (`teacher_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `lesson_request`
 --
 
-INSERT INTO `lesson_request` (`id`, `student_id`, `teacher_id`, `lesson_type_id`, `start_date`, `end_date`, `cost`, `currency_id`, `notes`, `status`) VALUES
-(1, 1, 5, 1, '2015-03-24', '2016-03-22', 0, 0, NULL, 1),
-(2, 2, 1, 1, '2015-03-22', '2016-03-27', NULL, 0, NULL, 1),
-(3, 3, 1, 1, '2015-03-22', '2016-03-27', NULL, 0, NULL, 1);
+INSERT INTO `lesson_request` (`id`, `student_id`, `teacher_id`, `start_date`, `end_date`, `cost`, `currency_id`, `notes`, `status`) VALUES
+(1, 1, 5, '2015-03-24', '2016-03-22', 0, 0, NULL, 1),
+(2, 2, 1, '2015-03-22', '2016-03-27', NULL, 0, NULL, 1),
+(3, 3, 1, '2015-03-22', '2016-03-27', NULL, 0, NULL, 1),
+(9, 11, NULL, NULL, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -565,21 +577,21 @@ INSERT INTO `lesson_request` (`id`, `student_id`, `teacher_id`, `lesson_type_id`
 --
 
 CREATE TABLE IF NOT EXISTS `lesson_request_time_slot` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `lesson_request_id` int(11) NOT NULL,
   `day` int(1) NOT NULL,
   `from` time NOT NULL,
-  `to` time NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `to` time NOT NULL,
+  `lesson_type` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `lesson_request_time_slot`
 --
 
-INSERT INTO `lesson_request_time_slot` (`id`, `lesson_request_id`, `day`, `from`, `to`) VALUES
-(1, 1, 3, '19:00:00', '20:00:00'),
-(2, 2, 1, '16:00:00', '17:00:00'),
-(3, 3, 1, '17:00:00', '18:00:00');
+INSERT INTO `lesson_request_time_slot` (`id`, `lesson_request_id`, `day`, `from`, `to`, `lesson_type`) VALUES
+(1, 9, 1, '21:00:00', '21:30:00', 1);
 
 -- --------------------------------------------------------
 
@@ -588,9 +600,10 @@ INSERT INTO `lesson_request_time_slot` (`id`, `lesson_request_id`, `day`, `from`
 --
 
 CREATE TABLE IF NOT EXISTS `lesson_type` (
-`id` int(11) NOT NULL,
-  `name` varchar(100) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `lesson_type`
@@ -608,14 +621,15 @@ INSERT INTO `lesson_type` (`id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `message` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `subject` varchar(300) NOT NULL,
   `content` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `sender_id` int(11) NOT NULL,
   `sender_type` tinyint(7) NOT NULL,
-  `broadcast_type` tinyint(7) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `broadcast_type` tinyint(7) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -628,8 +642,34 @@ CREATE TABLE IF NOT EXISTS `message_user_bridge` (
   `user_id` int(11) DEFAULT NULL,
   `user_type` tinyint(4) DEFAULT NULL,
   `seen` tinyint(1) NOT NULL DEFAULT '0',
-`id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  KEY `message_id` (`message_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `preference`
+--
+
+CREATE TABLE IF NOT EXISTS `preference` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` tinyint(4) NOT NULL,
+  `from` time NOT NULL,
+  `to` time NOT NULL,
+  `gender` tinyint(4) NOT NULL,
+  `lesson_type` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `preference`
+--
+
+INSERT INTO `preference` (`id`, `day`, `from`, `to`, `gender`, `lesson_type`) VALUES
+(1, 1, '09:30:00', '22:00:00', 0, 1),
+(2, 2, '09:30:00', '22:00:00', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -638,10 +678,11 @@ CREATE TABLE IF NOT EXISTS `message_user_bridge` (
 --
 
 CREATE TABLE IF NOT EXISTS `regions` (
-`id` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4055 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4055 ;
 
 --
 -- Dumping data for table `regions`
@@ -4711,7 +4752,7 @@ INSERT INTO `regions` (`id`, `country_id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `student` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `phone_no` varchar(100) NOT NULL,
@@ -4719,7 +4760,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `skype_id` varchar(100) DEFAULT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(500) CHARACTER SET latin1 NOT NULL,
-  `age` varchar(50) NOT NULL,
+  `date_of_birth` date NOT NULL,
   `country` varchar(100) NOT NULL,
   `city` varchar(100) NOT NULL,
   `gender` tinyint(1) NOT NULL,
@@ -4729,17 +4770,22 @@ CREATE TABLE IF NOT EXISTS `student` (
   `quran_course` tinyint(1) DEFAULT '0',
   `arabic_course` tinyint(1) DEFAULT '0',
   `guardians_name` varchar(300) DEFAULT NULL,
-  `notes` text
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `notes` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`id`, `first_name`, `last_name`, `phone_no`, `email`, `skype_id`, `username`, `password`, `age`, `country`, `city`, `gender`, `class_package`, `hear_us`, `image`, `quran_course`, `arabic_course`, `guardians_name`, `notes`) VALUES
-(1, 'Nisbah', 'Akhtar', '00447412546108', 'nisbahakhtar@hotmail.co.uk', 'nisbah97', 'Nisbah', '$2a$13$H9Jjp69OaP9yo7OJf2FqbOpJDn6l5herzcex1cl8r8NSK5.7leW1G', '01-01-2000', 'United Kingdom', 'Stoke on Trent', 1, 1, 'others', 'no-image.jpg', 1, 0, '', ''),
-(2, 'shak', 'shak', 'sdfsd', 'sdgjfjbg', 'fdkufbdkg', 'shakil', '$2a$13$HH4ye7VMiyoVbNI2upaehu0OQsUH5kfydhG8ImWPZrctlFBe2BZda', '01-01-2000', 'United Kingdom', 'Stoke on Trent', 0, 1, 'facebook', 'no-image.jpg', 1, 1, 'fe', 'ef'),
-(3, 'shak', 'shakdh', 'sdfsd', '000', '000', 'Shak12345', '$2a$13$0GyfgzitIUtpvBGIFIy3ruCYKHZdZTemrk7.b0qObEWMnbVGM31jW', '01-01-2000', 'United Kingdom', 'Stoke on Trent', 0, 1, 'facebook', 'no-image.jpg', 1, 1, '', '');
+INSERT INTO `student` (`id`, `first_name`, `last_name`, `phone_no`, `email`, `skype_id`, `username`, `password`, `date_of_birth`, `country`, `city`, `gender`, `class_package`, `hear_us`, `image`, `quran_course`, `arabic_course`, `guardians_name`, `notes`) VALUES
+(1, 'Nisbah', 'Akhtar', '00447412546108', 'nisbahakhtar@hotmail.co.uk', 'nisbah97', 'Nisbah', '$2a$13$H9Jjp69OaP9yo7OJf2FqbOpJDn6l5herzcex1cl8r8NSK5.7leW1G', '0000-00-00', 'United Kingdom', 'Stoke on Trent', 1, 1, 'others', 'no-image.jpg', 1, 0, '', ''),
+(2, 'shak', 'shak', 'sdfsd', 'sdgjfjbg', 'fdkufbdkg', 'shakil', '$2a$13$HH4ye7VMiyoVbNI2upaehu0OQsUH5kfydhG8ImWPZrctlFBe2BZda', '0000-00-00', 'United Kingdom', 'Stoke on Trent', 0, 1, 'facebook', 'no-image.jpg', 1, 1, 'fe', 'ef'),
+(3, 'shak', 'shakdh', 'sdfsd', '000', '000', 'Shak12345', '$2a$13$0GyfgzitIUtpvBGIFIy3ruCYKHZdZTemrk7.b0qObEWMnbVGM31jW', '0000-00-00', 'United Kingdom', 'Stoke on Trent', 0, 1, 'facebook', 'no-image.jpg', 1, 1, '', ''),
+(5, 'Mohamed', 'Samir', '01112828609', 'mohmed_samir_rabey@yahoo.com', 'skype', 'mohamedsam', '$2a$13$wolyj3YUtAWcv2WkGfx0oOS6YM7GW7t0r7vuV7HXX/koxhLaXRv0.', '2005-01-17', 'Egypt', 'Cairo', 0, 1, 'Flyer', 'no-image.jpg', 0, 0, 'samir', 'notes'),
+(6, 'Mohamed', 'Samir', '01112828609', 'mohmed_samir_rabey1@yahoo.com', 'skype', 'mohamedsam1', '$2a$13$g03yr81ZDnXgQ02I7Uquv.AOP7ZSHilYKjI/h7AArGgyh.jEWGxSy', '2005-01-17', 'Egypt', 'Cairo', 0, 1, 'Flyer', 'no-image.jpg', 0, 0, 'samir', 'notes'),
+(11, 'mohamed', 'rabey', '01112828609', 'mohmed_samir_rabey@yahoo.com', 'mohamedsamir92_10', 'mohamedsamir', '$2a$13$N054RPIoPdny6f1Mct5Dw.6rI9Q4Fw78PUfemXXkJMx/psE/lxvqa', '2005-01-01', '59', '887', 0, 1, 'Twitter', 'no-image.jpg', 0, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -4748,7 +4794,7 @@ INSERT INTO `student` (`id`, `first_name`, `last_name`, `phone_no`, `email`, `sk
 --
 
 CREATE TABLE IF NOT EXISTS `supervisor` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `phone_no` varchar(100) NOT NULL,
@@ -4765,8 +4811,10 @@ CREATE TABLE IF NOT EXISTS `supervisor` (
   `arabic_course` tinyint(1) NOT NULL,
   `spoken_languages` varchar(200) NOT NULL,
   `experience` varchar(300) NOT NULL,
-  `notes` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `notes` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`,`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -4778,7 +4826,8 @@ CREATE TABLE IF NOT EXISTS `supervisor_time_slot` (
   `supervisor_id` int(11) NOT NULL,
   `day` int(1) NOT NULL,
   `from` time NOT NULL,
-  `to` time NOT NULL
+  `to` time NOT NULL,
+  KEY `supervisor_id` (`supervisor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -4788,7 +4837,7 @@ CREATE TABLE IF NOT EXISTS `supervisor_time_slot` (
 --
 
 CREATE TABLE IF NOT EXISTS `teacher` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `phone_no` varchar(100) NOT NULL,
@@ -4803,8 +4852,10 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `image` varchar(100) NOT NULL,
   `quran_course` tinyint(1) DEFAULT '0',
   `arabic_course` tinyint(1) DEFAULT '0',
-  `notes` text
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `notes` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `teacher`
@@ -4825,12 +4876,14 @@ INSERT INTO `teacher` (`id`, `first_name`, `last_name`, `phone_no`, `email`, `sk
 --
 
 CREATE TABLE IF NOT EXISTS `teacher_time_slot` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `teacher_id` int(11) NOT NULL,
   `day` int(1) NOT NULL,
   `from` time NOT NULL,
-  `to` time NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+  `to` time NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `teacher_id` (`teacher_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `teacher_time_slot`
@@ -4871,6 +4924,28 @@ INSERT INTO `teacher_time_slot` (`id`, `teacher_id`, `day`, `from`, `to`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `teacher_type_bridge`
+--
+
+CREATE TABLE IF NOT EXISTS `teacher_type_bridge` (
+  `teacher_id` int(11) NOT NULL,
+  `type_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `teacher_type_bridge`
+--
+
+INSERT INTO `teacher_type_bridge` (`teacher_id`, `type_id`) VALUES
+(1, 1),
+(1, 3),
+(2, 2),
+(5, 1),
+(6, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `test`
 --
 
@@ -4885,10 +4960,11 @@ CREATE TABLE IF NOT EXISTS `test` (
 --
 
 CREATE TABLE IF NOT EXISTS `treasury` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `currency_id` int(11) NOT NULL,
-  `value` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `value` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -4897,7 +4973,7 @@ CREATE TABLE IF NOT EXISTS `treasury` (
 --
 
 CREATE TABLE IF NOT EXISTS `treasury_paper` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `currency_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `user_type` tinyint(4) DEFAULT NULL,
@@ -4906,8 +4982,9 @@ CREATE TABLE IF NOT EXISTS `treasury_paper` (
   `value` double NOT NULL,
   `notes` text NOT NULL,
   `date` date NOT NULL,
-  `actual_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `actual_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -4920,7 +4997,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `type` tinyint(5) NOT NULL,
   `profile_id` int(11) NOT NULL,
   `value` int(11) NOT NULL DEFAULT '0',
-  `currency_id` int(11) NOT NULL
+  `currency_id` int(11) DEFAULT '0',
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -4931,8 +5009,12 @@ INSERT INTO `users` (`username`, `type`, `profile_id`, `value`, `currency_id`) V
 ('Abduallah', 1, 4, 0, 1),
 ('Admin', 2, 3, 0, 1),
 ('Ahmad', 1, 2, 0, 1),
+('dsldsdjk', 0, 7, 0, 0),
 ('Mahmoud', 1, 1, 0, 1),
 ('Mohamed', 1, 3, 0, 1),
+('mohamedsam', 0, 5, 0, 0),
+('mohamedsam1', 0, 6, 0, 0),
+('mohamedsamir', 0, 11, 0, 0),
 ('Nisbah', 0, 1, 0, 1),
 ('Sara', 1, 5, 0, 1),
 ('Shak', 2, 1, 0, 1),
@@ -4941,208 +5023,6 @@ INSERT INTO `users` (`username`, `type`, `profile_id`, `value`, `currency_id`) V
 ('Umm', 1, 6, 0, 1);
 
 --
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `email` (`email`,`username`);
-
---
--- Indexes for table `admin_time_slot`
---
-ALTER TABLE `admin_time_slot`
- ADD KEY `admin_id` (`admin_id`);
-
---
--- Indexes for table `countries`
---
-ALTER TABLE `countries`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `currency`
---
-ALTER TABLE `currency`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `name` (`name`,`sign`);
-
---
--- Indexes for table `lesson`
---
-ALTER TABLE `lesson`
- ADD PRIMARY KEY (`id`), ADD KEY `teacher_reference` (`teacher_id`), ADD KEY `student_reference` (`student_id`), ADD KEY `lesson_type_id` (`lesson_type_id`);
-
---
--- Indexes for table `lesson_request`
---
-ALTER TABLE `lesson_request`
- ADD PRIMARY KEY (`id`), ADD KEY `lessons_request_student_id` (`student_id`), ADD KEY `lessons_request_teacher_id` (`teacher_id`), ADD KEY `lesson_type_id` (`lesson_type_id`);
-
---
--- Indexes for table `lesson_request_time_slot`
---
-ALTER TABLE `lesson_request_time_slot`
- ADD PRIMARY KEY (`id`), ADD KEY `lesson_request_id` (`lesson_request_id`);
-
---
--- Indexes for table `lesson_type`
---
-ALTER TABLE `lesson_type`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `message`
---
-ALTER TABLE `message`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `message_user_bridge`
---
-ALTER TABLE `message_user_bridge`
- ADD PRIMARY KEY (`id`), ADD KEY `message_id` (`message_id`);
-
---
--- Indexes for table `regions`
---
-ALTER TABLE `regions`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `student`
---
-ALTER TABLE `student`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `username` (`username`), ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `supervisor`
---
-ALTER TABLE `supervisor`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `email` (`email`,`username`);
-
---
--- Indexes for table `supervisor_time_slot`
---
-ALTER TABLE `supervisor_time_slot`
- ADD KEY `supervisor_id` (`supervisor_id`);
-
---
--- Indexes for table `teacher`
---
-ALTER TABLE `teacher`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `username` (`username`);
-
---
--- Indexes for table `teacher_time_slot`
---
-ALTER TABLE `teacher_time_slot`
- ADD PRIMARY KEY (`id`), ADD KEY `teacher_id` (`teacher_id`);
-
---
--- Indexes for table `treasury`
---
-ALTER TABLE `treasury`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `treasury_paper`
---
-ALTER TABLE `treasury_paper`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
- ADD UNIQUE KEY `username` (`username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `countries`
---
-ALTER TABLE `countries`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=235;
---
--- AUTO_INCREMENT for table `currency`
---
-ALTER TABLE `currency`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `lesson`
---
-ALTER TABLE `lesson`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=159;
---
--- AUTO_INCREMENT for table `lesson_request`
---
-ALTER TABLE `lesson_request`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `lesson_request_time_slot`
---
-ALTER TABLE `lesson_request_time_slot`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `lesson_type`
---
-ALTER TABLE `lesson_type`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `message`
---
-ALTER TABLE `message`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `message_user_bridge`
---
-ALTER TABLE `message_user_bridge`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `regions`
---
-ALTER TABLE `regions`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4055;
---
--- AUTO_INCREMENT for table `student`
---
-ALTER TABLE `student`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `supervisor`
---
-ALTER TABLE `supervisor`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `teacher`
---
-ALTER TABLE `teacher`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `teacher_time_slot`
---
-ALTER TABLE `teacher_time_slot`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
---
--- AUTO_INCREMENT for table `treasury`
---
-ALTER TABLE `treasury`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `treasury_paper`
---
-ALTER TABLE `treasury_paper`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- Constraints for dumped tables
 --
 
@@ -5150,41 +5030,34 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- Constraints for table `admin_time_slot`
 --
 ALTER TABLE `admin_time_slot`
-ADD CONSTRAINT `admin_time_slot_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`);
+  ADD CONSTRAINT `admin_time_slot_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`);
 
 --
 -- Constraints for table `lesson`
 --
 ALTER TABLE `lesson`
-ADD CONSTRAINT `lesson_ibfk_1` FOREIGN KEY (`lesson_type_id`) REFERENCES `lesson_type` (`id`),
-ADD CONSTRAINT `student_reference` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
-ADD CONSTRAINT `teacher_reference` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`);
+  ADD CONSTRAINT `lesson_ibfk_1` FOREIGN KEY (`lesson_type_id`) REFERENCES `lesson_type` (`id`),
+  ADD CONSTRAINT `student_reference` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
+  ADD CONSTRAINT `teacher_reference` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`);
 
 --
 -- Constraints for table `lesson_request`
 --
 ALTER TABLE `lesson_request`
-ADD CONSTRAINT `lesson_request_ibfk_1` FOREIGN KEY (`lesson_type_id`) REFERENCES `lesson_type` (`id`),
-ADD CONSTRAINT `lessons_request_student_id` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
-ADD CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`);
-
---
--- Constraints for table `lesson_request_time_slot`
---
-ALTER TABLE `lesson_request_time_slot`
-ADD CONSTRAINT `lesson_request_time_slot_ibfk_1` FOREIGN KEY (`lesson_request_id`) REFERENCES `lesson_request` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `lessons_request_student_id` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
+  ADD CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`);
 
 --
 -- Constraints for table `supervisor_time_slot`
 --
 ALTER TABLE `supervisor_time_slot`
-ADD CONSTRAINT `supervisor_time_slot_ibfk_1` FOREIGN KEY (`supervisor_id`) REFERENCES `supervisor` (`id`);
+  ADD CONSTRAINT `supervisor_time_slot_ibfk_1` FOREIGN KEY (`supervisor_id`) REFERENCES `supervisor` (`id`);
 
 --
 -- Constraints for table `teacher_time_slot`
 --
 ALTER TABLE `teacher_time_slot`
-ADD CONSTRAINT `teacher_time_slot_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`);
+  ADD CONSTRAINT `teacher_time_slot_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
