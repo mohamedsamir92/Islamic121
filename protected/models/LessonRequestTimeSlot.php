@@ -31,11 +31,11 @@ class LessonRequestTimeSlot extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('lesson_request_id, day, from, to', 'required'),
-			array('lesson_request_id, day', 'numerical', 'integerOnly'=>true),
+			array('lesson_request_id, day, from, to, lesson_type', 'required'),
+			array('lesson_request_id, day, lesson_type', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, lesson_request_id, day, from, to', 'safe', 'on'=>'search'),
+			array('id, lesson_request_id, day, from, to, lesson_type', 'safe', 'on'=>'search'),
 			//array('from',  'checkTimes'),
 		);
 	}
@@ -73,6 +73,7 @@ class LessonRequestTimeSlot extends CActiveRecord
 			'day' => 'Day',
 			'from' => 'From',
 			'to' => 'To',
+			'lesson_type' => 'Lesson Type',
 		);
 	}
 
@@ -99,7 +100,7 @@ class LessonRequestTimeSlot extends CActiveRecord
 		$criteria->compare('day',$this->day);
 		$criteria->compare('from',$this->from,true);
 		$criteria->compare('to',$this->to,true);
-
+		$criteria->compare('lesson_type',$this->lesson_type);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

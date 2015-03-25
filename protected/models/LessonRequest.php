@@ -7,12 +7,8 @@
  * @property integer $id
  * @property integer $student_id
  * @property integer $teacher_id
- * @property integer $lesson_type_id
  * @property string $start_date
  * @property string $end_date
- * @property string $from
- * @property string $to
- * @property integer $day
  * @property double $cost
  * @property integer $currency_id
  * @property string $notes
@@ -21,7 +17,7 @@
  * The followings are the available model relations:
  * @property Student $student
  * @property Teacher $teacher
- * @property LessonRequestTimeSlot[] $lessonRequestTimeSlotsLessonType $lessonType
+ * @property LessonRequestTimeSlot[] $lessonRequestTimeSlots
  */
 class LessonRequest extends CActiveRecord
 {
@@ -41,13 +37,13 @@ class LessonRequest extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('student_id,lesson_type_id', 'required'),
-			array('student_id, teacher_id,lesson_type_id, day, currency_id, status', 'numerical', 'integerOnly'=>true),
+			array('student_id', 'required'),
+			array('student_id, teacher_id, currency_id, status', 'numerical', 'integerOnly'=>true),
 			array('cost', 'numerical'),
-			array('start_date, end_date, from, to, notes', 'safe'),
+			array('start_date, end_date, notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, student_id, teacher_id, lesson_type_id, start_date, end_date, from, to, day, cost, currency_id, notes, status', 'safe', 'on'=>'search'),
+			array('id, student_id, teacher_id, start_date, end_date, cost, currency_id, notes, status', 'safe', 'on'=>'search'),
 			//array('start_date',  'checkTimes'),
 		);
 	}
@@ -64,7 +60,6 @@ class LessonRequest extends CActiveRecord
 			'student' => array(self::BELONGS_TO, 'Student', 'student_id'),
 			'teacher' => array(self::BELONGS_TO, 'Teacher', 'teacher_id'),
 			'lessonRequestTimeSlots' => array(self::HAS_MANY, 'LessonRequestTimeSlot', 'lesson_request_id'),
-			'lessonType' => array(self::BELONGS_TO, 'LessonType', 'lesson_type_id'),
 		);
 	}
 
@@ -77,12 +72,8 @@ class LessonRequest extends CActiveRecord
 			'id' => 'ID',
 			'student_id' => 'Student',
 			'teacher_id' => 'Teacher',
-			'lesson_type_id' => 'Lesson Type',
 			'start_date' => 'Start Date',
 			'end_date' => 'End Date',
-			'from' => 'From',
-			'to' => 'To',
-			'day' => 'Day',
 			'cost' => 'Cost',
 			'currency_id' => 'Currency',
 			'notes' => 'Notes',
@@ -111,16 +102,13 @@ class LessonRequest extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('student_id',$this->student_id);
 		$criteria->compare('teacher_id',$this->teacher_id);
-		$criteria->compare('lesson_type_id',$this->lesson_type_id);
 		$criteria->compare('start_date',$this->start_date,true);
 		$criteria->compare('end_date',$this->end_date,true);
-		$criteria->compare('from',$this->from,true);
-		$criteria->compare('to',$this->to,true);
-		$criteria->compare('day',$this->day);
 		$criteria->compare('cost',$this->cost);
 		$criteria->compare('currency_id',$this->currency_id);
 		$criteria->compare('notes',$this->notes,true);
 		$criteria->compare('status',$this->status);
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

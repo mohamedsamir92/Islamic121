@@ -110,23 +110,35 @@ class DataModuleController extends Controller {
 								}
 							}
 						} else {
-
+							$lesson_request = new LessonRequest;
+							$lesson_request -> student_id = $model -> id;
+							
 							//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
-							for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
-								$lesson_request = new LessonRequest;
-								$lesson_request -> student_id = $model -> id;
-								$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
-								$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
-								$lesson_request -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
-								$lesson_request -> from = $from_time;
-								$lesson_request -> to = $to_time;
-								$lesson_request -> lesson_type_id = $_POST['Student']['prefered_lesson_type_' . ($i + 1)];
-								$lesson_request -> save();
+							if ($lesson_request -> save()) {
+								for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
+									$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
+									$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
 
-								//print_r($lesson_time_slots -> getErrors());
+									$lesson_time_slots = new LessonRequestTimeSlot;
+									$lesson_time_slots -> lesson_request_id = $lesson_request -> id;
 
+									$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
+									$lesson_time_slots -> from = $from_time;
+									$lesson_time_slots -> to = $to_time;
+									$lesson_time_slots -> lesson_type = $_POST['Student']['prefered_lesson_type_' .  ($i + 1)];
+									$lesson_time_slots -> save();
+									//print_r($lesson_time_slots -> getErrors());
+
+								}
+							} else {
+								//var_dump($lesson_request->getErrors());
+								foreach ($lesson_request->getErrors() as $key => $value) {
+									foreach ($value as $error) {
+										$message .= $error . " ";
+									}
+								}
+								//Student::model() -> deleteAll("id = " . $model -> id);
 							}
-
 						}
 					} else {
 
@@ -145,18 +157,18 @@ class DataModuleController extends Controller {
 					if (strlen($message) < 1) {
 						$message = "Registered successfully";
 					}
-					$transaction -> commit();
+					$transaction->commit();
 					$this -> layout = 'registration';
 					$this -> render('AddStudent', array("my_message" => $message, "countries" => $countries));
-
+					
 				} catch (Exception $e) {
 					print_r($e);
 
 					//echo "ERROR. please check your data again";
 				}
-
+				
 			} catch (Exception $e) {
-
+				
 				$transaction -> rollBack();
 				$this -> render("paper", array("my_message" => "Failure"));
 			}
