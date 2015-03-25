@@ -46,128 +46,120 @@ class DataModuleController extends Controller {
 	}
 
 	public function actionAddStudent() {
+
 		$model = new Student;
 		//$allTeachers = Teacher::model() -> findAll();
 		$countries = Countries::model() -> findAll();
 
 		if (isset($_POST['Student'])) {
 			//$_POST['Student']['age'] = $_POST['Student']['day'] . "-" . $_POST['Student']['month'] . "-" . $_POST['Student']['year'];
-
-			$model -> attributes = $_POST['Student'];
-
-			if (strlen($_FILES['Student']['name']['image']) > 0) {
-
-				$file = CUploadedFile::getInstance($model, 'image');
-				//var_dump($file);
-
-				$fileName = date('YmdHms') + $model -> image;
-				// random number + file name
-				$model -> image = $fileName . '.' . $file -> getExtensionName();
-				//echo $model->image;
-
-				//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
-				$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
-			} else {
-				$model -> image = "no-image.jpg";
-			}
-			$model -> password = $model -> hashPassword($model -> password);
+			$transaction = Yii::app() -> db -> beginTransaction();
 			try {
-				$message = "";
-				if ($_POST['Student']['confirmed_password'] != $_POST['Student']['password']) {
-					$message = "Your passwords don\'t match, please try again. ";
+				$model -> attributes = $_POST['Student'];
+
+				if (strlen($_FILES['Student']['name']['image']) > 0) {
+
+					$file = CUploadedFile::getInstance($model, 'image');
+					//var_dump($file);
+
+					$fileName = date('YmdHms') + $model -> image;
+					// random number + file name
+					$model -> image = $fileName . '.' . $file -> getExtensionName();
+					//echo $model->image;
+
+					//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
+					$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
 				} else {
-					$username_exist_check = Users::model() -> find("username = :uname", array(":uname" => $_POST['Student']['username']));
-					if (count($username_exist_check) > 0)
-						$message = "username is already exist";
+					$model -> image = "no-image.jpg";
 				}
-				for ($i = 0; $i < $_POST['Student']['class_package'] && strlen($message) < 1; $i++) {
-					$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
-					$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
-					$dt_start = new DateTime('2001-01-01 ' . $from_time);
-					$dt_end = new DateTime('2001-01-1 ' . $to_time);
-					$dt_start_timestamp = $dt_start -> getTimestamp();
-					$dt_end_timestamp = $dt_end -> getTimestamp();
-					if ($dt_end_timestamp < $dt_start_timestamp) {
-						$message .= "Error in slot number " . ($i + 1) . ", slot interval should be only 30 minutes or 1 hour";
-					} else if (($dt_end_timestamp - $dt_start_timestamp) != 1800 && ($dt_end_timestamp - $dt_start_timestamp) != 3600) {
-						$message .= "Error in slot number " . ($i + 1) . ", slot interval should be only 30 minutes or 1 hour";
-					}
-					//echo $message;
-					//echo $dt_start->getTimestamp()."<br>";
-					//echo $dt_end->getTimestamp();
-				}
-				if (strlen($message) < 1 && $model -> save()) {
-					$user = new Users;
-					$user -> username = $_POST['Student']['username'];
-					$user -> type = 0;
-					$user -> profile_id = $model -> id;
-					if (!$user -> save()) {
-						foreach ($user->getErrors() as $key => $value) {
-							foreach ($value as $error) {
-								$message .= $error . " ";
-							}
-						}
+				$model -> password = $model -> hashPassword($model -> password);
+				try {
+					$message = "";
+					if ($_POST['Student']['confirmed_password'] != $_POST['Student']['password']) {
+						$message = "Your passwords don\'t match, please try again. ";
 					} else {
-						$lesson_request = new LessonRequest;
-						$lesson_request -> student_id = $model -> id;
-						//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
-						if ($lesson_request -> save()) {
-							for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
-								$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
-								$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
-
-								$lesson_time_slots = new LessonRequestTimeSlot;
-								$lesson_time_slots -> lesson_request_id = $lesson_request -> id;
-
-								$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
-								$lesson_time_slots -> from = $from_time;
-								$lesson_time_slots -> to = $to_time;
-								$lesson_time_slots -> save();
-								//print_r($lesson_time_slots -> getErrors());
-
-							}
-						} else {
-							//var_dump($lesson_request->getErrors());
-							foreach ($lesson_request->getErrors() as $key => $value) {
+						$username_exist_check = Users::model() -> find("username = :uname", array(":uname" => $_POST['Student']['username']));
+						if (count($username_exist_check) > 0)
+							$message = "username is already exist";
+					}
+					for ($i = 0; $i < $_POST['Student']['class_package'] && strlen($message) < 1; $i++) {
+						$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
+						$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
+						$dt_start = new DateTime('2001-01-01 ' . $from_time);
+						$dt_end = new DateTime('2001-01-1 ' . $to_time);
+						$dt_start_timestamp = $dt_start -> getTimestamp();
+						$dt_end_timestamp = $dt_end -> getTimestamp();
+						if ($dt_end_timestamp < $dt_start_timestamp) {
+							$message .= "Error in slot number " . ($i + 1) . ", slot interval should be only 30 minutes or 1 hour";
+						} else if (($dt_end_timestamp - $dt_start_timestamp) != 1800 && ($dt_end_timestamp - $dt_start_timestamp) != 3600) {
+							$message .= "Error in slot number " . ($i + 1) . ", slot interval should be only 30 minutes or 1 hour";
+						}
+						//echo $message;
+						//echo $dt_start->getTimestamp()."<br>";
+						//echo $dt_end->getTimestamp();
+					}
+					if (strlen($message) < 1 && $model -> save()) {
+						$user = new Users;
+						$user -> username = $_POST['Student']['username'];
+						$user -> type = 0;
+						$user -> profile_id = $model -> id;
+						if (!$user -> save()) {
+							foreach ($user->getErrors() as $key => $value) {
 								foreach ($value as $error) {
 									$message .= $error . " ";
 								}
 							}
-							//Student::model() -> deleteAll("id = " . $model -> id);
+						} else {
+
+							//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
+							for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
+								$lesson_request = new LessonRequest;
+								$lesson_request -> student_id = $model -> id;
+								$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
+								$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
+								$lesson_request -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
+								$lesson_request -> from = $from_time;
+								$lesson_request -> to = $to_time;
+								$lesson_request -> lesson_type_id = $_POST['Student']['prefered_lesson_type_' . ($i + 1)];
+								$lesson_request -> save();
+
+								//print_r($lesson_time_slots -> getErrors());
+
+							}
+
 						}
-					}
-				} else {
+					} else {
 
-					//var_dump($model->getErrors());
-					foreach ($model->getErrors() as $key => $value) {
-						foreach ($value as $error) {
-							$message .= $error . " ";
+						//var_dump($model->getErrors());
+						foreach ($model->getErrors() as $key => $value) {
+							foreach ($value as $error) {
+								$message .= $error . " ";
+							}
+
 						}
 
+						//return;
+
 					}
+					//echo $message;
+					if (strlen($message) < 1) {
+						$message = "Registered successfully";
+					}
+					$transaction -> commit();
+					$this -> layout = 'registration';
+					$this -> render('AddStudent', array("my_message" => $message, "countries" => $countries));
 
-					//return;
+				} catch (Exception $e) {
+					print_r($e);
 
+					//echo "ERROR. please check your data again";
 				}
-				//echo $message;
-				if (strlen($message) < 1) {
-					$message = "Registered successfully";
-				}
-				$this -> layout = 'registration';
-				$this -> render('AddStudent', array("my_message" => $message, "countries" => $countries));
 
 			} catch (Exception $e) {
-				print_r($e);
 
-				//echo "ERROR. please check your data again";
+				$transaction -> rollBack();
+				$this -> render("paper", array("my_message" => "Failure"));
 			}
-
-			//var_dump($_FILES);
-			//$target_file = $target_dir . basename($_FILES["image"]["name"]);
-			//$uploadOk = 1;
-			//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			//echo $imageFileType;
-
 		} else {
 			$this -> layout = 'registration';
 			$this -> render('AddStudent', array("countries" => $countries));
@@ -288,15 +280,8 @@ class DataModuleController extends Controller {
 			} catch (Exception $e) {
 				print_r($e);
 
-				//echo "ERROR. please check your data again";
 			}
 
-			//print_r($model -> getErrors());
-			//var_dump($_FILES);
-			//$target_file = $target_dir . basename($_FILES["image"]["name"]);
-			//$uploadOk = 1;
-			//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			//echo $imageFileType;
 			if (strlen($message) < 1)
 				$message = "Registered Successfully";
 			if (isset(Yii::app() -> user -> id)) {
@@ -369,6 +354,9 @@ class DataModuleController extends Controller {
 		$message = "";
 		$message = "";
 		$period = $_GET['period'];
+		$gender = $_GET['gender'];
+		$day = $_GET['day'];
+		$type = $_GET['type'];
 		$from_time = date("H:i", strtotime($_GET['from']));
 		$to_time = date("H:i", strtotime($_GET['to']));
 		$dt_start = new DateTime('2001-01-01 ' . $from_time);
@@ -376,28 +364,43 @@ class DataModuleController extends Controller {
 		$dt_start_timestamp = $dt_start -> getTimestamp();
 		$dt_end_timestamp = $dt_end -> getTimestamp();
 		//echo ($dt_end_timestamp - $dt_start_timestamp) . " " . ($period*60);
-		
+
 		if ($dt_end_timestamp < $dt_start_timestamp) {
-			$message .= " Slot interval should be ".$period." minutes ";
-		} else if (($dt_end_timestamp - $dt_start_timestamp) != ($period*60) ) {
-			$message .= " Slot interval should be ".$period." minutes ";
+			$message .= " Slot interval should be " . $period . " minutes ";
+		} else if (($dt_end_timestamp - $dt_start_timestamp) != ($period * 60)) {
+			$message .= " Slot interval should be " . $period . " minutes ";
 		}
 
-		$teacher_slots = TeacherTimeSlot::model() -> findAll();
 		$check = 0;
-		foreach ($teacher_slots as $teacher_slot) {
-			$dt_teacher_from = new DateTime('2001-01-01 ' . $teacher_slot -> from);
-			$dt_teacher_to = new DateTime('2001-01-01 ' . $teacher_slot -> to);
-			$dt_teacher_from_timestamp = $dt_teacher_from -> getTimestamp();
-			$dt_teacher_to_timestamp = $dt_teacher_to -> getTimestamp();
-			if ($dt_teacher_from_timestamp < $dt_start_timestamp && $dt_teacher_to_timestamp > $dt_end_timestamp) {
+		$slots = Preference::model() -> findAll("day = :day and gender = :gender and lesson_type = :type", array(":day" => $day, ":gender" => $gender, ":type" => $type));
+		$times = "";
+		foreach ($slots as $slot) {
+			$dt_slot_from = new DateTime('2001-01-01 ' . $slot -> from);
+			$dt_slot_to = new DateTime('2001-01-01 ' . $slot -> to);
+			$times .= "from " . $slot -> from . " to " . $slot -> to . ". ";
+			$dt_slot_from_timestamp = $dt_slot_from -> getTimestamp();
+			$dt_slot_to_timestamp = $dt_slot_to -> getTimestamp();
+			if ($dt_slot_from_timestamp <= $dt_start_timestamp && $dt_slot_to_timestamp >= $dt_end_timestamp) {
 				$check = 1;
 				break;
 			}
 		}
-		/*if ($check == 0) {
-		 $message .= "Teacher is not available";
+		/*$teacher_slots = TeacherTimeSlot::model() -> findAll();
+		 $check = 0;
+		 foreach ($teacher_slots as $teacher_slot) {
+		 $dt_teacher_from = new DateTime('2001-01-01 ' . $teacher_slot -> from);
+		 $dt_teacher_to = new DateTime('2001-01-01 ' . $teacher_slot -> to);
+		 $dt_teacher_from_timestamp = $dt_teacher_from -> getTimestamp();
+		 $dt_teacher_to_timestamp = $dt_teacher_to -> getTimestamp();
+		 if ($dt_teacher_from_timestamp < $dt_start_timestamp && $dt_teacher_to_timestamp > $dt_end_timestamp) {
+		 $check = 1;
+		 break;
+		 }
 		 }*/
+		if ($check == 0) {
+			if (strlen($message) < 1)
+				$message = " These times are not available, Available times are " . $times;
+		}
 		if (strlen($message) < 1)
 			$message = "Success";
 		$result = array();
@@ -458,33 +461,34 @@ class DataModuleController extends Controller {
 
 	}
 
-	public function actionGetRegions(){
+	public function actionGetRegions() {
 		$id = $_GET['id'];
-		$cities = Regions::model()->findAll("country_id = :id",array(":id"=>$id));
+		$cities = Regions::model() -> findAll("country_id = :id", array(":id" => $id));
 		$return = array();
 		$i = 0;
 		foreach ($cities as $city) {
 			$return[] = array();
-			$return[$i]["id"] = $city->id;
-			$return[$i]["name"] = $city->name;
+			$return[$i]["id"] = $city -> id;
+			$return[$i]["name"] = $city -> name;
 			$i++;
 		}
-		
+
 		echo json_encode($return);
 	}
-	
-	public function actionGetSlots(){
+
+	public function actionGetSlots() {
 		$gender = $_GET['gender'];
 		$type = $_GET['type'];
-		
-		$preferences = Preference::model()->findAll("lesson_type = :type and gender = :gender",array(":type"=>$type , ":gender" => $gender));
+
+		$preferences = Preference::model() -> findAll("lesson_type = :type and gender = :gender", array(":type" => $type, ":gender" => $gender));
 		$i = 0;
 		$return = array();
 		$days = array();
-		foreach($preferences as $pref){
-			$days[] = $pref->day;
+		foreach ($preferences as $pref) {
+			$days[] = $pref -> day;
 		}
 		$return["days"] = $days;
 		echo json_encode($return);
 	}
+
 }

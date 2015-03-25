@@ -98,14 +98,17 @@ $("select#package").change(function() {
 });
 
 function handleChange() {
+	//alert("Handle Change");
 	for (var counter = 0; counter < $(".timepicker_to").length; counter++) {
-		handleAjax(counter, $(".timepicker_from").eq(counter).val(), $(".timepicker_to").eq(counter).val() , $(".period").eq(counter).val() , $("#gender").val());
+		
+		handleAjax(counter, $(".timepicker_from").eq(counter).val(), $(".timepicker_to").eq(counter).val() , $(".period").eq(counter).val() , $("#gender").val() , $(".days").eq(counter*2).val() , $(".lesson-type select").eq(counter).val());
 
 	}
 }
 
-function handleAjax(index, from, to , period) {
-	$.ajax("index.php?r=DataModule/checkSlot&from=" + from + "&to=" + to + "&period=" + period, {
+function handleAjax(index, from, to , period , gender , day , lessonType ) {
+	//console.log("index.php?r=DataModule/checkSlot&from=" + from + "&to=" + to + "&period=" + period + "&gender=" + gender + "&day=" + day + "&type=" + lessonType);
+	$.ajax("index.php?r=DataModule/checkSlot&from=" + from + "&to=" + to + "&period=" + period + "&gender=" + gender + "&day=" + day + "&type=" + lessonType, {
 		success : function(data) {
 			var obj = jQuery.parseJSON(data);
 
@@ -117,7 +120,7 @@ function handleAjax(index, from, to , period) {
 
 		},
 		error : function() {
-			alert("ERROR");
+			alert("ERROR in handle Ajax");
 		}
 	});
 }
@@ -125,27 +128,6 @@ function handleAjax(index, from, to , period) {
 function createPreferences(){
 	var numberOfRows = $("select#package").val();
 		
-	
-	$.ajax("index.php?r=DataModule/getSlots&gender=0&type=1", {
-		success : function(data) {
-			var obj = jQuery.parseJSON(data);
-			$("#cities").html("");
-			if(obj.length>0){
-			
-				$("#cities").append('<span class="input-group-addon"><span class="fa fa-flag-o"></span></span>');
-				$("#cities").append('<select id = "cities-select" class="form-control select" name="Student[city]">');
-				for(var i=0;i<obj.length;i++){
-					$("#cities-select").append('<option value = '+obj[i].id+'>' + obj[i].name + '</option>');
-				}
-				$("#cities").append('</select>');
-				$('#cities-select').selectpicker();
-				
-			}			
-		},
-		error : function() {
-			alert("ERROR");
-		}
-	});
 
 	$('#preference').html("");
 
@@ -154,19 +136,10 @@ function createPreferences(){
 		'<label class="col-md-3 col-xs-12 control-label"></label>' + 
 		'<div class="col-md-2 col-xs-12 lesson-type">' + 
 		'<select class="form-control select  " name="Student[prefered_lesson_type_' + (i + 1) + ']">' + 
-		'<option value="0">Quran</option>' + '<option value="1">Arabic</option>' + 
+		'<option value="1">Quran Hifdh</option>' + '<option value="2">Quran Reading</option>' + '<option value = 3>Arabic</option>'+ 
 		'</select>' + 
 		'</div>' + 
 		'<div class="col-md-1 col-xs-12 days-container" >' + 
-		'<select id="days-id" class="form-control select days" name="Student[prefered_days_' + (i + 1) + ']">' + 
-		'<option value="0">Saturday</option>' + '<option value="1">Sunday</option>' + 
-		'<option value="2">Monday</option>' + 
-		'<option value="3">Tuesday</option>' + 
-		'<option value="4">Wednesday</option>' + 
-		'<option value="5">Thursday</option>' + 
-		'<option value="6">Friday</option>' + 
-		
-		'</select>' + 
 		'</div>' + 
 		'<div class="col-md-1 col-xs-12">' + '<input type="number" min="30" max="120" value="30" class="form-control period" name="Student[prefered_lesson_period_' + (i + 1) + ']">' + '</div>' + '<div class="col-md-1 col-xs-12">' + 
 		'<div class="input-group bootstrap-timepicker">' + '<input type="text" name="Student[prefered_from_' + (i + 1) + ']" class="form-control timeslot timepicker_from"/>' + '</div>' + '</div>' + '<div class="col-md-1 col-xs-12">' + 
@@ -181,7 +154,6 @@ function createPreferences(){
 	$('.timepicker_from').timepicker({
 		'minuteStep' : 5
 	});
-	 $('.timepicker_from').timepicker('setTime', '03:45 AM');
 	$('.select').selectpicker();
 	$(".days,.timepicker_to,.timepicker_from,.period").change(function() {
 		handleChange();
@@ -190,43 +162,46 @@ function createPreferences(){
 		var index = $(this).parent().prevAll().length;
 		var days = ["Saturday", "Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday"];
 		$(".days-container").eq(index).html("");
-		
-		
-		$.ajax("index.php?r=DataModule/getSlots&gender=0&type=1", {
+		var gender = $("#gender").val();
+		var lessonType = $(".lesson-type select").eq(index).val();
+		//console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
+		$.ajax("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType, {
 		success : function(data) {
 			var obj = jQuery.parseJSON(data);
 			if(obj.days.length>0){
 			
-				$(".days-container").eq(index).append('<select id="days-id" class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
+				$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
 				for(var i=0;i<obj.days.length;i++){
-					$("#days-id").append('<option value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
+					$(".days").eq(index*2).append('<option value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
 				}
 				$(".days-container").eq(index).append('</select>');
-				$("#days-id").selectpicker();
+				$(".days").eq(index*2).selectpicker();
+				$(".days").change(function() {
+				handleChange();
+				});
+				//$(".days").trigger("change");
+				
 				
 			}			
 		},
 		error : function() {
 			alert("ERROR");
-		}
+		},
+		
+		async : false
+		
+		
 	});
+		//alert($(".days").length);
 
 		
 		
-		/*$(".days-container").eq(index).html('<select class="form-control select days" name="Student[prefered_lesson_type_' + (i + 1) + ']">' + 
-		'<option value="0">Saturday</option>' + '<option value="1">Sunday</option>' + 
-		'<option value="2">Monday</option>' + 
-		'<option value="3">Tuesday</option>' + 
-		
-		
-		'</select>'  
-		);*/
 		$('.select').selectpicker();
 		//alert($(this).parent().prevAll().length);
 	});
-	$(".days").trigger("change");
 	$(".lesson-type").trigger("change");
-	//$(".lesson-type").trigger("change");
+	$(".period").trigger("change");
+	
 
 	
 }

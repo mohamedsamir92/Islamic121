@@ -7093,3 +7093,373 @@ in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\ind
 2015/03/25 05:27:58 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (56)
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:40 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:40 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:40 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:40 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:40 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:40 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:41 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:31:41 [error] [php] Undefined index: gender (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:372)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=3:45%20AM&to=10:35%20PM&period=30
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (372)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:39:22 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:40%20PM&to=10:40%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:39:22 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:40%20PM&to=10:40%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:39:38 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:40%20PM&to=10:40%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:39:38 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:40%20PM&to=10:40%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:41:04 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:40%20PM&to=10:40%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:41:05 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:40%20PM&to=10:40%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:41:30 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:45%20PM&to=10:45%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:41:30 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:45%20PM&to=10:45%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 21:42:50 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=10:45%20PM&to=10:45%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:30:10 [error] [php] Undefined variable: dt_teacher_from_timestamp (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:398)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=11:25%20PM&to=11:25%20PM&period=30&gender=0&day=1&type=1
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (398)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:32:09 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=11:35%20PM&to=11:35%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:32:34 [error] [php] Undefined index: day (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php:373)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): DataModuleController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): DataModuleController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DataModuleController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=DataModule/checkSlot&from=11:35%20PM&to=11:35%20PM&period=30&gender=0
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (373)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:38 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:38 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:38 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:38 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:38 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:38 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:38 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:57 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:57 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:57 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:57 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:57 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:57 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:53:57 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:54:35 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:54:35 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:54:35 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:54:35 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:54:35 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:54:35 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:54:35 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:22 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:22 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:22 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:22 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:22 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:22 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:22 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:38 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:38 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:38 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:38 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:38 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:38 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:55:38 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:20 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:20 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:20 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:20 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:20 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:20 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:20 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 22:56:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lesson_request_ibfk_1` FOREIGN KEY (`lesson_type_id`) REFERENCES `lesson_type` (`id`)). The SQL statement executed was: INSERT INTO `lesson_request` (`status`, `student_id`) VALUES (:yp0, :yp1).
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (116)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 23:11:29 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 23:11:29 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 23:11:29 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 23:11:29 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 23:11:29 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 23:11:29 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/25 23:11:29 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (58)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
