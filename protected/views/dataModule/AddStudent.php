@@ -1,18 +1,18 @@
 <?php if(isset($my_message)): ?>
 
-<script>
-				$(document).ready(function(){
+	<script>
+		$(document).ready(function(){
 
-	noty({
-	text: '<?php echo $my_message ?>
-		',
-		layout: 'topRight',
-		type: 'error',
-		timeout: 5000,
+			noty({
+				text: '<?php echo $my_message ?>
+				',
+				layout: 'topRight',
+				type: 'error',
+				timeout: 5000,
 
+			});
 		});
-		});
-</script>
+	</script>
 <?php endif; ?>
 
 <!-- PAGE CONTENT WRAPPER -->
@@ -82,10 +82,10 @@
 							<div class="col-md-3 col-xs-12">
 								<div class="input-group" style="z-index: 999">
 									<span class="input-group-addon"><span class="fa fa-flag"></span></span>
-									<select id="country" class="form-control select" name="Student[country]">
-									<?php foreach ($countries as $country):	?>
-										<option value="<?php echo $country->id ?>"><?php echo $country -> name; ?></option>
-									<?php endforeach; ?>
+									<select id="country" class="form-control select" data-live-search="true" name="Student[country]">
+										<?php foreach ($countries as $country):	?>
+											<option value="<?php echo $country->id ?>"><?php echo $country -> name; ?></option>
+										<?php endforeach; ?>
 									</select>
 									
 								</div>
@@ -94,7 +94,7 @@
 							<div class="col-md-3 col-xs-12">
 								<div id="cities" class="input-group" style="z-index: 999">
 									
-										
+
 								</div>
 							</div>
 						</div>
@@ -129,7 +129,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-envelope"></span></span>
-									<input id="email" type="email" class="form-control" name="Student[email]" placeholder="Please enter valid email" />
+									<input id="email" type="email" class="form-control" name="Student[email]" />
 								</div>
 							</div>
 							<div id="email-status"></div>
@@ -191,7 +191,7 @@
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Guardians Name</label>
 							<div class="col-md-6 col-xs-12">
-								<input type="text" class="form-control" placeholder="Guardians Name" name="Student[guardians_name]" />
+								<input type="text" class="form-control" name="Student[guardians_name]" />
 							</div>
 						</div>
 
@@ -205,7 +205,7 @@
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">How did you hear about us</label>
 							<div class="col-md-2 col-xs-12">
-								<select class="form-control select" name="Student[hear_us]" >
+								<select id="hear_us" class="form-control select" name="Student[hear_us]" >
 									<option value="Twitter">Twitter</option>
 									<option value="Facebook">Facebook</option>
 									<option value="Whats App">Whats App</option>
@@ -219,7 +219,7 @@
 								</select>
 							</div>
 							<div class="col-md-4 col-xs-12">
-								<input type="text" class="form-control" name="Student[hear_us_others]" />
+								<input id="hear_us_others" type="text" class="form-control" name="Student[hear_us_others]" />
 							</div>
 						</div>
 
@@ -250,10 +250,10 @@
 <!-- THIS PAGE PLUGINS -->
 <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
 <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-        <script type='text/javascript' src='js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
-        <script type='text/javascript' src='js/plugins/validationengine/jquery.validationEngine.js'></script>        
+<script type='text/javascript' src='js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
+<script type='text/javascript' src='js/plugins/validationengine/jquery.validationEngine.js'></script>        
 
-        <script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>                
+<script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>                
 
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
@@ -263,4 +263,3 @@
 <script type="text/javascript" src="js/myscript.js"></script>
 
 <!-- END THIS PAGE PLUGINS -->
-

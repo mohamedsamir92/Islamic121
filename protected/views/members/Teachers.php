@@ -11,9 +11,6 @@
 						<li>
 							<a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a>
 						</li>
-						<li>
-							<a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a>
-						</li>
 					</ul>
 				</div>
 				<div class="panel-body">

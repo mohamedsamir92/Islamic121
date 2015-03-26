@@ -52,6 +52,11 @@ class DataModuleController extends Controller {
 		$countries = Countries::model() -> findAll();
 
 		if (isset($_POST['Student'])) {
+
+			if ($_POST['Student']['hear_us'] == 'Others') {
+				$_POST['Student']['hear_us'] = $_POST['Student']['hear_us_others'];
+			}
+
 			//$_POST['Student']['age'] = $_POST['Student']['day'] . "-" . $_POST['Student']['month'] . "-" . $_POST['Student']['year'];
 			$transaction = Yii::app() -> db -> beginTransaction();
 			try {
@@ -384,7 +389,7 @@ class DataModuleController extends Controller {
 		}
 
 		$check = 0;
-		$slots = Preference::model() -> findAll("day = :day and gender = :gender and lesson_type = :type", array(":day" => $day, ":gender" => $gender, ":type" => $type));
+		$slots = ValidationRules::model() -> findAll("day = :day and gender = :gender and lesson_type = :type", array(":day" => $day, ":gender" => $gender, ":type" => $type));
 		$times = "";
 		if(count($slots) == 0)
 			$message = " No Available slots";
@@ -496,7 +501,7 @@ class DataModuleController extends Controller {
 		$gender = $_GET['gender'];
 		$type = $_GET['type'];
 
-		$preferences = Preference::model() -> findAll("lesson_type = :type and gender = :gender", array(":type" => $type, ":gender" => $gender));
+		$preferences = ValidationRules::model() -> findAll("lesson_type = :type and gender = :gender", array(":type" => $type, ":gender" => $gender));
 		$i = 0;
 		$return = array();
 		$days = array();

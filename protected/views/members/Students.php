@@ -11,9 +11,6 @@
 						<li>
 							<a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a>
 						</li>
-						<li>
-							<a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a>
-						</li>
 					</ul>
 				</div>
 				<div class="panel-body">
@@ -23,7 +20,7 @@
 								<tr>
 									<th style="text-align: center;">First Name</th>
 									<th style="text-align: center;">Second Name</th>
-									<th style="text-align: center;">Age</th>
+									<th style="text-align: center;">Date of Birth</th>
 									<th style="text-align: center;">Gender</th>
 									<th style="text-align: center;">Phone</th>
 									<th style="text-align: center;">Country</th>
@@ -48,7 +45,7 @@
 								<tr>
 									<td><?php echo $request -> student -> first_name; ?></td>
 									<td><?php echo $request -> student -> last_name; ?></td>
-									<td><?php echo $request -> student -> age; ?></td>
+									<td><?php echo $request -> student -> date_of_birth; ?></td>
 									<td><?php if($request->student->gender == 0 ): ?>Male<?php else: ?>Female <?php endif; ?></td>
 									<td><?php echo $request -> student -> phone_no; ?></td>
 									<td><?php echo $request -> student -> country; ?></td>

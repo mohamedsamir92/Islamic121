@@ -7,6 +7,7 @@ class RequestsController extends Controller {
 		$pendingRequests = LessonRequest::model() -> findAll('status = 0');
 		return count($pendingRequests);
 	}
+
 	public function actionCheckTeacher() {
 
 		$message = "";
@@ -224,15 +225,17 @@ class RequestsController extends Controller {
 				$request -> getErrors();
 				$result = LessonRequest::model() -> with(array("lessonRequestTimeSlots", "teacher", "student")) -> findAll("status = 0");
 				$teachers = Teacher::model() -> findAll();
+				$currencies = Currency::model() -> findAll();
 				if (strlen($message) < 1)
 					$message = "Accepted Successfully";
-				$this -> redirect('index.php?r=Requests/PendingRequests', array("results" => $result, "teachers" => $teachers, "my_message" => $message));
+				$this -> redirect('index.php?r=Requests/PendingRequests', array("results" => $result, "teachers" => $teachers, "my_message" => $message, "currencies" => $currencies));
 
 			} else {
 				$result = LessonRequest::model() -> with(array("lessonRequestTimeSlots", "teacher", "student")) -> findAll("status = 0");
 				$teachers = Teacher::model() -> findAll();
+				$currencies = Currency::model() -> findAll();
 
-				$this -> render('PendingRequests', array("results" => $result, "teachers" => $teachers));
+				$this -> render('PendingRequests', array("results" => $result, "teachers" => $teachers, "currencies" => $currencies));
 			}
 
 		} else {
