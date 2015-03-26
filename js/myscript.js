@@ -119,7 +119,7 @@ $("#country").change(function() {
 });
 $("#country").change();
 
-$("select#package").change(function() {
+$("select#package,#gender").change(function() {
 	createPreferences();
 	
 });
