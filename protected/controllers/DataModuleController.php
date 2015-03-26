@@ -378,23 +378,27 @@ class DataModuleController extends Controller {
 		//echo ($dt_end_timestamp - $dt_start_timestamp) . " " . ($period*60);
 
 		if ($dt_end_timestamp < $dt_start_timestamp) {
-			$message .= " Slot interval should be " . $period . " minutes ";
+			$message .= " Time interval isn't equal to period time";
 		} else if (($dt_end_timestamp - $dt_start_timestamp) != ($period * 60)) {
-			$message .= " Slot interval should be " . $period . " minutes ";
+			$message .= " Time interval isn't equal to period time";
 		}
 
 		$check = 0;
 		$slots = Preference::model() -> findAll("day = :day and gender = :gender and lesson_type = :type", array(":day" => $day, ":gender" => $gender, ":type" => $type));
 		$times = "";
-		foreach ($slots as $slot) {
-			$dt_slot_from = new DateTime('2001-01-01 ' . $slot -> from);
-			$dt_slot_to = new DateTime('2001-01-01 ' . $slot -> to);
-			$times .= "from " . $slot -> from . " to " . $slot -> to . ". ";
-			$dt_slot_from_timestamp = $dt_slot_from -> getTimestamp();
-			$dt_slot_to_timestamp = $dt_slot_to -> getTimestamp();
-			if ($dt_slot_from_timestamp <= $dt_start_timestamp && $dt_slot_to_timestamp >= $dt_end_timestamp) {
-				$check = 1;
-				break;
+		if(count($slots) == 0)
+			$message = " No Available slots";
+		else{
+			foreach ($slots as $slot) {
+				$dt_slot_from = new DateTime('2001-01-01 ' . $slot -> from);
+				$dt_slot_to = new DateTime('2001-01-01 ' . $slot -> to);
+				$times .= "from " . $slot -> from . " to " . $slot -> to . ". ";
+				$dt_slot_from_timestamp = $dt_slot_from -> getTimestamp();
+				$dt_slot_to_timestamp = $dt_slot_to -> getTimestamp();
+				if ($dt_slot_from_timestamp <= $dt_start_timestamp && $dt_slot_to_timestamp >= $dt_end_timestamp) {
+					$check = 1;
+					break;
+				}
 			}
 		}
 		/*$teacher_slots = TeacherTimeSlot::model() -> findAll();

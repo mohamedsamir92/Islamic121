@@ -33,7 +33,7 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-									<input type="text" class="form-control" name="Student[first_name]"/>
+									<input type="text" class="form-control" name="Student[first_name]" required="" />
 								</div>
 							</div>
 						</div>

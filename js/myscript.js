@@ -1,4 +1,31 @@
+function IsEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
 $(document).ready(function() {
+	
+	
+	
+	
+	
+	$("#email").change(function(){
+		
+		if(!IsEmail($("#email").val())){
+			
+			
+					$("#email-group #email-status").html('<div style="display: table-cell; vertical-align: middle;"><span class="glyphicon glyphicon-remove"></span> This email is incorrect </div>');
+					$("#email").addClass('error');
+				
+		}
+		
+		else{
+			$("#email-group #email-status").html('<span style="display: table-cell; vertical-align: middle;" class="glyphicon glyphicon-ok"></span>');
+			$("#email").removeClass('error');
+		}
+		
+	});
+	
 	$("#sender-type").change(function() {
 		var val = $("#sender-type").val();
 		if (val == 0) {
@@ -114,9 +141,9 @@ function handleAjax(index, from, to , period , gender , day , lessonType ) {
 
 			$(".logo" + index).html("");
 			if (obj.status == "Success")
-				$('.slot-time').eq(index).append('<div class = "logo' + index + '"><span class="glyphicon glyphicon-ok"></span> Success</div>');
+				$('.slot-time').eq(index).append('<span style="display: table-cell; vertical-align: middle;" class="glyphicon glyphicon-ok"></span>');
 			else
-				$('.slot-time').eq(index).append('<div class = "logo' + index + '"><span class="glyphicon glyphicon-remove"></span>' + obj.status + '</div>');
+				$('.slot-time').eq(index).append('<div style="display: table-cell; vertical-align: middle;" class = "logo' + index + '"><span class="glyphicon glyphicon-remove"></span>' + obj.status + '</div>');
 
 		},
 		error : function() {
@@ -164,7 +191,7 @@ function createPreferences(){
 		$(".days-container").eq(index).html("");
 		var gender = $("#gender").val();
 		var lessonType = $(".lesson-type select").eq(index).val();
-		//console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
+		console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
 		$.ajax("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType, {
 		success : function(data) {
 			var obj = jQuery.parseJSON(data);
@@ -182,6 +209,16 @@ function createPreferences(){
 				//$(".days").trigger("change");
 				
 				
+			}
+			
+			else{
+				$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
+				$(".days-container .days").eq(index).append('<option> No available days </option>');
+				
+				$(".days-container").eq(index).append('</select>');
+				//$('.slot-time logo').html();
+				//$('.slot-time logo').eq(index).append('<div style="display: table-cell; vertical-align: middle;" class = "logo' + index + '"><span class="glyphicon glyphicon-remove"></span>' + obj.status + '</div>');
+				
 			}			
 		},
 		error : function() {
@@ -197,6 +234,7 @@ function createPreferences(){
 		
 		
 		$('.select').selectpicker();
+		handleChange();
 		//alert($(this).parent().prevAll().length);
 	});
 	$(".lesson-type").trigger("change");
