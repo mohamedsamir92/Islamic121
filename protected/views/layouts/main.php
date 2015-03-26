@@ -68,7 +68,10 @@
 					<?php endif; ?>
 					<?php if(Yii::app()->user->type == "Admin"): ?>
 					<li>
-						<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=Requests/PendingRequests"><span class="fa fa-bell-o"></span><span class="xn-text">New Requests</span></a>
+						<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=Requests/PendingRequests"><span class="fa fa-bell-o"></span><span class="xn-text">New Requests <div class="informer informer-warning">
+						<?php
+						echo RequestsController::getRequests();
+						 ?></div></span></a>
 					</li>
 					<?php endif; ?>
 					<li>

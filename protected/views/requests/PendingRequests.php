@@ -49,7 +49,7 @@
 		
 		var index = $(this).attr("number");
 		//alert($("#from"+index).val());
-		handleAjax(index,$("#from"+index).val(),$("#to"+index).val())
+		//handleAjax(index,$("#from"+index).val(),$("#to"+index).val())
 						
 	});
 	$('.time_from').timepicker({ 'minuteStep' : 30 });
@@ -64,10 +64,7 @@
     <?php endif; ?>
 
 });
-function handleChangeRequest(){
-alert("kdsldklsdk");
 
-}
 function handleAjax(index,from,to){
 	$.ajax("index.php?r=DataModule/checkSlot&from=" + from+"&to="+to, {
 							success : function(data) {
@@ -137,7 +134,9 @@ function handleAjax(index,from,to){
 							<thead>
 								<tr>
 									<th width="20%" style="text-align: center;">First Name</th>
-									<th width="20%" style="text-align: center;">Last Name</th>
+									<th width="10%" style="text-align: center;">Last Name</th>
+									<th width="10%" style="text-align: center;">Skype id</th>
+									
 									<th width="5%" style="text-align: center;">Age</th>
 									<th width="5%" style="text-align: center;">Gender</th>
 									<th width="5%" style="text-align: center;">Currency</th>
@@ -162,7 +161,20 @@ function handleAjax(index,from,to){
 									<tr>
 										<td><?php echo $request -> student -> first_name; ?></td>
 										<td><?php echo $request -> student -> last_name; ?></td>
-										<td><?php echo $request -> student -> age; ?></td>
+										<td><?php echo $request -> student -> skype_id; ?></td>
+										<?php
+											  //date in mm/dd/yyyy format; or it can be in other formats as well
+											  //explode the date to get month, day and year
+											  //$birthDate = explode("-", $request -> student -> date_of_birth);
+											  //get age from date or birthdate
+											  $date = new DateTime($request -> student -> date_of_birth);
+											  $now = new DateTime();
+											  $interval = $now->diff($date);
+											  $age =  $interval->y;
+											  //echo "Age is:" . $age;
+										?>
+										
+										<td><?php echo $age; ?></td>
 										
 										<td><?php if($request->student->gender == 0 ): ?><p id="gender<?php echo $j ?>">Male<p></p><?php else: ?><p id="gender<?php echo $j ?>">Female</p> <?php endif; ?></td>
 										

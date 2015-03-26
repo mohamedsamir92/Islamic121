@@ -2,6 +2,11 @@
 
 class RequestsController extends Controller {
 
+
+	public static function getRequests(){
+		$pendingRequests = LessonRequest::model() -> findAll('status = 0');
+		return count($pendingRequests);
+	}
 	public function actionCheckTeacher() {
 
 		$message = "";
