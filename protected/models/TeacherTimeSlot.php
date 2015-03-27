@@ -48,6 +48,7 @@ class TeacherTimeSlot extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'teacher' => array(self::BELONGS_TO, 'Teacher', 'teacher_id'),
+			
 		);
 	}
 

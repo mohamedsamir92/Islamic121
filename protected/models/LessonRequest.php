@@ -60,6 +60,7 @@ class LessonRequest extends CActiveRecord
 			'student' => array(self::BELONGS_TO, 'Student', 'student_id'),
 			'teacher' => array(self::BELONGS_TO, 'Teacher', 'teacher_id'),
 			'lessonRequestTimeSlots' => array(self::HAS_MANY, 'LessonRequestTimeSlot', 'lesson_request_id'),
+			'currency' => array(self::BELONGS_TO, 'Currency', 'currency_id'),
 		);
 	}
 

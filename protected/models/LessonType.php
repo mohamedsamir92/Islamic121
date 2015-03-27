@@ -45,6 +45,7 @@ class LessonType extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'lessons' => array(self::HAS_MANY, 'Lesson', 'lesson_type_id'),
+			
 		);
 	}
 

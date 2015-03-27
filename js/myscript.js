@@ -44,7 +44,7 @@ $(document).ready(function() {
 			});
 		} else {
 			noty({
-				text : 'Registered Successfully',
+				text : 'Waiting .. ',
 				layout : 'topRight',
 				type : 'error',
 				timeout : 5000,

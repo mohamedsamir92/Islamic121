@@ -55,8 +55,8 @@ class Teacher extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, phone_no, username, password, age, country, city, gender, image', 'required'),
-			array('age, gender, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
+			array('first_name, last_name, phone_no, username, password, date_of_birth, country, city, gender, image', 'required'),
+			array('gender, quran_course, arabic_course', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_no, email, skype_id, username, country, city, image', 'length', 'max'=>100),
 			array('password', 'length', 'max'=>500),
 			array('notes', 'safe'),
@@ -134,7 +134,7 @@ class Teacher extends CActiveRecord
 		$criteria->compare('skype_id',$this->skype_id,true);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('age',$this->age);
+		$criteria->compare('age',$this->age,true);
 		$criteria->compare('country',$this->country,true);
 		$criteria->compare('city',$this->city,true);
 		$criteria->compare('gender',$this->gender);

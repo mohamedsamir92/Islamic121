@@ -1,21 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "currency".
+ * This is the model class for table "teacher_type_bridge".
  *
- * The followings are the available columns in table 'currency':
- * @property integer $id
- * @property string $name
- * @property string $sign
+ * The followings are the available columns in table 'teacher_type_bridge':
+ * @property integer $teacher_id
+ * @property integer $type_id
  */
-class Currency extends CActiveRecord
+class TeacherTypeBridge extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'currency';
+		return 'teacher_type_bridge';
 	}
 
 	/**
@@ -26,11 +25,11 @@ class Currency extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, sign', 'required'),
-			array('name, sign', 'length', 'max'=>100),
+			array('teacher_id, type_id', 'required'),
+			array('teacher_id, type_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, sign', 'safe', 'on'=>'search'),
+			array('teacher_id, type_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -42,7 +41,6 @@ class Currency extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'lessonRequests' => array(self::HAS_MANY, 'LessonRequest', 'currency_id'),
 		);
 	}
 
@@ -52,9 +50,8 @@ class Currency extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'sign' => 'Sign',
+			'teacher_id' => 'Teacher',
+			'type_id' => 'Type',
 		);
 	}
 
@@ -76,9 +73,8 @@ class Currency extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('sign',$this->sign,true);
+		$criteria->compare('teacher_id',$this->teacher_id);
+		$criteria->compare('type_id',$this->type_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -89,7 +85,7 @@ class Currency extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Currency the static model class
+	 * @return TeacherTypeBridge the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

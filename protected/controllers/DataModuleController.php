@@ -117,7 +117,7 @@ class DataModuleController extends Controller {
 						} else {
 							$lesson_request = new LessonRequest;
 							$lesson_request -> student_id = $model -> id;
-							
+
 							//$lesson_request -> teacher_id = $_POST['Student']['teacher'];
 							if ($lesson_request -> save()) {
 								for ($i = 0; $i < $_POST['Student']['class_package']; $i++) {
@@ -130,7 +130,9 @@ class DataModuleController extends Controller {
 									$lesson_time_slots -> day = $_POST['Student']['prefered_days_' . ($i + 1)];
 									$lesson_time_slots -> from = $from_time;
 									$lesson_time_slots -> to = $to_time;
-									$lesson_time_slots -> lesson_type = $_POST['Student']['prefered_lesson_type_' .  ($i + 1)];
+									$lesson_time_slots -> lesson_type = $_POST['Student']['prefered_lesson_type_' . ($i + 1)];
+									$lesson_time_slots -> period = $_POST['Student']['prefered_lesson_period_' . ($i + 1)];
+
 									$lesson_time_slots -> save();
 									//print_r($lesson_time_slots -> getErrors());
 
@@ -162,20 +164,20 @@ class DataModuleController extends Controller {
 					if (strlen($message) < 1) {
 						$message = "Registered successfully";
 					}
-					$transaction->commit();
+					$transaction -> commit();
 					$this -> layout = 'registration';
 					$this -> render('AddStudent', array("my_message" => $message, "countries" => $countries));
-					
+
 				} catch (Exception $e) {
 					print_r($e);
 
 					//echo "ERROR. please check your data again";
 				}
-				
+
 			} catch (Exception $e) {
-				
+
 				$transaction -> rollBack();
-				$this -> render("paper", array("my_message" => "Failure"));
+				$this -> render("AddStudent", array("countries" => $countries, "my_message" => "Failure"));
 			}
 		} else {
 			$this -> layout = 'registration';
@@ -198,112 +200,151 @@ class DataModuleController extends Controller {
 		echo json_encode($result);
 	}
 
+	public function actionCheckTeacherSlot() {
+		$from_time = date("H:i", strtotime($_GET['from']));
+		$to_time = date("H:i", strtotime($_GET['to']));
+		$dt_start = new DateTime('2001-01-01 ' . $from_time);
+		$dt_end = new DateTime('2001-01-1 ' . $to_time);
+		$dt_start_timestamp = $dt_start -> getTimestamp();
+		$dt_end_timestamp = $dt_end -> getTimestamp();
+		$result = array();
+		if ($dt_end_timestamp < $dt_start_timestamp) {
+			$result["status"] = "Slot interval should be at least 30 minutes";
+		} else if (($dt_end_timestamp - $dt_start_timestamp) < 1800) {
+			$result["status"] = "Slot interval should be at least 30 minutes";
+		}
+		else{
+			$result["status"] = "OK";
+		}
+		echo json_encode($result);
+	}
+
 	public function actionAddTeacher() {
 		$model = new Teacher;
 		$message = "";
+		$countries = Countries::model() -> findAll();
+		$lessons = LessonType::model() -> findAll();
 		if (isset($_POST['Teacher'])) {
 			//var_dump($_POST['Teacher']);
 			$model -> attributes = $_POST['Teacher'];
-			//
-			//$target_dir = Yii::app() -> request -> baseUrl . "/images/";
-
-			if (isset($_POST['Teacher']['image'])) {
-				$file = CUploadedFile::getInstance($model, 'image');
-				//var_dump($file);
-
-				$fileName = date('YmdHms') + $model -> image;
-				// random number + file name
-				$model -> image = $fileName . '.' . $file -> getExtensionName();
-				//echo $model->image;
-
-				//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
-				$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
-			} else {
-				$model -> image = "no-image.jpg";
-			}
-			//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
-			//$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
-			$model -> password = $model -> hashPassword($model -> password);
+			$transaction = Yii::app() -> db -> beginTransaction();
 			try {
-				$message = "";
-				if ($_POST['Teacher']['confirmed_password'] != $_POST['Teacher']['password']) {
-					$message = "Your passwords don\'t match, please try again. ";
+				//
+				//$target_dir = Yii::app() -> request -> baseUrl . "/images/";
+
+				if (isset($_POST['Teacher']['image'])) {
+					$file = CUploadedFile::getInstance($model, 'image');
+					//var_dump($file);
+
+					$fileName = date('YmdHms') + $model -> image;
+					// random number + file name
+					$model -> image = $fileName . '.' . $file -> getExtensionName();
+					//echo $model->image;
+
+					//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
+					$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
 				} else {
-					$username_exist_check = Users::model() -> find("username = :uname", array(":uname" => $_POST['Teacher']['username']));
-					if (count($username_exist_check) > 0)
-						$message = "username is already exist";
+					$model -> image = "no-image.jpg";
 				}
-
-				$i = 0;
-
-				if (!isset($_POST['Teacher']['days']))
-					$message = "You must register working hours";
-				else {
-					foreach ($_POST['Teacher']['days'] as $dayIndex) {
-						$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$dayIndex]));
-						$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$dayIndex]));
-						$dt_start = new DateTime('2001-01-01 ' . $from_time);
-						$dt_end = new DateTime('2001-01-1 ' . $to_time);
-						$dt_start_timestamp = $dt_start -> getTimestamp();
-						$dt_end_timestamp = $dt_end -> getTimestamp();
-						if ($dt_end_timestamp < $dt_start_timestamp) {
-							$message .= "Error in time number " . ($i + 1) . ", slot interval should be at least 30 minutes ";
-						} else if (($dt_end_timestamp - $dt_start_timestamp) < 1800) {
-							$message .= "Error in time number " . ($i + 1) . ", slot interval should be at least 30 minutes ";
-						}
-						$i++;
+				//echo Yii::app() -> basePath . '\\images\\' . $model -> image;
+				//$file -> saveAs(Yii::app() -> basePath . '\\..\\images\\' . $model -> image);
+				$model -> password = $model -> hashPassword($model -> password);
+				try {
+					$message = "";
+					if ($_POST['Teacher']['confirmed_password'] != $_POST['Teacher']['password']) {
+						$message = "Your passwords don\'t match, please try again. ";
+					} else {
+						$username_exist_check = Users::model() -> find("username = :uname", array(":uname" => $_POST['Teacher']['username']));
+						if (count($username_exist_check) > 0)
+							$message = "username is already exist";
 					}
-				}
 
-				if (strlen($message) < 1 && $model -> save()) {
+					$i = 0;
 
-					$user = new Users;
-					$user -> username = $_POST['Teacher']['username'];
-					$user -> type = 1;
-					$user -> profile_id = $model -> id;
-					if (!$user -> save()) {
-						foreach ($user->getErrors() as $key => $value) {
+					if (!isset($_POST['Teacher']['days']))
+						$message = "You must register working hours";
+					else {
+
+						foreach ($_POST['Teacher']['days'] as $dayIndex) {
+							$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$i]));
+							$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$i]));
+							$dt_start = new DateTime('2001-01-01 ' . $from_time);
+							$dt_end = new DateTime('2001-01-1 ' . $to_time);
+							$dt_start_timestamp = $dt_start -> getTimestamp();
+							$dt_end_timestamp = $dt_end -> getTimestamp();
+							if ($dt_end_timestamp < $dt_start_timestamp) {
+								$message .= "Error in time number " . ($i + 1) . ", slot interval should be at least 30 minutes ";
+							} else if (($dt_end_timestamp - $dt_start_timestamp) < 1800) {
+								$message .= "Error in time number " . ($i + 1) . ", slot interval should be at least 30 minutes ";
+							}
+							$i++;
+						}
+
+					}
+
+					if (strlen($message) < 1 && $model -> save()) {
+
+						$user = new Users;
+						$user -> username = $_POST['Teacher']['username'];
+						$user -> type = 1;
+						$user -> profile_id = $model -> id;
+						if (!$user -> save()) {
+							foreach ($user->getErrors() as $key => $value) {
+								foreach ($value as $error) {
+									$message .= $error . " ";
+								}
+
+							}
+						} else {
+							$index = 0;
+							foreach ($_POST['Teacher']['days'] as $dayIndex) {
+								$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$index]));
+								$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$index]));
+
+								$slot = new TeacherTimeSlot;
+								$slot -> teacher_id = $model -> id;
+								$slot -> day = $dayIndex;
+								$slot -> from = $from_time;
+								$slot -> to = $to_time;
+								$slot -> save();
+								$index++;
+
+							}
+
+							foreach ($_POST['Teacher']['lesson'] as $lessons_type) {
+								$teacherTypeBridge = new TeacherTypeBridge;
+								$teacherTypeBridge -> teacher_id = $model -> id;
+								$teacherTypeBridge -> type_id = $lessons_type;
+								$teacherTypeBridge -> save();
+							}
+							
+						}
+
+					} else {
+
+						foreach ($model->getErrors() as $key => $value) {
 							foreach ($value as $error) {
 								$message .= $error . " ";
 							}
-
 						}
-					} else {
 
-						foreach ($_POST['Teacher']['days'] as $dayIndex) {
-							$from_time = date("H:i", strtotime($_POST['Teacher']['from'][$dayIndex]));
-							$to_time = date("H:i", strtotime($_POST['Teacher']['to'][$dayIndex]));
-
-							$slot = new TeacherTimeSlot;
-							$slot -> teacher_id = $model -> id;
-							$slot -> day = $dayIndex;
-							$slot -> from = $from_time;
-							$slot -> to = $to_time;
-							$slot -> save();
-
-						}
 					}
-
-				} else {
-
-					foreach ($model->getErrors() as $key => $value) {
-						foreach ($value as $error) {
-							$message .= $error . " ";
-						}
-					}
+					$transaction -> commit();
+				} catch (Exception $e) {
+					print_r($e);
 
 				}
-
 			} catch (Exception $e) {
 				print_r($e);
-
+				$transaction -> rollBack();
+				$this -> render('AddTeacher', array("countries" => $countries, "lessons" => $lessons, "my_message" => $message));
 			}
 
 			if (strlen($message) < 1)
 				$message = "Registered Successfully";
 			if (isset(Yii::app() -> user -> id)) {
 				if (Yii::app() -> user -> type == 'Admin')
-					$this -> render('AddTeacher', array("my_message" => $message));
+					$this -> render('AddTeacher', array("countries" => $countries, "lessons" => $lessons, "my_message" => $message));
 				else
 					$this -> redirect('index.php?r=DataModule/Login', array("my_message" => $message));
 			} else
@@ -311,7 +352,7 @@ class DataModuleController extends Controller {
 		} else {
 			if (isset(Yii::app() -> user -> id)) {
 				if (Yii::app() -> user -> type == 'Admin')
-					$this -> render('AddTeacher');
+					$this -> render('AddTeacher', array("countries" => $countries, "lessons" => $lessons));
 				else
 					$this -> redirect('index.php?r=DataModule/Login');
 			} else
@@ -391,9 +432,9 @@ class DataModuleController extends Controller {
 		$check = 0;
 		$slots = ValidationRules::model() -> findAll("day = :day and gender = :gender and lesson_type = :type", array(":day" => $day, ":gender" => $gender, ":type" => $type));
 		$times = "";
-		if(count($slots) == 0)
+		if (count($slots) == 0)
 			$message = " No Available slots";
-		else{
+		else {
 			foreach ($slots as $slot) {
 				$dt_slot_from = new DateTime('2001-01-01 ' . $slot -> from);
 				$dt_slot_to = new DateTime('2001-01-01 ' . $slot -> to);
