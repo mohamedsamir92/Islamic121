@@ -100,8 +100,12 @@ $(document).ready(function() {
 
 					$("#cities").append('<span class="input-group-addon"><span class="fa fa-flag-o"></span></span>');
 					$("#cities").append('<select id = "cities-select" class="form-control select" data-live-search="true" name="Teacher[city]">');
-					for (var i = 0; i < obj.length; i++) {
-						$("#cities-select").append('<option value = ' + obj[i].id + '>' + obj[i].name + '</option>');
+					var id = $("#cities").attr("city-id");
+					for(var i=0;i<obj.length;i++){
+						if(id == obj[i].id)
+							$("#cities-select").append('<option value = '+obj[i].id+' selected >' + obj[i].name + '</option>');
+						else
+							$("#cities-select").append('<option value = '+obj[i].id+'  >' + obj[i].name + '</option>');
 					}
 					$("#cities").append('</select>');
 					$('#cities-select').selectpicker();
@@ -116,6 +120,8 @@ $(document).ready(function() {
 	});
 
 	$("#country").change();
+	
+	
 	$(".day-check").on("ifChecked",function(event){
 		var index = $(this).attr("number");
 		$(".time-from").eq(index).prop("disabled",false);
@@ -132,9 +138,11 @@ $(document).ready(function() {
 		
 	});
 	
+	
 	$(".time-from,.time-to").change(function() {
 	var index = $(this).attr("number");
-	
+	if($(".time-from").eq(index).attr("disabled"))
+		return;
 	handleChange(index,$(".time-from").eq(index).val(),$(".time-to").eq(index).val());
 });
 	

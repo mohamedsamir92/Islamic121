@@ -39,16 +39,35 @@
 								<tr>
 									<td><?php echo $teacher -> first_name ; ?></td>
 									<td><?php echo $teacher -> last_name ; ?></td>
-									<td><?php echo $teacher -> age ; ?></td>
+									<?php
+
+										$date = new DateTime($teacher -> date_of_birth);
+										$now = new DateTime();
+										$interval = $now -> diff($date);
+										$age = $interval -> y;
+										//echo "Age is:" . $age;
+									?>
+
+									<td><?php echo $age ; ?></td>
 									<td><?php if($teacher->gender == 0 ): ?>Male<?php else: ?>Female <?php endif; ?></td>
 									<td><?php echo $teacher -> phone_no; ?></td>
 									<td><?php echo $teacher -> email; ?></td>
 									<td><?php echo $teacher -> country; ?></td>
 									<td><?php echo $teacher -> city; ?></td>
 									<td>
-									<button href="#myModal<?php echo $j; ?>" id="openBtn" data-toggle="modal" class="btn btn-primary">
-											<span class="fa fa-calendar" style="color: #fff;"></span>
-										</button>
+									<div class="btn-group">
+										<a href="index.php?r=members/showTeacherCalendar&id=<?php echo $teacher->id; ?>" class="btn btn-default btn-condensed" data-toggle="modal" >
+											<i class="fa fa-calendar"></i>
+										</a>
+	
+										<a href="index.php?r=members/editTeacher&id=<?php echo $teacher->id; ?>" data-toggle="modal" class="btn btn-default btn-condensed">
+											<i class="fa fa-pencil"></i>
+										</a>
+										<!--<a href="index.php?r=members/removeTeacher&id=<?php echo $teacher -> id; ?>" class="btn btn-danger btn-condensed">
+											<i class="fa fa-times"></i>
+										</a>-->
+										
+									</div>
 										<div class="modal fade" id="myModal<?php echo $j; ?>" style="z-index:0;">
 											<div class="modal-dialog">
 												<div class="modal-content">

@@ -6,6 +6,19 @@ class RequestsController extends Controller {
 		$pendingRequests = LessonRequest::model() -> findAll('status = 0');
 		return count($pendingRequests);
 	}
+	
+	public function actionDeclineRequest(){
+		$id = $_GET['id'];
+		$request = LessonRequest::model()->find("id = :id",array(":id"=>$id));
+		$request->status = -1;
+		$request->save();
+		
+		$result = LessonRequest::model() -> with(array("lessonRequestTimeSlots", "teacher", "student")) -> findAll("status = 0");
+		$teachers = Teacher::model() -> findAll();
+		$currencies = Currency::model() -> findAll();
+		$this -> render('PendingRequests', array("results" => $result, "teachers" => $teachers, "currencies" => $currencies , "my_message"=>"Request declined"));
+		
+	}
 
 	public function actionCheckTeacher() {
 
@@ -132,7 +145,6 @@ class RequestsController extends Controller {
 			if ($_POST) {
 
 				 $received_data = $_POST;
-				 var_dump($received_data);
 				 
 				 $transaction = Yii::app() -> db -> beginTransaction();
 				 try{

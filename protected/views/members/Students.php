@@ -1,3 +1,21 @@
+
+<?php if(isset($my_message)): ?>
+			
+		<script>
+			$(document).ready(function(){
+				
+				noty({
+                        text: '<?php echo $my_message ?>',
+                        layout: 'topRight',
+                        type: 'error',
+                        timeour: 5000
+                        
+                   });
+			});
+		</script>
+		<?php endif; ?>
+
+
 <div class="page-content-wrap">
 
 	<div class="row">
@@ -15,7 +33,7 @@
 				</div>
 				<div class="panel-body">
 					<div class="table-responsive">
-						<table class="table datatable">
+						<table class="table ">
 							<thead>
 								<tr>
 									<th style="text-align: center;">First Name</th>
@@ -56,9 +74,21 @@
 									</td>
 									<td><?php echo $request -> teacher -> first_name." ".$request -> teacher -> last_name; ?></td>
 									<td>
-									<button href="#myModal<?php echo $j; ?>" id="openBtn" data-toggle="modal" class="btn btn-primary">
-											<span class="fa fa-calendar" style="color: #fff;"></span>
+									<div class="btn-group">
+										<a href="index.php?r=members/showStudentCalendar&id=<?php echo $request -> student -> id; ?>" class="btn btn-default btn-condensed" data-toggle="modal" >
+											<i class="fa fa-calendar"></i>
 										</button>
+	
+										<a href="index.php?r=members/editStudent&id=<?php echo $request -> student -> id; ?>" data-toggle="modal" class="btn btn-default btn-condensed">
+											<i class="fa fa-pencil"></i>
+										</a>
+										<a href="index.php?r=members/removeStudent&id=<?php echo $request -> student -> id; ?>" class="btn btn-danger btn-condensed">
+											<i class="fa fa-times"></i>
+										</a>
+										
+									</div>
+									
+									
 										<div class="modal fade" id="myModal<?php echo $j; ?>" style="z-index:0;">
 											<div class="modal-dialog">
 												<div class="modal-content">

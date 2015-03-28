@@ -12,7 +12,7 @@
  * @property string $skype_id
  * @property string $username
  * @property string $password
- * @property integer $age
+ * @property string $date_of_birth
  * @property string $country
  * @property string $city
  * @property integer $gender

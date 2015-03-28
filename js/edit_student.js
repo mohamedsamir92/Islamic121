@@ -91,7 +91,84 @@ $(document).ready(function() {
 
 	});
 	
-	$("select#package").change();
+	//$("select#package").change();
+	
+	$('.timepicker_to').timepicker({
+	'minuteStep' : 5
+});
+
+$('.timepicker_from').timepicker({
+	'minuteStep' : 5
+});
+$('.select').selectpicker();
+$(".days,.timepicker_to,.timepicker_from,.period").change(function() {
+	handleChange();
+});
+
+$(".lesson-type").change(function(){
+	var index = $(this).parent().prevAll().length;
+	var days = ["Saturday", "Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday"];
+	$(".days-container").eq(index).html("");
+	var gender = $("#gender").val();
+	var lessonType = $(".lesson-type select").eq(index).val();
+	//console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
+	$.ajax("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType, {
+		success : function(data) {
+			var obj = jQuery.parseJSON(data);
+			if(obj.days.length>0){
+
+				$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
+				var first = $(".days-container").eq(index).attr("first");
+				
+				var day = $(".days-container").eq(index).attr("day");
+				for(var i=0;i<obj.days.length;i++){
+					if(first == 1 && day == days[obj.days[i]])
+						$(".days").eq(index*2).append('<option selected value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
+					else
+						$(".days").eq(index*2).append('<option value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
+				}
+				$(".days-container").eq(index).append('</select>');
+				var first = $(".days-container").eq(index).attr("first" , 0);
+				var dayIndex = $(".days-container").eq(index).attr("day" , "");
+				
+				$(".days").eq(index*2).selectpicker();
+				$(".days").change(function() {
+					handleChange();
+				});
+				//$(".days").trigger("change");
+				
+				
+			}
+			
+			else{
+				$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
+				$(".days-container .days").eq(index).append('<option>Unavailable</option>');
+				
+				$(".days-container").eq(index).append('</select>');
+				//$('.slot-time logo').html();
+				//$('.slot-time logo').eq(index).append('<div style="display: table-cell; vertical-align: middle;" class = "logo' + index + '"><span class="glyphicon glyphicon-remove"></span>' + obj.status + '</div>');
+				
+			}			
+		},
+		error : function() {
+			alert("ERROR");
+		},
+		
+		async : false
+		
+		
+	});
+		//alert($(".days").length);
+
+		
+		
+		$('.select').selectpicker();
+		handleChange();
+		//alert($(this).parent().prevAll().length);
+	});
+
+$(".lesson-type").trigger("change");
+
 	
 });
 
@@ -105,14 +182,12 @@ $("#country").change(function() {
 
 				$("#cities").append('<span class="input-group-addon"><span class="fa fa-flag-o"></span></span>');
 				$("#cities").append('<select id = "cities-select" class="form-control select" data-live-search="true" name="Student[city]">');
-				var id = "";
-				id += $("#cities").attr("city-id");
-				
+				var id = $("#cities").attr("city-id");
 				for(var i=0;i<obj.length;i++){
 					if(id == obj[i].id)
 						$("#cities-select").append('<option value = '+obj[i].id+' selected >' + obj[i].name + '</option>');
 					else
-						$("#cities-select").append('<option value = '+obj[i].id+' selected >' + obj[i].name + '</option>');
+						$("#cities-select").append('<option value = '+obj[i].id+'  >' + obj[i].name + '</option>');
 				}
 				$("#cities").append('</select>');
 				$('#cities-select').selectpicker();
@@ -201,23 +276,34 @@ $('.select').selectpicker();
 $(".days,.timepicker_to,.timepicker_from,.period").change(function() {
 	handleChange();
 });
+
 $(".lesson-type").change(function(){
 	var index = $(this).parent().prevAll().length;
 	var days = ["Saturday", "Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday"];
 	$(".days-container").eq(index).html("");
 	var gender = $("#gender").val();
 	var lessonType = $(".lesson-type select").eq(index).val();
-	console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
+	//console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
 	$.ajax("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType, {
 		success : function(data) {
 			var obj = jQuery.parseJSON(data);
 			if(obj.days.length>0){
 
 				$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
+				var first = $(".days-container").eq(index).attr("first");
+				var day = $(".days-container").eq(index).attr("day");
+				alert(first);
+				
 				for(var i=0;i<obj.days.length;i++){
-					$(".days").eq(index*2).append('<option value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
+					if(first == 1 && day == days[obj.days[i]])
+						$(".days").eq(index*2).append('<option selected value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
+					else
+						$(".days").eq(index*2).append('<option value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
 				}
 				$(".days-container").eq(index).append('</select>');
+				var first = $(".days-container").eq(index).attr("first" , 0);
+				var dayIndex = $(".days-container").eq(index).attr("day" , "");
+				
 				$(".days").eq(index*2).selectpicker();
 				$(".days").change(function() {
 					handleChange();
@@ -253,12 +339,17 @@ $(".lesson-type").change(function(){
 		handleChange();
 		//alert($(this).parent().prevAll().length);
 	});
+
+
 $(".lesson-type").trigger("change");
 $(".period").trigger("change");
 
 
 
 }
+
+
+
 
 
 

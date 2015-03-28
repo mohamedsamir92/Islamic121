@@ -1,5 +1,7 @@
 <script>
 		$(document).ready(function() {
+			//alert("Here");
+			//console.log("sdklskds");
 			<?php for($i=0;$i<count($results);$i++): ?>
 				$("#edit-form<?php echo $i; ?>").submit(function( event ){
 					//alert("dksldksd");
@@ -12,7 +14,9 @@
 					});
 				});
 				$( "#myform<?php echo $i ?>" ).submit(function( event ) {
-					var state = 0;
+					
+					var state = 1;
+					var message = "Success";
 					var cost = $("#cost<?php echo $i ?>").val();
 					if(cost == ""){
 						
@@ -28,55 +32,92 @@
 					
 					
 					}
-					if(typeof $("#from<?php echo $i ?>").val() !== "undefined"){
-					console.log("index.php?r=Requests/checkTeacher&id=" + 
-					$("#teacher<?php echo $i ?>").val() +"&from=" + $("#from<?php echo $i ?>").val()+
-					"&to="+$("#to<?php echo $i ?>").val()+"&day="+$("#day<?php echo $i ?>").val()+
-					"&student_gender="+$("#gender<?php echo $i ?>").text()+"&lesson_type="+$("#lesson-type<?php echo $i ?>").val()+"&period="+$("#period<?php echo $i ?>").val());
-					$.ajax("index.php?r=Requests/checkTeacher&id=" + 
-					$("#teacher<?php echo $i ?>").val() +"&from=" + $("#from<?php echo $i ?>").val()+
-					"&to="+$("#to<?php echo $i ?>").val()+"&day="+$("#day<?php echo $i ?>").val()+
-					"&student_gender="+$("#gender<?php echo $i ?>").text()+"&lesson_type="+$("#lesson-type<?php echo $i ?>").val()+"&period="+$("#period<?php echo $i ?>").val(), {
-					success : function(data) {
-					var obj = jQuery.parseJSON(data);
-					noty({
-					text: obj.status,
-					layout: 'topRight',
-					type: 'error',
-					timeout : 5000,
+					if ($(".request-check<?php echo $i ?> .glyphicon-remove").length > 0) {
+						noty({
+							text : 'Some fields contain incorrect data in this request, check your data again',
+							layout : 'topRight',
+							type : 'error',
+							timeout : 5000,
+						});
+						event.preventDefault();
+						return;
+					}
 					
-				
-					});
-					if (obj.status == "Success")
-					{
-					state = 1;
+					if(typeof $("#from<?php echo $i ?>").val() !== "undefined"){
+					//alert("dksldksld");
+					
+					var slotsSize = $(".slot<?php echo $i ?>").length;
+					var formNumber = <?php echo $i ?>;
+					for(var counter = 0;counter<slotsSize;counter++){
+						
+							console.log("index.php?r=Requests/checkTeacher&id=" + 
+							$("#teacher"+formNumber).val() +"&from=" + $("#from"+(formNumber+counter)).val()+
+							"&to="+$("#to"+(formNumber+counter)).val()+"&day="+$("#day"+(formNumber+counter)).val()+
+							"&student_gender="+$("#gender"+formNumber).text()+"&lesson_type="+$("#lesson-type"+(formNumber+counter)).val()+"&period="+$("#period"+(formNumber+counter)).val());
+								
+							
+							$.ajax("index.php?r=Requests/checkTeacher&id=" + 
+							$("#teacher"+formNumber).val() +"&from=" + $("#from"+(formNumber+counter)).val()+
+							"&to="+$("#to"+(formNumber+counter)).val()+"&day="+$("#day"+(formNumber+counter)).val()+
+							"&student_gender="+$("#gender"+formNumber).text()+"&lesson_type="+$("#lesson-type"+(formNumber+counter)).val()+"&period="+$("#period"+(formNumber+counter)).val(), {
+							success : function(data) {
+							var obj = jQuery.parseJSON(data);
+							if(obj.status != "Success"){
+								state = 0;
+								message = obj.status;
+							}
+								
+							
+							
+							},
+							error : function() {
+							alert("ERROR");
+							},
+							async: false
+						
+							});
+							if(state == 0)break;
+						}
+						if(state == 1){
+							noty({
+								text: message,
+								layout: 'topRight',
+								type: 'error',
+								timeout : 5000,
+								
+							
+							});
+							//event.preventDefault();
+							return;
+						}
+						else {
+							
+							state = 1;
+							noty({
+								text: message,
+								layout: 'topRight',
+								type: 'error',
+								timeout : 5000,
+								
+							
+							});
+							event.preventDefault();
+							return;
+						}
+						
 					}
-				
-					},
-					error : function() {
-					alert("ERROR");
-					},
-					async: false
-				
-					});
-					}
+					event.preventDefault();
+							return;
 				
 					//return;
-					if(state == 1){
-					state = 0;
-					return;
-					}
-					else {
-					state = 0;
-					event.preventDefault();
-				
-					}
+					
 					});
 
 			<?php endfor; ?>
 			$(".daysReq,.time_from,.time_to,.periodReq").change(function() {
 	
 				var index = $(this).attr("number");
+				
 				//alert($("#from"+index).val());
 				handleAjax(index,$("#from"+index).val(),$("#to"+index).val(),$("#period"+index).val(), $("#gender"+index).val()
 				, $("#day"+index).val() , $("#lesson-type"+index).val());
@@ -85,6 +126,9 @@
 			
 			$(".typeReq").change(function(){
 				var index = $(this).attr("number");
+				var formIndex = $(this).attr("fIndex");
+				//alert(index);
+				
 				var days = ["Saturday", "Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday"];
 				$(".days-container").eq(index).html("");
 				var genderType = $("#gender"+index).html();
@@ -92,12 +136,12 @@
 				if(genderType == "Female")
 					gender = 1;
 				var lessonType = $("#lesson-type"+index).val();
-				console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
+				//console.log("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType);
 				$.ajax("index.php?r=DataModule/getSlots&gender="+gender+"&type="+lessonType, {
 					success : function(data) {
 						var obj = jQuery.parseJSON(data);
 						if(obj.days.length>0){
-							$(".days-container").eq(index).append('<select id="day'+index+'" class = "form-control select daysReq " name="LessonRequest[day][]" number = "'+index+'" form = "myform'+index+'">');
+							$(".days-container").eq(index).append('<select id="day'+index+'" class = "form-control select daysReq " name="LessonRequest[day][]" number = "'+index+'" form = "myform'+formIndex+'">');
 							
 							
 							//$("#day"+index).append("<option>kdsldksld</option>");
@@ -302,9 +346,9 @@ else
 									<button href="#editModal<?php echo $j; ?>" data-toggle="modal" class="btn btn-default btn-condensed">
 										<i class="fa fa-pencil"></i>
 									</button>
-									<button class="btn btn-danger btn-condensed">
+									<a href="index.php?r=requests/declineRequest&id=<?php echo $request->id ?>" class="btn btn-danger btn-condensed">
 										<i class="fa fa-times"></i>
-									</button>
+									</a>
 									<button type="submit" form="myform<?php echo $j; ?>" class="btn btn-success btn-condensed">
 										<i class="fa fa-check"></i>
 									</button>
@@ -359,9 +403,9 @@ else
 																$counter++;
 															?>
 
-															<tr>
+															<tr class="slot<?php echo $j ?>">
 																<td>
-																<select id="lesson-type<?php echo $j; ?>" class="form-control typeReq select" name="LessonRequest[lesson-type][]" number="<?php echo $j; ?>" form="myform<?php echo $j; ?>">
+																<select id="lesson-type<?php echo ($counter+$j); ?>" class="form-control typeReq select" name="LessonRequest[lesson-type][]" number="<?php echo ($counter+$j); ?>" fIndex ="<?php echo $j; ?>" form="myform<?php echo $j; ?>">
 																	<?php
 																		$types = array("Quran Hifdh" , "Quran Reading" , "Arabic");
 																		for($i=0;$i<3;$i++): ?>
@@ -376,7 +420,7 @@ else
 																</td>
 																<td>
 																<div class="days-container">
-																	<select id="day<?php echo $j; ?>" class="form-control daysReq select" name="LessonRequest[day][]" number="<?php echo $j; ?>" form="myform<?php echo $j; ?>">
+																	<select id="day<?php echo ($counter+$j); ?>" class="form-control daysReq select" name="LessonRequest[day][]" number="<?php echo ($counter+$j); ?>" form="myform<?php echo $j; ?>">
 																		<?php
 																		$days = array("Saturday" , "Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday");
 																		for($i=0;$i<7;$i++):
@@ -391,7 +435,7 @@ else
 																</div>
 																</td>
 																<td>
-																	<input id="period<?php echo $j ?>" type="text"  class="form-control periodReq" name="LessonRequest[period][]" number="<?php echo $j; ?>" value = "<?php echo $lessonTimeSlot->period; ?>"  form="myform<?php echo $j; ?>">
+																	<input id="period<?php echo ($counter+$j) ?>" type="text"  class="form-control periodReq" name="LessonRequest[period][]" number="<?php echo ($counter+$j); ?>" value = "<?php echo $lessonTimeSlot->period; ?>"  form="myform<?php echo $j; ?>">
 								
 																</td>
 								
@@ -401,14 +445,14 @@ else
 																	<?php $lessonTimeSlot -> from = date("g:i a", strtotime($lessonTimeSlot -> from));
 																		$lessonTimeSlot -> to = date("g:i a", strtotime($lessonTimeSlot -> to));
 																	?>
-																	<input id="from<?php echo $j; ?>" type="text" class="form-control timepicker time_from" form="myform<?php echo $j; ?>" number="<?php echo $j; ?>" name="LessonRequest[from][]" value="<?php echo $lessonTimeSlot->from ?>" />
+																	<input id="from<?php echo ($counter+$j); ?>" type="text" class="form-control timepicker time_from" form="myform<?php echo $j; ?>" number="<?php echo ($counter+$j); ?>" name="LessonRequest[from][]" value="<?php echo $lessonTimeSlot->from ?>" />
 																</div></td>
 																<td>
 																<div class="input-group bootstrap-timepicker">
 																	<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-																	<input id="to<?php echo $j; ?>" type="text" class="form-control timepicker time_to"  form="myform<?php echo $j; ?>" number="<?php echo $j; ?>" name="LessonRequest[to][]" value="<?php echo $lessonTimeSlot->to ?>" />
+																	<input id="to<?php echo ($counter+$j); ?>" type="text" class="form-control timepicker time_to"  form="myform<?php echo $j; ?>" number="<?php echo ($counter+$j); ?>" name="LessonRequest[to][]" value="<?php echo $lessonTimeSlot->to ?>" />
 																</div></td>
-																<td id="check<?php echo $j; ?>"></td>
+																<td class="request-check<?php echo $j; ?>" id="check<?php echo ($counter+$j); ?>"></td>
 															</tr>
 
 															<?php
