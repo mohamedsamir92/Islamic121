@@ -18,7 +18,11 @@ class PreferencesController extends Controller {
         {
             $is_insert = true;
             $model = new ValidationRules();
+			
             $model->attributes = $_POST['ValidationRules'];
+			$model->from = date("H:i", strtotime($model->from));
+			$model->to = date("H:i", strtotime($model->to));
+			
             if ($model->save()) {
                 $insert_success = true;
                 $message = "Saved Successfully!";

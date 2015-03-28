@@ -126,7 +126,7 @@
 
 
 
-<div class="modal fade" id="AddRule">
+<div class="modal fade" id="AddRule" style="z-index: 100">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -252,4 +252,13 @@
 
 <script type="text/javascript" src="js/plugins/moment.min.js"></script>
 <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+<script>
+	$("document").ready(function(){
+		//alert("dksldks");
+		$('.timepicker').timepicker({
+			'minuteStep' : 5
+		});	
+	});
+	
+</script>
 <!-- END THIS PAGE PLUGINS-->
