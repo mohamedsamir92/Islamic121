@@ -11146,3 +11146,339 @@ REQUEST_URI=/Islamic121/index.php?r=members/editStudent&id=11
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\views\members\EditSpecificStudent.php (37)
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (311)
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:13:12 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:13:12 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:13:12 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:13:12 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:13:12 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:13:12 [error] [php] Undefined index: prefered_days_1 (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php:198)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): MembersController->runAction()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): MembersController->runActionWithFilters()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): MembersController->run()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=members/editStudent
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (198)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:21:11 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:21:11 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:21:11 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:21:11 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:21:11 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:21:11 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:21:11 [error] [php] Undefined variable: edit (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\views\members\EditSpecificStudent.php:37)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(869): MembersController->renderFile()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(782): MembersController->renderPartial()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php(306): MembersController->render()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): MembersController->actionEditStudent()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): MembersController->runAction()
+#6 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): MembersController->runActionWithFilters()
+#7 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): MembersController->run()
+#8 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=members/editStudent
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\views\members\EditSpecificStudent.php (37)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (306)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:23:07 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:23:07 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:23:07 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:23:07 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:23:07 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:23:07 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:36 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:36 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:36 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:36 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:36 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:36 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:54 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:54 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:54 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:54 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:54 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:24:54 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:26:27 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:26:27 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:26:27 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:26:27 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:26:27 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:26:27 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:28:05 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:28:05 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:28:05 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:28:05 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:28:05 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:28:05 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:19 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:19 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:19 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:19 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:19 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:19 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:29 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:29 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:29 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:29 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:29 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:29 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:59 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:59 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:59 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:59 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:59 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:59 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:30:59 [error] [php] Undefined variable: enable_edit (C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\views\members\EditSpecificStudent.php:34)
+Stack trace:
+#0 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(869): MembersController->renderFile()
+#1 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(782): MembersController->renderPartial()
+#2 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php(306): MembersController->render()
+#3 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): MembersController->actionEditStudent()
+#4 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(286): MembersController->runAction()
+#6 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CController.php(265): MembersController->runActionWithFilters()
+#7 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): MembersController->run()
+#8 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Yii\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php(13): CWebApplication->run()
+REQUEST_URI=/Islamic121/index.php?r=members/editStudent
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\views\members\EditSpecificStudent.php (34)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (306)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:31:23 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:31:23 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:31:23 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:31:23 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:31:23 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:31:23 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:32:39 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:32:39 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:32:39 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:32:39 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:32:39 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:32:39 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:33:27 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:33:27 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:33:27 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:33:27 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:33:27 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:33:27 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:12 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:12 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:12 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:12 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:12 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:12 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:42 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:42 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:42 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:42 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:42 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:34:42 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:35:21 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:36:30 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:36:58 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:36:58 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:36:58 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:36:58 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:36:58 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/03/31 04:36:58 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)

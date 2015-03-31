@@ -116,7 +116,7 @@ $(".lesson-type").change(function(){
 		success : function(data) {
 			var obj = jQuery.parseJSON(data);
 			if(obj.days.length>0){
-				var disabled = $(".days-container").eq(index).attr("disabled");
+				var disabled = $(".days-container").eq(index).attr("edit");
 				if(disabled == 0)
 					$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
 				else

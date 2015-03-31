@@ -204,7 +204,7 @@ class MembersController extends Controller {
 									$lesson_time_slots -> save();
 									//print_r($lesson_time_slots -> getErrors());
 									
-									$date = getdate();
+									/*$date = getdate();
 									$current_day_index = ($date['wday'] + 1) % 7;
 									$received_day_index = $_POST['Student']['prefered_days_' . ($i + 1)];
 
@@ -257,7 +257,10 @@ class MembersController extends Controller {
 						
 										$lesson_request -> end_date = $end_date;
 										$lesson_request -> status = 1;
-										$lesson_request -> save();
+										
+									  
+									 */
+									 $lesson_request -> save();
 
 									
 
@@ -300,7 +303,7 @@ class MembersController extends Controller {
 			$request = LessonRequest::model() -> find("student_id = :id", array("id" => $id));
 			$slots = LessonRequestTimeSlot::model() -> findAll("lesson_request_id = :id", array(":id" => $request -> id));
 			$countries = Countries::model() -> findAll();
-			$this -> render("EditSpecificStudent", array("id"=>$id,"student" => $student, "countries" => $countries, "slots" => $slots , "my_message" => $message ));
+			$this -> render("EditSpecificStudent", array("edit"=>$enable_edit,"id"=>$id,"student" => $student, "countries" => $countries, "slots" => $slots , "my_message" => $message ));
 		} else {
 			if(!isset($_GET['id']))return;
 			$id = $_GET['id'];

@@ -26,11 +26,13 @@
 						if(isset($_GET['id'])){
 							$id = 	$_GET['id'];
 						}
-						if(isset($_GET['edit'])){
+						if(isset($edit) && $edit == 1)$enable_edit = $edit;
+						else if(isset($_GET['edit'])){
 							$edit = $_GET['edit'];
 							if($edit == 1)
 								$enable_edit = $edit;
 						}
+						
 						//else $edit = 0;
 						?>
 						<input type = "hidden" name = "id" value = "<?php echo $id ?>" />
@@ -224,14 +226,14 @@
 									</select>
 								</div>  
 								<?php if(isset($enable_edit)): ?>
-									<div disabled="0" class="col-md-1 col-xs-12 days-container" first="1" day = <?php echo $days[$slots[$i]->day]; ?> ></div>
+									<div edit="0" class="col-md-1 col-xs-12 days-container" first="1" day = <?php echo $days[$slots[$i]->day]; ?> ></div>
 								<?php else: ?>
-									<div disabled="1" class="col-md-1 col-xs-12 days-container" first="1" day = <?php echo $days[$slots[$i]->day]; ?> ></div>
+									<div edit="1" class="col-md-1 col-xs-12 days-container" first="1" day = <?php echo $days[$slots[$i]->day]; ?> ></div>
 								<?php endif; ?>
 								
 								<div class="col-md-1 col-xs-12">
 									<?php if(isset($enable_edit)): ?>
-										<input type="number" min="30" max="120" value="30" class="form-control period" name="Student[prefered_lesson_period_<?php echo ($i+1); ?>]" > 
+										<input type="number" min="30" max="120" value="<?php echo $slots[$i]->period; ?>" class="form-control period" name="Student[prefered_lesson_period_<?php echo ($i+1); ?>]" > 
 									<?php else: ?>
 										<input type="number" min="30" max="120" value="30" class="form-control period" name="Student[prefered_lesson_period_<?php echo ($i+1); ?>]" disabled >
 									<?php endif; ?>
