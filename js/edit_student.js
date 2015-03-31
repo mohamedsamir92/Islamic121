@@ -116,8 +116,11 @@ $(".lesson-type").change(function(){
 		success : function(data) {
 			var obj = jQuery.parseJSON(data);
 			if(obj.days.length>0){
-
-				$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
+				var disabled = $(".days-container").eq(index).attr("disabled");
+				if(disabled == 0)
+					$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
+				else
+					$(".days-container").eq(index).append('<select disabled class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
 				var first = $(".days-container").eq(index).attr("first");
 				
 				var day = $(".days-container").eq(index).attr("day");
@@ -128,8 +131,8 @@ $(".lesson-type").change(function(){
 						$(".days").eq(index*2).append('<option value = '+obj.days[i]+'>' + days[obj.days[i]] + '</option>');
 				}
 				$(".days-container").eq(index).append('</select>');
-				var first = $(".days-container").eq(index).attr("first" , 0);
-				var dayIndex = $(".days-container").eq(index).attr("day" , "");
+				//var first = $(".days-container").eq(index).attr("first" , 0);
+				//var dayIndex = $(".days-container").eq(index).attr("day" , "");
 				
 				$(".days").eq(index*2).selectpicker();
 				$(".days").change(function() {
@@ -292,7 +295,7 @@ $(".lesson-type").change(function(){
 				$(".days-container").eq(index).append('<select class="form-control select days" name="Student[prefered_days_' + (index + 1) + ']">');
 				var first = $(".days-container").eq(index).attr("first");
 				var day = $(".days-container").eq(index).attr("day");
-				alert(first);
+				//alert(first);
 				
 				for(var i=0;i<obj.days.length;i++){
 					if(first == 1 && day == days[obj.days[i]])

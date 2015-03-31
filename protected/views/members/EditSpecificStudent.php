@@ -26,8 +26,15 @@
 						if(isset($_GET['id'])){
 							$id = 	$_GET['id'];
 						}
+						if(isset($_GET['edit'])){
+							$edit = $_GET['edit'];
+							if($edit == 1)
+								$enable_edit = $edit;
+						}
+						//else $edit = 0;
 						?>
 						<input type = "hidden" name = "id" value = "<?php echo $id ?>" />
+						<input type = "hidden" name = "edit" value = "<?php echo $edit ?>" />
 					
 
 						<div class="form-group">
@@ -157,11 +164,18 @@
 
 							</div>
 						</div>
-
+						
+						
+						
 						<div class="form-group">
 							<label class="col-md-3 col-xs-12 control-label">Class Package <span class="text-danger">*</span></label>
 							<div class="col-md-6 col-xs-12">
+								<?php if(isset($enable_edit)): ?>
 								<select id="package" class="form-control select" name="Student[class_package]">
+								<?php else: ?>
+								<select id="package" class="form-control select" name="Student[class_package]" disabled>
+								<?php endif; ?>
+								
 									<?php for($i=1;$i<11;$i++): ?>
 										<?php if($i == count($slots)): ?>
 											<option value="<?php echo $i ?>" selected><?php echo $i ?> Lesson/Week</option>
@@ -185,30 +199,42 @@
 
 
 
-						<div class="slots" style="visibility: hidden">
+						<!--<div class="slots" style="visibility: hidden">
 							<?php foreach($slots as $slot): ?>
 								<input type="text" class="time-from" value="<?php echo $slot->from ?>" />
 								<input type="text" class="time-to" value="<?php echo $slot->to ?>" />
 								<input type="text" class="time-day" value="<?php echo $slot->day ?>" />
 							<?php endforeach; ?>
 							
-						</div>
+						</div>-->
 						<div class="form-group" id="preference">
 							<?php $days = array("Saturday" , "Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday"); ?>
 							<?php for($i=0;$i<count($slots);$i++): ?>
 							<div class="form-group slot-time"> 
 								<label class="col-md-3 col-xs-12 control-label"></label> 
 								<div class="col-md-2 col-xs-12 lesson-type"> 
-									<select class="form-control select" name="Student[prefered_lesson_type_<?php echo ($i+1); ?>]"> 
+									<?php if(isset($enable_edit)): ?>
+									<select class="form-control select" name="Student[prefered_lesson_type_<?php echo ($i+1); ?>]">
+									<?php else: ?> 
+									<select class="form-control select" name="Student[prefered_lesson_type_<?php echo ($i+1); ?>]" disabled>
+									<?php endif; ?>
 										<option value="1">Quran Hifdh</option>
 										<option value="2">Quran Reading</option>
 										<option value="3">Arabic</option>
 									</select>
 								</div>  
-								<div class="col-md-1 col-xs-12 days-container" first="1" day = <?php echo $days[$slots[$i]->day]; ?> >
-								</div> 
+								<?php if(isset($enable_edit)): ?>
+									<div disabled="0" class="col-md-1 col-xs-12 days-container" first="1" day = <?php echo $days[$slots[$i]->day]; ?> ></div>
+								<?php else: ?>
+									<div disabled="1" class="col-md-1 col-xs-12 days-container" first="1" day = <?php echo $days[$slots[$i]->day]; ?> ></div>
+								<?php endif; ?>
+								
 								<div class="col-md-1 col-xs-12">
-									<input type="number" min="30" max="120" value="30" class="form-control period" name="Student[prefered_lesson_period_<?php echo ($i+1); ?>]" > 
+									<?php if(isset($enable_edit)): ?>
+										<input type="number" min="30" max="120" value="30" class="form-control period" name="Student[prefered_lesson_period_<?php echo ($i+1); ?>]" > 
+									<?php else: ?>
+										<input type="number" min="30" max="120" value="30" class="form-control period" name="Student[prefered_lesson_period_<?php echo ($i+1); ?>]" disabled >
+									<?php endif; ?>
 								</div>
 								<div class="col-md-1 col-xs-12"> 
 									<div class="input-group bootstrap-timepicker">
@@ -219,12 +245,20 @@
 				 						//$received_data['LessonRequest']['to'][$i] = date("H:i", strtotime($received_data['LessonRequest']['to'][$i]));
 										
 										 ?>
-										<input value="<?php echo $slots[$i]->from ?>" type="text" name="Student[prefered_from_<?php echo ($i+1) ?>]" class="form-control timeslot timepicker_from" style="border-radius: 5px;"/>
+										<?php if(isset($enable_edit)): ?>
+											<input value="<?php echo $slots[$i]->from ?>" type="text" name="Student[prefered_from_<?php echo ($i+1) ?>]" class="form-control timeslot timepicker_from" style="border-radius: 5px;"/>
+										<?php else: ?>
+											<input value="<?php echo $slots[$i]->from ?>" type="text" name="Student[prefered_from_<?php echo ($i+1) ?>]" class="form-control timeslot timepicker_from" style="border-radius: 5px;" disabled />
+										<?php endif; ?>
 									</div>
 								</div>
 								<div class="col-md-1 col-xs-12">
 									<div class="input-group bootstrap-timepicker">
-										<input value="<?php echo $slots[$i]->to ?>" type="text" name="Student[prefered_to_<?php echo ($i+1) ?>]" class="form-control timeslot timepicker_to" style="border-radius: 5px;"/>
+										<?php if(isset($enable_edit)): ?>
+											<input value="<?php echo $slots[$i]->to ?>" type="text" name="Student[prefered_to_<?php echo ($i+1) ?>]" class="form-control timeslot timepicker_to" style="border-radius: 5px;"/>
+										<?php else: ?>
+											<input value="<?php echo $slots[$i]->to ?>" type="text" name="Student[prefered_to_<?php echo ($i+1) ?>]" class="form-control timeslot timepicker_to" style="border-radius: 5px;" disabled />
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>

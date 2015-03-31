@@ -343,9 +343,9 @@ else
 										<i class="fa fa-calendar"></i>
 									</button>
 
-									<button href="#editModal<?php echo $j; ?>" data-toggle="modal" class="btn btn-default btn-condensed">
+									<a href="index.php?r=members/editStudent&id=<?php echo $request->student->id ?>&edit=1" data-toggle="modal" class="btn btn-default btn-condensed">
 										<i class="fa fa-pencil"></i>
-									</button>
+									</a>
 									<a href="index.php?r=requests/declineRequest&id=<?php echo $request->id ?>" class="btn btn-danger btn-condensed">
 										<i class="fa fa-times"></i>
 									</a>

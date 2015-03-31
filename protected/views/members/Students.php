@@ -79,7 +79,7 @@
 											<i class="fa fa-calendar"></i>
 										</button>
 	
-										<a href="index.php?r=members/editStudent&id=<?php echo $request -> student -> id; ?>" data-toggle="modal" class="btn btn-default btn-condensed">
+										<a href="index.php?r=members/editStudent&id=<?php echo $request -> student -> id; ?>&edit=0" data-toggle="modal" class="btn btn-default btn-condensed">
 											<i class="fa fa-pencil"></i>
 										</a>
 										<a href="index.php?r=members/removeStudent&id=<?php echo $request -> student -> id; ?>" class="btn btn-danger btn-condensed">

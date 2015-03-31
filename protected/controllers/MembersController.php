@@ -17,9 +17,9 @@ class MembersController extends Controller {
 		}
 		if(Yii::app()->user->type == 'Admin'){
 			$lessons = Lesson::model()->findAll("student_id = ".$_GET['id']);
-			$this->render('/Calendar/CalendarView',array("lessons"=>$lessons));
+			$this->render('/Calendar/calendarView',array("lessons"=>$lessons));
 		}else{
-		$this -> redirect("index.php?r=Calendar/CalendarView");
+		$this -> redirect("index.php?r=Calendar/calendarView");
 		}
 		
 	}
@@ -109,12 +109,14 @@ class MembersController extends Controller {
 		}
 		if(Yii::app()->user->type == 'Admin'){
 			$lessons = Lesson::model()->findAll("teacher_id = ".$_GET['id']);
-			$this->render('/Calendar/CalendarView',array("lessons"=>$lessons));
+			$this->render('/Calendar/calendarView',array("lessons"=>$lessons));
 		}else{
-		$this -> redirect("index.php?r=Calendar/CalendarView");
+		$this -> redirect("index.php?r=Calendar/calendarView");
 		}
 		
 	}
+	
+	
 	
 	public function actionEditStudent() {
 		if (!isset(Yii::app() -> user -> id)) {
@@ -128,6 +130,8 @@ class MembersController extends Controller {
 			if ($_POST['Student']['hear_us'] == 'Others') {
 				$_POST['Student']['hear_us'] = $_POST['Student']['hear_us_others'];
 			}
+			
+			$enable_edit = $_POST["edit"];
 
 			//$_POST['Student']['age'] = $_POST['Student']['day'] . "-" . $_POST['Student']['month'] . "-" . $_POST['Student']['year'];
 			$transaction = Yii::app() -> db -> beginTransaction();
@@ -139,7 +143,7 @@ class MembersController extends Controller {
 				try {
 					$message = "";
 					
-					for ($i = 0; $i < $_POST['Student']['class_package'] && strlen($message) < 1; $i++) {
+					for ($i = 0; $i < $enable_edit == 1 && $_POST['Student']['class_package'] && strlen($message) < 1 ; $i++) {
 						$from_time = date("H:i", strtotime($_POST['Student']['prefered_from_' . ($i + 1)]));
 						$to_time = date("H:i", strtotime($_POST['Student']['prefered_to_' . ($i + 1)]));
 						$period = $_POST['Student']['prefered_lesson_period_' . ($i + 1)];
@@ -167,7 +171,18 @@ class MembersController extends Controller {
 									$message .= $error . " ";
 								}
 							}
+							
 						} else {
+							if($enable_edit == 0){
+								$transaction -> commit();
+								$id = $_POST['id'];
+								$student = Student::model() -> find("id = :id", array(":id" => $id));
+								$request = LessonRequest::model() -> find("student_id = :id", array("id" => $id));
+								$slots = LessonRequestTimeSlot::model() -> findAll("lesson_request_id = :id", array(":id" => $request -> id));
+								$countries = Countries::model() -> findAll();
+								$this -> render("EditSpecificStudent", array("edit"=>$enable_edit, "id"=>$id,"student" => $student, "countries" => $countries, "slots" => $slots , "my_message" => "User data updated successfully" ));
+								return;
+							}
 							$lesson_request = LessonRequest::model()->find("student_id = :id",array(":id"=>$_POST['id']));
 							LessonRequestTimeSlot::model()->deleteAll("lesson_request_id = :lid",array("lid"=>$lesson_request->id));
 							Lesson::model()->deleteAll("student_id = :id",array("id"=>$_POST['id']));
@@ -287,7 +302,7 @@ class MembersController extends Controller {
 			$countries = Countries::model() -> findAll();
 			$this -> render("EditSpecificStudent", array("id"=>$id,"student" => $student, "countries" => $countries, "slots" => $slots , "my_message" => $message ));
 		} else {
-
+			if(!isset($_GET['id']))return;
 			$id = $_GET['id'];
 			$student = Student::model() -> find("id = :id", array(":id" => $id));
 			$request = LessonRequest::model() -> find("student_id = :id", array("id" => $id));
