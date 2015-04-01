@@ -11482,3 +11482,141 @@ in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\ind
 2015/03/31 04:36:58 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (141)
 in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:48:07 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:48:07 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:48:07 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:48:07 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:48:07 [warning] [application] Failed to set unsafe attribute "lesson" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:52:44 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:52:44 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:52:44 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:52:44 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 06:52:44 [warning] [application] Failed to set unsafe attribute "lesson" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:03:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (50)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:04:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (51)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:04:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (51)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:04:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (51)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:08:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (52)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:09:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (52)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:09:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (52)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:09:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (52)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:09:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (52)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:09:57 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (52)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:10:07 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (53)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:12:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`islamonline`.`lesson_request`, CONSTRAINT `lessons_request_teacher_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)). The SQL statement executed was: DELETE FROM `teacher` WHERE `teacher`.`id`=1.
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\MembersController.php (53)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:35:34 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:35:34 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:35:34 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:35:34 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:35:34 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:35:34 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:35:34 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:37:25 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:37:25 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:37:25 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:37:25 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:37:25 [warning] [application] Failed to set unsafe attribute "lesson" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:48:22 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:48:22 [warning] [application] Failed to set unsafe attribute "days" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:48:22 [warning] [application] Failed to set unsafe attribute "from" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:48:22 [warning] [application] Failed to set unsafe attribute "to" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:48:22 [warning] [application] Failed to set unsafe attribute "lesson" of "Teacher".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (229)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:53:10 [warning] [application] Failed to set unsafe attribute "confirmed_password" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:53:10 [warning] [application] Failed to set unsafe attribute "prefered_lesson_type_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:53:10 [warning] [application] Failed to set unsafe attribute "prefered_days_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:53:10 [warning] [application] Failed to set unsafe attribute "prefered_lesson_period_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:53:10 [warning] [application] Failed to set unsafe attribute "prefered_from_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:53:10 [warning] [application] Failed to set unsafe attribute "prefered_to_1" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)
+2015/04/01 07:53:10 [warning] [application] Failed to set unsafe attribute "hear_us_others" of "Student".
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\protected\controllers\DataModuleController.php (63)
+in C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\Islamic121\index.php (13)

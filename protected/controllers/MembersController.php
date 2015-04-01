@@ -27,6 +27,7 @@ class MembersController extends Controller {
 	
 	public function actionRemoveTeacher(){
 		$id = $_GET['id'];
+			
 		$transaction = Yii::app() -> db -> beginTransaction();
 		try{
 			$user = Users::model()->find("profile_id = :id and type = 1",array(":id"=>$id));
@@ -34,10 +35,11 @@ class MembersController extends Controller {
 		
 			Lesson::model()->deleteAll("teacher_id = :id",array(":id"=>$id));
 			$lesson_request_id = LessonRequest::model()->find("teacher_id = :id",array(":id"=>$id));
-			if($lesson_request_id != null){
+			if(count($lesson_request_id)){
+			//	echo "HERE";
 				$lesson_request_id->status = 0;
 				$lesson_request_id->teacher_id = null;
-				$lesson_request_id->delete();
+				$lesson_request_id->save();
 				$request_id = $lesson_request_id->id;
 				LessonRequestTimeSlot::model()->deleteAll("lesson_request_id = :id",array(":id"=>$request_id));
 		
@@ -46,7 +48,7 @@ class MembersController extends Controller {
 			TeacherTimeSlot::model()->deleteAll("teacher_id = :id",array(":id"=>$id));
 			TeacherTypeBridge::model()->deleteAll("teacher_id = :id",array(":id"=>$id));
 			
-			$teacher = Teacher::model()->find("id",array(":id"=>$id));
+			$teacher = Teacher::model()->find("id = :id",array(":id"=>$id));
 			$teacher->delete();
 			
 			$result = Teacher::model() -> with("teacherTimeSlots") -> findAll();

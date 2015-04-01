@@ -63,9 +63,9 @@
 										<a href="index.php?r=members/editTeacher&id=<?php echo $teacher->id; ?>" data-toggle="modal" class="btn btn-default btn-condensed">
 											<i class="fa fa-pencil"></i>
 										</a>
-										<!--<a href="index.php?r=members/removeTeacher&id=<?php echo $teacher -> id; ?>" class="btn btn-danger btn-condensed">
+										<a href="index.php?r=members/removeTeacher&id=<?php echo $teacher -> id; ?>" class="btn btn-danger btn-condensed">
 											<i class="fa fa-times"></i>
-										</a>-->
+										</a>
 										
 									</div>
 										<div class="modal fade" id="myModal<?php echo $j; ?>" style="z-index:0;">
