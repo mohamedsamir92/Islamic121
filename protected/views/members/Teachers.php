@@ -52,8 +52,8 @@
 									<td><?php if($teacher->gender == 0 ): ?>Male<?php else: ?>Female <?php endif; ?></td>
 									<td><?php echo $teacher -> phone_no; ?></td>
 									<td><?php echo $teacher -> email; ?></td>
-									<td><?php echo $teacher -> country; ?></td>
-									<td><?php echo $teacher -> city; ?></td>
+									<td><?php echo $this->getCountry($teacher -> country); ?></td>
+									<td><?php echo $this->getCity($teacher -> city); ?></td>
 									<td>
 									<div class="btn-group">
 										<a href="index.php?r=members/showTeacherCalendar&id=<?php echo $teacher->id; ?>" class="btn btn-default btn-condensed" data-toggle="modal" >

@@ -1,6 +1,17 @@
 <?php
 
 class MembersController extends Controller {
+		
+	public function getCountry($id){
+		$country = Countries::model()->find("id = :id",array(":id"=>$id));
+		return $country["name"];
+	}
+	
+	public function getCity($id){
+		$country = Regions::model()->find("id = :id",array(":id"=>$id));
+		return $country["name"];
+	}	
+		
 	public function actionIndex() {
 		if (!isset(Yii::app() -> user -> id)) {
 			$this -> redirect("index.php?r=DataModule/Login");

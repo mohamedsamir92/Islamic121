@@ -66,7 +66,7 @@
 									<td><?php echo $request -> student -> date_of_birth; ?></td>
 									<td><?php if($request->student->gender == 0 ): ?>Male<?php else: ?>Female <?php endif; ?></td>
 									<td><?php echo $request -> student -> phone_no; ?></td>
-									<td><?php echo $request -> student -> country; ?></td>
+									<td><?php echo $this->getCountry($request -> student -> country); ?></td>
 									<td><?php echo $request -> cost; ?>
 										
 										<?php if($request->currency_id == 0 ): ?> GBP<?php elseif($request->currency_id == 1): ?> EUR <?php else: ?> EGP <?php endif; ?>
