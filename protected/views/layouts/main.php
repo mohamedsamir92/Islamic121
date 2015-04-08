@@ -74,8 +74,18 @@
 						 ?></div></span></a>
 					</li>
 					<?php endif; ?>
-					<li>
-						<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=Calendar/CalendarView"><span class="fa fa-calendar"></span><span class="xn-text">Calendar</span></a>
+					<li class="xn-openable">
+						<a href="#"><span class="fa fa-calendar"></span><span class="xn-text">Lessons</span></a>
+						<ul>
+							<li>
+								<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=Calendar/CalendarView"><span class="fa fa-calendar"></span><span class="xn-text">Calendar</span></a>	
+							</li>
+							<li>
+								<a href="<?php echo Yii::app()->request->baseUrl ?>/index.php?r=Lessons/index"><span class="fa fa-calendar"></span><span class="xn-text">Lessons</span></a>	
+							</li>
+						</ul>
+						
+						
 					</li>
 					<li class="xn-openable">
 						<a href="#"><span class="fa fa-comments"></span><span class="xn-text">Messages</span></a>
