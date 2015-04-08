@@ -40,9 +40,20 @@ else echo "2015-02-16 18:08:00";
                 },
                 <?php endforeach; ?>
                 
-            ]
+            ],
             <?php endif; ?>
+            eventClick: function(calEvent, jsEvent, view) {
+
+		        alert('Event: ' + calEvent.start);
+		        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+		        alert('View: ' + view.name);
+		
+		        // change the border color just for fun
+		        $(this).css('border-color', 'red');
+
+    		}
         });
+        
         
     });
 

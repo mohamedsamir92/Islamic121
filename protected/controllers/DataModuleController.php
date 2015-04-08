@@ -523,6 +523,16 @@ class DataModuleController extends Controller {
 
 	}
 
+	public static function getTeacher($id){
+		$teacher = Teacher::model()->find("id = :id",array(":id"=>$id));
+		return $teacher;
+	}
+	
+	public static function getStudent($id){
+		$student = Student::model()->find("id = :id",array(":id"=>$id));
+		return $student;
+	}
+	
 	public function actionGetRegions() {
 		$id = $_GET['id'];
 		$cities = Regions::model() -> findAll("country_id = :id", array(":id" => $id));
